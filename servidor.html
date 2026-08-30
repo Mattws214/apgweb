@@ -17,10 +17,6 @@
 <body>
 
 ```
-<!-- =========================================
-     HEADER
-========================================= -->
-
 <header>
 
     <div class="logo">
@@ -30,13 +26,9 @@
     <nav>
 
         <a href="index.html">Inicio</a>
-
         <a href="reglas.html">Reglas</a>
-
         <a href="servidor.html">Servidor</a>
-
         <a href="tienda.html">Tienda</a>
-
         <a href="informacion.html">Información</a>
 
         <a href="https://discord.gg/gfNhf58B48" target="_blank">
@@ -48,15 +40,9 @@
 </header>
 
 
-<!-- =========================================
-     CONTENIDO
-========================================= -->
-
 <main>
 
     <section class="rules-section">
-
-        <!-- TÍTULO -->
 
         <div class="rules-header">
 
@@ -65,58 +51,41 @@
             </span>
 
             <h1>
-                Servidor APGMC
+                Servidor
             </h1>
 
             <p>
-                Conéctate a nuestra comunidad desde Java o Bedrock.
+                Conéctate a APGMC desde tu plataforma favorita.
             </p>
 
         </div>
 
 
-        <!-- =====================================
-             SERVIDORES
-        ====================================== -->
-
-        <div class="server-container">
+        <div class="server-buttons">
 
 
             <!-- JAVA -->
 
-            <div class="server-card">
+            <div class="server-button">
 
-                <div class="server-card-icon">
+                <div class="server-button-icon">
                     ☕
                 </div>
 
-                <h2>
-                    Minecraft Java
-                </h2>
+                <div class="server-button-content">
 
-                <p class="server-platform">
-                    PC · Java Edition
-                </p>
+                    <h2>
+                        Minecraft Java
+                    </h2>
 
-
-                <div class="server-address">
-
-                    <span>
-                        Dirección del servidor
-                    </span>
-
-                    <strong id="javaAddress">
+                    <p>
                         51.81.49.65:26495
-                    </strong>
+                    </p>
 
                 </div>
 
-
-                <button
-                    class="copy-server"
-                    onclick="copyServer('javaAddress', this)"
-                >
-                    📋 Copiar IP
+                <button onclick="copyText('51.81.49.65:26495', this)">
+                    📋
                 </button>
 
             </div>
@@ -124,194 +93,52 @@
 
             <!-- BEDROCK -->
 
-            <div class="server-card">
+            <div class="server-button">
 
-                <div class="server-card-icon">
+                <div class="server-button-icon">
                     🟩
                 </div>
 
-                <h2>
-                    Minecraft Bedrock
-                </h2>
+                <div class="server-button-content">
 
-                <p class="server-platform">
-                    Móvil · Windows · Consolas
-                </p>
+                    <h2>
+                        Minecraft Bedrock
+                    </h2>
 
-
-                <div class="server-address">
-
-                    <span>
-                        Dirección del servidor
-                    </span>
-
-                    <strong id="bedrockAddress">
+                    <p>
                         51.81.49.65
-                    </strong>
+                        <span>•</span>
+                        Puerto: 26495
+                    </p>
 
                 </div>
 
-
-                <div class="server-port">
-
-                    <span>
-                        Puerto
-                    </span>
-
-                    <strong>
-                        26495
-                    </strong>
-
-                </div>
-
-
-                <button
-                    class="copy-server"
-                    onclick="copyBedrock(this)"
-                >
-                    📋 Copiar IP y puerto
+                <button onclick="copyText('51.81.49.65:26495', this)">
+                    📋
                 </button>
 
             </div>
 
+
         </div>
 
-
-        <!-- =====================================
-             INFORMACIÓN
-        ====================================== -->
 
         <div class="warning">
 
-            <span>
-                💡
-            </span>
+            <span>💡</span>
 
             <p>
-
-                <strong>¿Juegas desde Bedrock?</strong><br>
-
-                Al agregar el servidor debes introducir
-                <strong>51.81.49.65</strong> como dirección y
+                <strong>Bedrock:</strong>
+                utiliza <strong>51.81.49.65</strong> como IP y
                 <strong>26495</strong> como puerto.
-
             </p>
 
         </div>
-
-
-        <!-- =====================================
-             CÓMO CONECTARSE
-        ====================================== -->
-
-        <div class="server-howto">
-
-            <h2>
-                ¿Cómo conectarse?
-            </h2>
-
-
-            <div class="server-steps">
-
-
-                <div class="server-step">
-
-                    <span>
-                        1
-                    </span>
-
-                    <div>
-
-                        <h3>
-                            Abre Minecraft
-                        </h3>
-
-                        <p>
-                            Inicia Minecraft Java o Bedrock.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="server-step">
-
-                    <span>
-                        2
-                    </span>
-
-                    <div>
-
-                        <h3>
-                            Agrega el servidor
-                        </h3>
-
-                        <p>
-                            Ve a la sección de servidores y selecciona
-                            la opción para agregar uno nuevo.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="server-step">
-
-                    <span>
-                        3
-                    </span>
-
-                    <div>
-
-                        <h3>
-                            Introduce los datos
-                        </h3>
-
-                        <p>
-                            Utiliza la IP y el puerto mostrados arriba.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="server-step">
-
-                    <span>
-                        ✓
-                    </span>
-
-                    <div>
-
-                        <h3>
-                            ¡Entra a APGMC!
-                        </h3>
-
-                        <p>
-                            Conéctate y comienza a jugar con nuestra comunidad.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
 
     </section>
 
 </main>
 
-
-<!-- =========================================
-     FOOTER
-========================================= -->
 
 <footer>
 
@@ -322,54 +149,26 @@
 </footer>
 
 
-<!-- =========================================
-     JAVASCRIPT
-========================================= -->
-
 <script>
 
-    function copyServer(id, button) {
+    function copyText(text, button) {
 
-        const address =
-            document.getElementById(id).textContent.trim();
-
-        navigator.clipboard.writeText(address);
+        navigator.clipboard.writeText(text);
 
         const original = button.innerHTML;
 
-        button.innerHTML = "✓ IP copiada";
+        button.innerHTML = "✓";
 
         setTimeout(() => {
 
             button.innerHTML = original;
 
-        }, 1800);
-
-    }
-
-
-    function copyBedrock(button) {
-
-        const address = "51.81.49.65";
-        const port = "26495";
-
-        navigator.clipboard.writeText(
-            address + ":" + port
-        );
-
-        const original = button.innerHTML;
-
-        button.innerHTML = "✓ Copiado";
-
-        setTimeout(() => {
-
-            button.innerHTML = original;
-
-        }, 1800);
+        }, 1500);
 
     }
 
 </script>
+```
 
 </body>
 

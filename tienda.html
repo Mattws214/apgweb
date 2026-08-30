@@ -3,10 +3,11 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 ```
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>APGMC | Tienda</title>
 
 <link rel="stylesheet" href="style.css">
@@ -24,15 +25,35 @@
 </div>
 
 <nav>
-    <a href="index.html">Inicio</a>
-    <a href="reglas.html">Reglas</a>
-    <a href="servidor.html">Dirección IP</a>
-    <a href="tienda.html">Tienda</a>
-    <a href="informacion.html">Información</a>
 
-    <a href="https://discord.gg/gfNhf58B48" target="_blank">
-        Discord
+    <a href="index.html">
+        Inicio
     </a>
+
+    <a href="reglas.html">
+        Reglas
+    </a>
+
+    <a href="servidor.html">
+        Dirección IP
+    </a>
+
+    <a href="tienda.html">
+        Tienda
+    </a>
+
+    <a href="informacion.html">
+        Información
+    </a>
+
+    <a
+        href="https://discord.gg/gfNhf58B48"
+        target="_blank">
+
+        Discord
+
+    </a>
+
 </nav>
 ```
 
@@ -46,36 +67,56 @@
 </h1>
 
 
-<div class="shop-layout">
+<div class="shop-wrapper">
 
 
     <!-- =====================================
-         MENÚ LATERAL
+         CATEGORÍAS
     ====================================== -->
 
-    <aside class="shop-menu">
+    <div class="shop-menu">
 
-        <button onclick="showCategory('soda')">
+        <button
+            class="active"
+            onclick="showCategory('soda', this)">
+
             🥤 Soda
+
         </button>
 
-        <button onclick="showCategory('survival')">
+
+        <button
+            onclick="showCategory('survival', this)">
+
             🌳 Survival clásico
+
         </button>
 
-        <button onclick="showCategory('anarquico')">
+
+        <button
+            onclick="showCategory('anarquico', this)">
+
             ⚔️ Anárquico
+
         </button>
 
-        <button onclick="showCategory('rangos')">
+
+        <button
+            onclick="showCategory('rangos', this)">
+
             🏆 Rangos
+
         </button>
 
-        <button onclick="showCategory('cosmeticos')">
+
+        <button
+            onclick="showCategory('cosmeticos', this)">
+
             🎨 Cosméticos
+
         </button>
 
-    </aside>
+    </div>
 
 
     <!-- =====================================
@@ -85,11 +126,113 @@
     <section class="shop-content">
 
 
-        <!-- =====================================
-             SURVIVAL CLÁSICO
-        ====================================== -->
+        <!-- =================================
+             SODA
+        ================================== -->
 
-        <div id="survival" class="shop-category">
+        <div
+            id="soda"
+            class="shop-category active">
+
+            <div class="discount">
+                -25%
+            </div>
+
+            <h2>
+                🥤 Soda
+            </h2>
+
+
+            <div class="products">
+
+
+                <div class="product-card">
+
+                    <div class="product-emoji">
+                        🥤
+                    </div>
+
+                    <h3>
+                        Soda — 1 mes
+                    </h3>
+
+                    <p>
+                        Acceso a Soda durante 1 mes.
+                    </p>
+
+                    <strong>
+                        $9
+                    </strong>
+
+                    <button onclick="paymentMessage()">
+                        Comprar
+                    </button>
+
+                </div>
+
+
+                <div class="product-card">
+
+                    <div class="product-emoji">
+                        🥤
+                    </div>
+
+                    <h3>
+                        Soda — 3 meses
+                    </h3>
+
+                    <p>
+                        Acceso a Soda durante 3 meses.
+                    </p>
+
+                    <strong>
+                        $20
+                    </strong>
+
+                    <button onclick="paymentMessage()">
+                        Comprar
+                    </button>
+
+                </div>
+
+
+                <div class="product-card">
+
+                    <div class="product-emoji">
+                        🥤
+                    </div>
+
+                    <h3>
+                        Soda — 1 año
+                    </h3>
+
+                    <p>
+                        Acceso a Soda durante 1 año.
+                    </p>
+
+                    <strong>
+                        $44
+                    </strong>
+
+                    <button onclick="paymentMessage()">
+                        Comprar
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================
+             SURVIVAL
+        ================================== -->
+
+        <div
+            id="survival"
+            class="shop-category">
 
             <div class="discount">
                 -25%
@@ -211,34 +354,7 @@
                 </div>
 
 
-                <!-- KIT APG -->
-
-                <div class="product-card">
-
-                    <div class="item-placeholder">
-                        🛡️
-                    </div>
-
-                    <h3>
-                        Kit APG completo
-                    </h3>
-
-                    <p>
-                        Set completo APG.
-                    </p>
-
-                    <strong>
-                        $10
-                    </strong>
-
-                    <button onclick="paymentMessage()">
-                        Comprar
-                    </button>
-
-                </div>
-
-
-                <!-- ESPADA APG -->
+                <!-- ESPADA -->
 
                 <div class="product-card">
 
@@ -265,7 +381,7 @@
                 </div>
 
 
-                <!-- PICO APG -->
+                <!-- PICO -->
 
                 <div class="product-card">
 
@@ -292,7 +408,7 @@
                 </div>
 
 
-                <!-- HACHA APG -->
+                <!-- HACHA -->
 
                 <div class="product-card">
 
@@ -319,7 +435,7 @@
                 </div>
 
 
-                <!-- BALLESTA APG -->
+                <!-- BALLESTA -->
 
                 <div class="product-card">
 
@@ -332,7 +448,7 @@
                     </h3>
 
                     <p>
-                        Ballesta APG para combate.
+                        Ballesta APG.
                     </p>
 
                     <strong>
@@ -346,7 +462,7 @@
                 </div>
 
 
-                <!-- ARCO APG -->
+                <!-- ARCO -->
 
                 <div class="product-card">
 
@@ -359,11 +475,38 @@
                     </h3>
 
                     <p>
-                        Arco APG para combate.
+                        Arco APG.
                     </p>
 
                     <strong>
                         $9
+                    </strong>
+
+                    <button onclick="paymentMessage()">
+                        Comprar
+                    </button>
+
+                </div>
+
+
+                <!-- KIT -->
+
+                <div class="product-card">
+
+                    <div class="item-placeholder">
+                        🛡️
+                    </div>
+
+                    <h3>
+                        Kit APG completo
+                    </h3>
+
+                    <p>
+                        Set completo de equipamiento APG.
+                    </p>
+
+                    <strong>
+                        $10
                     </strong>
 
                     <button onclick="paymentMessage()">
@@ -378,106 +521,13 @@
         </div>
 
 
-        <!-- =====================================
-             SODA
-        ====================================== -->
-
-        <div id="soda" class="shop-category">
-
-            <div class="discount">
-                -25%
-            </div>
-
-            <h2>
-                🥤 Soda
-            </h2>
-
-            <div class="products">
-
-                <div class="product-card">
-
-                    <div class="product-emoji">
-                        🥤
-                    </div>
-
-                    <h3>
-                        Soda — 1 mes
-                    </h3>
-
-                    <p>
-                        Acceso a Soda durante 1 mes.
-                    </p>
-
-                    <strong>
-                        $9
-                    </strong>
-
-                    <button onclick="paymentMessage()">
-                        Comprar
-                    </button>
-
-                </div>
-
-
-                <div class="product-card">
-
-                    <div class="product-emoji">
-                        🥤
-                    </div>
-
-                    <h3>
-                        Soda — 3 meses
-                    </h3>
-
-                    <p>
-                        Acceso a Soda durante 3 meses.
-                    </p>
-
-                    <strong>
-                        $20
-                    </strong>
-
-                    <button onclick="paymentMessage()">
-                        Comprar
-                    </button>
-
-                </div>
-
-
-                <div class="product-card">
-
-                    <div class="product-emoji">
-                        🥤
-                    </div>
-
-                    <h3>
-                        Soda — 1 año
-                    </h3>
-
-                    <p>
-                        Acceso a Soda durante 1 año.
-                    </p>
-
-                    <strong>
-                        $44
-                    </strong>
-
-                    <button onclick="paymentMessage()">
-                        Comprar
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- =====================================
+        <!-- =================================
              RANGOS
-        ====================================== -->
+        ================================== -->
 
-        <div id="rangos" class="shop-category">
+        <div
+            id="rangos"
+            class="shop-category">
 
             <div class="discount">
                 -25%
@@ -487,7 +537,9 @@
                 🏆 Rangos
             </h2>
 
+
             <div class="products">
+
 
                 <div class="product-card">
 
@@ -588,16 +640,19 @@
 
                 </div>
 
+
             </div>
 
         </div>
 
 
-        <!-- =====================================
+        <!-- =================================
              ANÁRQUICO
-        ====================================== -->
+        ================================== -->
 
-        <div id="anarquico" class="shop-category coming-soon">
+        <div
+            id="anarquico"
+            class="shop-category coming-soon">
 
             <div class="coming-icon">
                 🚧
@@ -608,17 +663,19 @@
             </h2>
 
             <p>
-                Próximamente🚧
+                Próximamente 🚧
             </p>
 
         </div>
 
 
-        <!-- =====================================
+        <!-- =================================
              COSMÉTICOS
-        ====================================== -->
+        ================================== -->
 
-        <div id="cosmeticos" class="shop-category coming-soon">
+        <div
+            id="cosmeticos"
+            class="shop-category coming-soon">
 
             <div class="coming-icon">
                 🚧
@@ -629,7 +686,7 @@
             </h2>
 
             <p>
-                Próximamente🚧
+                Próximamente 🚧
             </p>
 
         </div>
@@ -646,7 +703,9 @@
      VENTANA DE PAGO
 ========================================= -->
 
-<div id="payment-modal" class="payment-modal">
+<div
+    id="payment-modal"
+    class="payment-modal">
 
 ```
 <div class="payment-box">
@@ -654,25 +713,33 @@
     <button
         class="close-payment"
         onclick="closePayment()">
+
         ×
+
     </button>
+
 
     <div class="payment-icon">
         💳
     </div>
 
+
     <h2>
         Métodos de pago
     </h2>
+
 
     <p>
         Aún no están disponibles los métodos de pago.
     </p>
 
+
     <button
         class="close-button"
         onclick="closePayment()">
+
         Entendido
+
     </button>
 
 </div>
@@ -693,5 +760,4 @@
 <script src="script.js"></script>
 
 </body>
-
 </html>

@@ -1,125 +1,192 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>APGMC | Dirección IP</title>
-
+    <title>APGMC | Servidor</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-
-    <div class="logo">
-        APGMC
-    </div>
+```
+<header class="navbar">
+    <div class="logo">APGMC</div>
 
     <nav>
         <a href="index.html">Inicio</a>
         <a href="reglas.html">Reglas</a>
-        <a href="servidor.html">Dirección IP</a>
+        <a href="servidor.html" class="active">Servidor</a>
         <a href="tienda.html">Tienda</a>
         <a href="informacion.html">Información</a>
-        <a href="https://discord.gg/gfNhf58B48" target="_blank">
-            Discord
-        </a>
+        <a href="https://discord.gg/gfNhf58B48" target="_blank">Discord</a>
     </nav>
-
 </header>
 
+<main class="server-page">
 
-<main>
+    <section class="server-hero">
+        <span class="server-badge">🟢 SERVIDOR ONLINE</span>
 
-<section class="rules-section">
-
-    <div class="rules-header">
-
-        <span class="rules-icon">🌐</span>
-
-        <h1>Dirección IP</h1>
-
-        <p style="margin-top: 15px;">
-            Conéctate al servidor de APGMC.
-        </p>
-
-    </div>
-
-
-    <div class="rules-container">
-
-        <div class="rule">
-
-            <span>☕</span>
-
-            <div>
-
-                <strong>Java Edition</strong>
-
-                <p style="margin-top: 8px;">
-                    <strong>IP:</strong>
-                    apgmc.servidor.lol
-                </p>
-
-                <p style="margin-top: 6px; color: #888;">
-                    También puedes utilizar:
-                    51.81.49.65:26495
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="rule">
-
-            <span>📱</span>
-
-            <div>
-
-                <strong>Bedrock Edition</strong>
-
-                <p style="margin-top: 8px;">
-                    🟡 Próximamente
-                </p>
-
-                <p style="margin-top: 6px; color: #888;">
-                    Estamos trabajando en la conexión
-                    de Bedrock.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="warning">
-
-        <span>💡</span>
+        <h1>Conéctate a <span>APGMC</span></h1>
 
         <p>
-            La conexión de Bedrock estará disponible
-            próximamente.
+            Entra al servidor y comienza tu aventura.
+            APGMC es compatible con <strong>Java</strong> y <strong>Bedrock</strong>.
         </p>
+    </section>
 
-    </div>
 
-</section>
+    <section class="server-cards">
+
+        <!-- JAVA -->
+        <div class="server-card">
+
+            <div class="server-icon">☕</div>
+
+            <h2>Minecraft Java</h2>
+
+            <p class="platform">PC • Java Edition</p>
+
+            <div class="ip-box">
+                <span id="java-ip">51.81.49.65:26495</span>
+                <button onclick="copyIP('java-ip', this)">
+                    📋 Copiar
+                </button>
+            </div>
+
+            <div class="server-info">
+                <div>
+                    <span>IP</span>
+                    <strong>51.81.49.65</strong>
+                </div>
+
+                <div>
+                    <span>Puerto</span>
+                    <strong>26495</strong>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- BEDROCK -->
+        <div class="server-card bedrock">
+
+            <div class="server-icon">🟩</div>
+
+            <h2>Minecraft Bedrock</h2>
+
+            <p class="platform">Móvil • Consolas • Windows</p>
+
+            <div class="ip-box">
+                <span id="bedrock-ip">51.81.49.65</span>
+                <button onclick="copyIP('bedrock-ip', this)">
+                    📋 Copiar
+                </button>
+            </div>
+
+            <div class="server-info">
+                <div>
+                    <span>IP</span>
+                    <strong>51.81.49.65</strong>
+                </div>
+
+                <div>
+                    <span>Puerto</span>
+                    <strong>26495</strong>
+                </div>
+            </div>
+
+            <div class="bedrock-note">
+                💡 En Bedrock debes introducir la IP y el puerto manualmente.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="how-to">
+
+        <h2>¿Cómo entrar?</h2>
+
+        <div class="steps">
+
+            <div class="step">
+                <div class="step-number">1</div>
+                <div>
+                    <h3>Abre Minecraft</h3>
+                    <p>Inicia Minecraft Java o Bedrock.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <div>
+                    <h3>Agrega el servidor</h3>
+                    <p>Busca la opción para añadir un servidor.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <div>
+                    <h3>Introduce los datos</h3>
+                    <p>Usa la IP y el puerto mostrados arriba.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <div>
+                    <h3>¡A jugar!</h3>
+                    <p>Conéctate y disfruta de APGMC.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="server-bottom">
+
+        <h2>¿Todavía no estás en nuestra comunidad?</h2>
+
+        <p>Únete a nuestro Discord para conocer las novedades de APGMC.</p>
+
+        <a href="https://discord.gg/gfNhf58B48" target="_blank" class="discord-button">
+            💬 Unirse al Discord
+        </a>
+
+    </section>
 
 </main>
 
 
 <footer>
-
-    <p>
-        © 2026 APGMC. Todos los derechos reservados.
-    </p>
-
+    <p>© 2026 APGMC — Todos los derechos reservados.</p>
 </footer>
+
+
+<script>
+    function copyIP(id, button) {
+
+        const text = document.getElementById(id).textContent;
+
+        navigator.clipboard.writeText(text);
+
+        const originalText = button.innerHTML;
+
+        button.innerHTML = "✓ Copiado";
+
+        setTimeout(() => {
+            button.innerHTML = originalText;
+        }, 1500);
+    }
+</script>
 
 </body>
 </html>

@@ -49,24 +49,19 @@ z-index: 1000;
 .logo {
 font-size: 28px;
 font-weight: 900;
-
-```
 letter-spacing: 3px;
-
 color: #ffffff;
-```
-
 }
 
 nav {
 display: flex;
 align-items: center;
+justify-content: center;
 
 ```
 gap: 25px;
 
 flex-wrap: wrap;
-justify-content: center;
 ```
 
 }
@@ -254,13 +249,8 @@ TARJETAS
 
 .rules-container {
 display: flex;
-
-```
 flex-direction: column;
-
 gap: 14px;
-```
-
 }
 
 .rule {
@@ -381,9 +371,11 @@ TIENDA
 
 .shop-page {
 width: 100%;
-max-width: 1400px;
 
 ```
+/* Más grande que antes */
+max-width: 1350px;
+
 margin: auto;
 
 padding: 55px 25px 80px;
@@ -408,10 +400,13 @@ ESTRUCTURA DE LA TIENDA
 ========================================= */
 
 .shop-layout {
-display: grid;
+width: 100%;
 
 ```
-grid-template-columns: 220px 1fr;
+display: grid;
+
+/* El menú NO se estira */
+grid-template-columns: 220px minmax(0, 1fr);
 
 gap: 25px;
 
@@ -425,9 +420,11 @@ MENÚ DE CATEGORÍAS
 ========================================= */
 
 .shop-menu {
-display: flex;
+width: 220px;
 
 ```
+display: flex;
+
 flex-direction: column;
 
 gap: 12px;
@@ -483,6 +480,19 @@ transform: translateX(4px);
 }
 
 /* =========================================
+CONTENIDO DE LA TIENDA
+========================================= */
+
+.shop-content {
+width: 100%;
+
+```
+min-width: 0;
+```
+
+}
+
+/* =========================================
 CATEGORÍAS
 ========================================= */
 
@@ -491,6 +501,8 @@ display: none;
 
 ```
 position: relative;
+
+width: 100%;
 
 padding: 35px;
 
@@ -544,20 +556,30 @@ PRODUCTOS
 ========================================= */
 
 .products {
-display: grid;
+width: 100%;
 
 ```
-grid-template-columns: repeat(2, 1fr);
+display: grid;
+
+/* SIEMPRE 2 TARJETAS POR FILA */
+grid-template-columns: repeat(2, minmax(0, 1fr));
 
 gap: 18px;
 ```
 
 }
 
+/* =========================================
+TARJETA DE PRODUCTO
+========================================= */
+
 .product-card {
-display: flex;
+width: 100%;
+min-width: 0;
 
 ```
+display: flex;
+
 flex-direction: column;
 
 align-items: center;
@@ -588,6 +610,10 @@ border-color: #5865f2;
 
 }
 
+/* =========================================
+IMÁGENES
+========================================= */
+
 .product-card img {
 width: 90px;
 height: 90px;
@@ -602,6 +628,10 @@ margin-bottom: 15px;
 
 }
 
+/* =========================================
+NOMBRE
+========================================= */
+
 .product-card h3 {
 font-size: 18px;
 
@@ -610,6 +640,10 @@ margin-bottom: 8px;
 ```
 
 }
+
+/* =========================================
+DESCRIPCIÓN
+========================================= */
 
 .product-card p {
 color: #969aa8;
@@ -620,9 +654,15 @@ font-size: 14px;
 line-height: 1.5;
 
 margin-bottom: 12px;
+
+max-width: 250px;
 ```
 
 }
+
+/* =========================================
+PRECIO
+========================================= */
 
 .product-card strong {
 display: block;
@@ -673,7 +713,7 @@ transform: translateY(-2px);
 }
 
 /* =========================================
-EMOJIS / IMÁGENES DE PRODUCTOS
+EMOJIS / PLACEHOLDERS
 ========================================= */
 
 .product-emoji,
@@ -839,7 +879,9 @@ margin-bottom: 25px;
 
 }
 
-/* CERRAR */
+/* =========================================
+CERRAR PAGO
+========================================= */
 
 .close-payment {
 position: absolute;
@@ -865,7 +907,9 @@ cursor: pointer;
 color: #ffffff;
 }
 
-/* BOTÓN ENTENDIDO */
+/* =========================================
+BOTÓN ENTENDIDO
+========================================= */
 
 .close-button {
 padding: 12px 25px;
@@ -929,10 +973,10 @@ color: #ffffff;
 }
 
 /* =========================================
-TABLET / MÓVIL
+TABLET
 ========================================= */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 
 ```
 header {
@@ -952,6 +996,8 @@ nav {
 }
 
 .shop-menu {
+    width: 100%;
+
     position: static;
 
     display: grid;
@@ -959,8 +1005,8 @@ nav {
     grid-template-columns: repeat(2, 1fr);
 }
 
-.products {
-    grid-template-columns: 1fr;
+.shop-menu button {
+    width: 100%;
 }
 ```
 
@@ -1067,6 +1113,10 @@ nav a {
     display: inline-block;
 
     margin-bottom: 15px;
+}
+
+.products {
+    grid-template-columns: 1fr;
 }
 
 

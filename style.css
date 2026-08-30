@@ -1,6 +1,5 @@
 /* =========================================
 APGMC WEBSITE
-STYLE.CSS
 ========================================= */
 
 * {
@@ -46,10 +45,10 @@ z-index: 1000;
 }
 
 .logo {
-color: #ffffff;
 font-size: 28px;
 font-weight: 900;
 letter-spacing: 3px;
+color: #ffffff;
 }
 
 nav {
@@ -73,7 +72,7 @@ color: #ffffff;
 }
 
 /* =========================================
-CONTENIDO
+MAIN
 ========================================= */
 
 main {
@@ -82,7 +81,7 @@ min-height: calc(100vh - 150px);
 }
 
 /* =========================================
-HERO
+INICIO
 ========================================= */
 
 .hero {
@@ -123,12 +122,12 @@ margin-bottom: 45px;
 }
 
 /* =========================================
-BOTONES DEL INICIO
+BOTONES PRINCIPALES
 ========================================= */
 
 .buttons {
 width: 100%;
-max-width: 420px;
+max-width: 560px;
 
 ```
 display: flex;
@@ -142,7 +141,6 @@ gap: 16px;
 
 .main-button {
 width: 100%;
-max-width: 420px;
 min-height: 60px;
 
 ```
@@ -153,6 +151,7 @@ justify-content: center;
 padding: 16px 20px;
 
 background: #11131b;
+
 border: 1px solid #292d39;
 border-radius: 12px;
 
@@ -174,7 +173,8 @@ transform: translateY(-4px);
 background: #191c27;
 border-color: #5865f2;
 
-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.35);
 ```
 
 }
@@ -183,23 +183,8 @@ box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 SERVIDOR
 ========================================= */
 
-.server-buttons {
-width: 100%;
-max-width: 850px;
-
-```
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-
-gap: 20px;
-```
-
-}
-
-.server-buttons .server-option {
-width: 100%;
-max-width: none;
-min-height: 145px;
+.server-option {
+min-height: 140px;
 }
 
 .server-option > div {
@@ -208,10 +193,11 @@ width: 100%;
 ```
 display: flex;
 flex-direction: column;
+
 align-items: center;
 justify-content: center;
 
-gap: 8px;
+gap: 7px;
 ```
 
 }
@@ -223,7 +209,6 @@ font-size: 18px;
 .server-option small {
 color: #999daa;
 font-size: 14px;
-line-height: 1.5;
 }
 
 /* =========================================
@@ -265,7 +250,7 @@ font-size: 16px;
 }
 
 /* =========================================
-TARJETAS DE REGLAS / INFORMACIÓN
+REGLAS / INFORMACIÓN
 ========================================= */
 
 .rules-container {
@@ -283,7 +268,7 @@ gap: 14px;
 
 .rule {
 width: 100%;
-max-width: 780px;
+max-width: 760px;
 
 ```
 display: flex;
@@ -294,6 +279,7 @@ gap: 18px;
 padding: 18px 20px;
 
 background: #11131a;
+
 border: 1px solid #222631;
 border-radius: 13px;
 
@@ -324,6 +310,7 @@ align-items: center;
 justify-content: center;
 
 background: #5865f2;
+
 border-radius: 10px;
 
 font-size: 16px;
@@ -354,7 +341,7 @@ AVISO
 
 .warning {
 width: 100%;
-max-width: 780px;
+max-width: 760px;
 
 ```
 display: flex;
@@ -367,6 +354,7 @@ margin: 25px auto 0;
 padding: 18px 20px;
 
 background: #19150c;
+
 border: 1px solid #55451b;
 border-radius: 13px;
 ```
@@ -413,25 +401,23 @@ margin-bottom: 30px;
 }
 
 /* =========================================
-TARJETA PRINCIPAL DE LA TIENDA
+ESTRUCTURA DE TIENDA
 ========================================= */
 
-.shop-wrapper {
+.shop-layout {
 width: 100%;
 
 ```
-padding: 22px;
+display: flex;
+flex-direction: column;
 
-background: #10121a;
-
-border: 1px solid #292d39;
-border-radius: 18px;
+gap: 20px;
 ```
 
 }
 
 /* =========================================
-CATEGORÍAS
+MENÚ DE CATEGORÍAS
 ========================================= */
 
 .shop-menu {
@@ -442,11 +428,16 @@ display: flex;
 align-items: center;
 justify-content: center;
 
-flex-wrap: wrap;
-
 gap: 10px;
 
-margin-bottom: 22px;
+flex-wrap: wrap;
+
+padding: 18px;
+
+background: #10121a;
+
+border: 1px solid #292d39;
+border-radius: 15px;
 ```
 
 }
@@ -457,12 +448,12 @@ min-width: 150px;
 ```
 padding: 13px 20px;
 
-background: #6f7df5;
+background: #7180f5;
 
-border: 1px solid #7d89f7;
+border: 1px solid #8290f7;
 border-radius: 10px;
 
-color: #ffffff;
+color: #ffffff !important;
 
 font-family: Arial, Helvetica, sans-serif;
 font-size: 14px;
@@ -470,7 +461,10 @@ font-weight: 700;
 
 cursor: pointer;
 
-transition: 0.2s ease;
+transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 ```
 
 }
@@ -481,7 +475,7 @@ background: #5865f2;
 ```
 border-color: #5865f2;
 
-color: #ffffff;
+color: #ffffff !important;
 
 transform: translateY(-2px);
 ```
@@ -494,13 +488,13 @@ background: #5865f2;
 ```
 border-color: #5865f2;
 
-color: #ffffff;
+color: #ffffff !important;
 ```
 
 }
 
 /* =========================================
-CONTENIDO DE CATEGORÍA
+CONTENIDO TIENDA
 ========================================= */
 
 .shop-content {
@@ -508,18 +502,18 @@ width: 100%;
 }
 
 .shop-category {
-display: none;
+width: 100%;
 
 ```
-position: relative;
+display: none;
 
-width: 100%;
+position: relative;
 
 padding: 30px;
 
-background: #0b0d13;
+background: #10121a;
 
-border: 1px solid #252936;
+border: 1px solid #292d39;
 border-radius: 15px;
 ```
 
@@ -541,52 +535,26 @@ margin-bottom: 28px;
 }
 
 /* =========================================
-DESCUENTO
-========================================= */
-
-.discount {
-position: absolute;
-
-```
-top: 18px;
-right: 18px;
-
-padding: 8px 12px;
-
-background: #ed2633;
-
-border-radius: 9px;
-
-font-size: 14px;
-font-weight: 800;
-```
-
-}
-
-/* =========================================
 PRODUCTOS
 ========================================= */
 
 .products {
 width: 100%;
-max-width: 1000px;
 
 ```
-margin: 0 auto;
-
 display: grid;
 
 grid-template-columns:
     repeat(3, minmax(0, 1fr));
 
 gap: 18px;
+
+max-width: 1000px;
+
+margin: 0 auto;
 ```
 
 }
-
-/* =========================================
-TARJETA DE PRODUCTO
-========================================= */
 
 .product-card {
 width: 100%;
@@ -595,8 +563,8 @@ min-height: 325px;
 ```
 display: flex;
 flex-direction: column;
-align-items: center;
 
+align-items: center;
 text-align: center;
 
 padding: 24px 20px;
@@ -619,7 +587,8 @@ background: #0d0f16;
 
 border-color: #5865f2;
 
-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.25);
 ```
 
 }
@@ -670,7 +639,7 @@ font-size: 22px;
 }
 
 /* =========================================
-BOTÓN COMPRAR
+COMPRAR
 ========================================= */
 
 .product-card button {
@@ -685,7 +654,7 @@ background: #5865f2;
 border: none;
 border-radius: 9px;
 
-color: #ffffff;
+color: #ffffff !important;
 
 font-family: Arial, Helvetica, sans-serif;
 font-size: 15px;
@@ -702,7 +671,7 @@ transition: 0.2s ease;
 background: #4752c4;
 
 ```
-color: #ffffff;
+color: #ffffff !important;
 
 transform: translateY(-2px);
 ```
@@ -710,7 +679,30 @@ transform: translateY(-2px);
 }
 
 /* =========================================
-EMOJIS / PLACEHOLDERS
+DESCUENTO
+========================================= */
+
+.discount {
+position: absolute;
+
+```
+top: 18px;
+right: 18px;
+
+padding: 8px 12px;
+
+background: #ed2633;
+
+border-radius: 9px;
+
+font-size: 14px;
+font-weight: 800;
+```
+
+}
+
+/* =========================================
+EMOJIS
 ========================================= */
 
 .product-emoji,
@@ -741,6 +733,7 @@ min-height: 400px;
 display: none;
 
 flex-direction: column;
+
 align-items: center;
 justify-content: center;
 
@@ -768,14 +761,15 @@ font-size: 20px;
 }
 
 /* =========================================
-VENTANA DE PAGO
+MODAL DE PAGO
 ========================================= */
 
 .payment-modal {
 position: fixed;
-inset: 0;
 
 ```
+inset: 0;
+
 display: none;
 
 align-items: center;
@@ -808,27 +802,11 @@ text-align: center;
 background: #11131a;
 
 border: 1px solid #5865f2;
+
 border-radius: 18px;
 
-box-shadow: 0 20px 70px rgba(0, 0, 0, 0.6);
-
-animation: paymentAppear 0.2s ease;
-```
-
-}
-
-@keyframes paymentAppear {
-
-```
-from {
-    opacity: 0;
-    transform: scale(0.92);
-}
-
-to {
-    opacity: 1;
-    transform: scale(1);
-}
+box-shadow:
+    0 20px 70px rgba(0, 0, 0, 0.6);
 ```
 
 }
@@ -857,6 +835,7 @@ top: 10px;
 right: 15px;
 
 border: none;
+
 background: transparent;
 
 color: #aaa;
@@ -881,13 +860,11 @@ background: #5865f2;
 border: none;
 border-radius: 9px;
 
-color: #ffffff;
+color: #ffffff !important;
 
 font-weight: 700;
 
 cursor: pointer;
-
-transition: 0.2s ease;
 ```
 
 }
@@ -936,11 +913,9 @@ TABLET
 
 ```
 header {
-    padding: 18px 20px;
-
     flex-direction: column;
-
     gap: 15px;
+    padding: 18px 20px;
 }
 
 nav {
@@ -974,9 +949,6 @@ nav a {
     font-size: 13px;
 }
 
-
-/* INICIO */
-
 .hero {
     padding: 60px 20px;
 }
@@ -989,20 +961,9 @@ nav a {
     font-size: 17px;
 }
 
-
-/* SERVIDOR */
-
-.server-buttons {
-    grid-template-columns: 1fr;
-}
-
-.server-buttons .server-option {
+.buttons {
     max-width: 350px;
-    margin: 0 auto;
 }
-
-
-/* PÁGINAS */
 
 .rules-section {
     padding: 60px 18px;
@@ -1017,19 +978,12 @@ nav a {
     padding: 18px;
 }
 
-
-/* TIENDA */
-
 .shop-page {
     padding: 40px 15px 60px;
 }
 
 .shop-title {
     font-size: 34px;
-}
-
-.shop-wrapper {
-    padding: 15px;
 }
 
 .shop-menu {
@@ -1059,9 +1013,6 @@ nav a {
     display: table;
     margin: 0 auto 15px;
 }
-
-
-/* PAGO */
 
 .payment-box {
     padding: 35px 22px;

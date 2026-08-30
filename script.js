@@ -1,3 +1,4 @@
+alert("SCRIPT.JS FUNCIONA");
 ```javascript
 /* =====================================================
    APGMC - SCRIPT.JS

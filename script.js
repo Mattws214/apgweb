@@ -4,26 +4,24 @@ SCRIPT.JS
 ========================================= */
 
 /* =========================================
-CAMBIAR CATEGORÍA DE LA TIENDA
+CAMBIAR CATEGORÍA
 ========================================= */
 
 function showCategory(categoryId, button) {
 
 ```
-/* Ocultar todas las categorías */
-
 const categories = document.querySelectorAll(".shop-category");
 
-categories.forEach(category => {
+categories.forEach(function(category) {
 
     category.classList.remove("active");
 
 });
 
 
-/* Mostrar la categoría seleccionada */
+const selectedCategory =
+    document.getElementById(categoryId);
 
-const selectedCategory = document.getElementById(categoryId);
 
 if (selectedCategory) {
 
@@ -32,18 +30,16 @@ if (selectedCategory) {
 }
 
 
-/* Quitar estado activo de todos los botones */
+const buttons =
+    document.querySelectorAll(".shop-menu button");
 
-const categoryButtons = document.querySelectorAll(".shop-menu button");
 
-categoryButtons.forEach(categoryButton => {
+buttons.forEach(function(categoryButton) {
 
     categoryButton.classList.remove("active");
 
 });
 
-
-/* Activar el botón seleccionado */
 
 if (button) {
 
@@ -61,11 +57,14 @@ VENTANA DE PAGO
 function paymentMessage() {
 
 ```
-const modal = document.getElementById("payment-modal");
+const modal =
+    document.getElementById("payment-modal");
+
 
 if (!modal) {
     return;
 }
+
 
 modal.classList.add("show");
 ```
@@ -73,17 +72,20 @@ modal.classList.add("show");
 }
 
 /* =========================================
-CERRAR VENTANA DE PAGO
+CERRAR PAGO
 ========================================= */
 
 function closePayment() {
 
 ```
-const modal = document.getElementById("payment-modal");
+const modal =
+    document.getElementById("payment-modal");
+
 
 if (!modal) {
     return;
 }
+
 
 modal.classList.remove("show");
 ```
@@ -91,112 +93,125 @@ modal.classList.remove("show");
 }
 
 /* =========================================
-CERRAR AL HACER CLIC FUERA
+INICIALIZACIÓN
 ========================================= */
 
-document.addEventListener("click", function(event) {
+document.addEventListener(
+"DOMContentLoaded",
+function() {
 
 ```
-const modal = document.getElementById("payment-modal");
+    const categories =
+        document.querySelectorAll(".shop-category");
 
-if (!modal) {
-    return;
+    const buttons =
+        document.querySelectorAll(".shop-menu button");
+
+
+    /*
+     * Solo ejecutamos esto si estamos
+     * realmente en la página de la tienda.
+     */
+
+    if (
+        categories.length > 0 &&
+        buttons.length > 0
+    ) {
+
+        let activeCategory =
+            document.querySelector(
+                ".shop-category.active"
+            );
+
+
+        /*
+         * Si no existe una categoría activa,
+         * mostramos la primera.
+         */
+
+        if (!activeCategory) {
+
+            activeCategory =
+                categories[0];
+
+            activeCategory.classList.add("active");
+
+        }
+
+
+        /*
+         * Si ningún botón tiene active,
+         * activamos el botón correspondiente
+         * a la categoría que está visible.
+         */
+
+        let activeButton =
+            document.querySelector(
+                ".shop-menu button.active"
+            );
+
+
+        if (!activeButton) {
+
+            buttons[0].classList.add("active");
+
+        }
+
+    }
+
 }
-
-
-if (
-    modal.classList.contains("show") &&
-    event.target === modal
-) {
-
-    closePayment();
-
-}
 ```
 
-});
-
-/* =========================================
-CERRAR CON ESCAPE
-========================================= */
-
-document.addEventListener("keydown", function(event) {
-
-```
-if (event.key === "Escape") {
-
-    closePayment();
-
-}
-```
-
-});
-
-/* =========================================
-CATEGORÍA INICIAL
-========================================= */
-
-document.addEventListener("DOMContentLoaded", function() {
-
-```
-const firstCategory = document.querySelector(
-    ".shop-category.active"
 );
 
-const firstButton = document.querySelector(
-    ".shop-menu button.active"
-);
+/* =========================================
+CERRAR MODAL CON ESCAPE
+========================================= */
 
+document.addEventListener(
+"keydown",
+function(event) {
 
-/*
-   Si existe una categoría activa pero
-   ningún botón está activo, activamos
-   automáticamente el primer botón.
-*/
+```
+    if (event.key === "Escape") {
 
-if (firstCategory && !firstButton) {
-
-    const button = document.querySelector(
-        ".shop-menu button"
-    );
-
-    if (button) {
-
-        button.classList.add("active");
-
-    }
-
-}
-
-
-/*
-   Si no hay ninguna categoría activa,
-   mostramos la primera.
-*/
-
-if (!firstCategory) {
-
-    const category = document.querySelector(
-        ".shop-category"
-    );
-
-    const button = document.querySelector(
-        ".shop-menu button"
-    );
-
-    if (category) {
-
-        category.classList.add("active");
-
-    }
-
-    if (button) {
-
-        button.classList.add("active");
+        closePayment();
 
     }
 
 }
 ```
 
-});
+);
+
+/* =========================================
+CERRAR MODAL HACIENDO CLIC AFUERA
+========================================= */
+
+document.addEventListener(
+"click",
+function(event) {
+
+```
+    const modal =
+        document.getElementById("payment-modal");
+
+
+    if (!modal) {
+        return;
+    }
+
+
+    if (
+        modal.classList.contains("show") &&
+        event.target === modal
+    ) {
+
+        closePayment();
+
+    }
+
+}
+```
+
+);

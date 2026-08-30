@@ -1,7 +1,11 @@
-/* =========================================
+/* =====================================================
 APGMC WEBSITE
-ESTILO GENERAL
-========================================= */
+STYLE.CSS COMPLETO
+===================================================== */
+
+/* =====================================================
+RESET
+===================================================== */
 
 * {
   margin: 0;
@@ -14,15 +18,20 @@ scroll-behavior: smooth;
 }
 
 body {
+min-height: 100vh;
+
+```
 font-family: Arial, Helvetica, sans-serif;
+
 background: #08090d;
 color: #ffffff;
-min-height: 100vh;
+```
+
 }
 
-/* =========================================
+/* =====================================================
 HEADER
-========================================= */
+===================================================== */
 
 header {
 width: 100%;
@@ -36,39 +45,59 @@ justify-content: space-between;
 padding: 15px 6%;
 
 background: #0d0f15;
+
 border-bottom: 1px solid #242733;
 
 position: sticky;
 top: 0;
+
 z-index: 1000;
 ```
 
 }
 
+/* LOGO */
+
 .logo {
+color: #ffffff;
+
+```
 font-size: 28px;
 font-weight: 900;
+
 letter-spacing: 3px;
-color: #ffffff;
+
+white-space: nowrap;
+```
+
 }
+
+/* NAV */
 
 nav {
 display: flex;
+
+```
 align-items: center;
 justify-content: center;
+
 gap: 25px;
+
 flex-wrap: wrap;
+```
+
 }
 
 nav a {
 color: #cfd1da;
-text-decoration: none;
 
 ```
+text-decoration: none;
+
 font-size: 15px;
 font-weight: 600;
 
-transition: 0.2s ease;
+transition: color 0.2s ease;
 ```
 
 }
@@ -77,18 +106,22 @@ nav a:hover {
 color: #ffffff;
 }
 
-/* =========================================
+/* =====================================================
 MAIN
-========================================= */
+===================================================== */
 
 main {
 width: 100%;
+
+```
 min-height: calc(100vh - 150px);
+```
+
 }
 
-/* =========================================
+/* =====================================================
 INICIO
-========================================= */
+===================================================== */
 
 .hero {
 width: 100%;
@@ -96,6 +129,7 @@ min-height: calc(100vh - 150px);
 
 ```
 display: flex;
+
 flex-direction: column;
 
 align-items: center;
@@ -117,10 +151,12 @@ background:
 }
 
 .hero h1 {
+color: #ffffff;
+
+```
 font-size: 58px;
 font-weight: 900;
 
-```
 margin-bottom: 15px;
 ```
 
@@ -137,9 +173,9 @@ margin-bottom: 45px;
 
 }
 
-/* =========================================
+/* =====================================================
 BOTONES DEL INICIO
-========================================= */
+===================================================== */
 
 .buttons {
 width: 100%;
@@ -147,23 +183,28 @@ max-width: 560px;
 
 ```
 display: flex;
+
 flex-direction: column;
 
 align-items: center;
 justify-content: center;
 
 gap: 16px;
+
+margin: 0 auto;
 ```
 
 }
 
 .main-button {
 width: 100%;
+max-width: 560px;
 
 ```
 min-height: 60px;
 
 display: flex;
+
 align-items: center;
 justify-content: center;
 
@@ -172,6 +213,7 @@ padding: 16px 20px;
 background: #11131b;
 
 border: 1px solid #292d39;
+
 border-radius: 12px;
 
 color: #ffffff;
@@ -181,7 +223,10 @@ text-decoration: none;
 font-size: 16px;
 font-weight: 700;
 
-transition: 0.2s ease;
+transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
 ```
 
 }
@@ -200,18 +245,20 @@ box-shadow:
 
 }
 
-/* =========================================
+/* =====================================================
 SERVIDOR
-========================================= */
+===================================================== */
 
 .server-option {
 min-height: 140px;
 }
 
 .server-option > div {
-display: flex;
+width: 100%;
 
 ```
+display: flex;
+
 flex-direction: column;
 
 align-items: center;
@@ -223,17 +270,28 @@ gap: 7px;
 }
 
 .server-option strong {
+color: #ffffff;
+
+```
 font-size: 18px;
+```
+
 }
 
 .server-option small {
 color: #999daa;
+
+```
 font-size: 14px;
+
+text-align: center;
+```
+
 }
 
-/* =========================================
+/* =====================================================
 PÁGINAS INTERNAS
-========================================= */
+===================================================== */
 
 .rules-section {
 width: 100%;
@@ -251,6 +309,12 @@ padding: 75px 25px 90px;
 width: 100%;
 
 ```
+display: flex;
+
+flex-direction: column;
+
+align-items: center;
+
 text-align: center;
 
 margin-bottom: 40px;
@@ -270,10 +334,12 @@ margin-bottom: 15px;
 }
 
 .rules-header h1 {
+color: #ffffff;
+
+```
 font-size: 42px;
 font-weight: 900;
 
-```
 margin-bottom: 10px;
 ```
 
@@ -281,20 +347,28 @@ margin-bottom: 10px;
 
 .rules-header p {
 color: #9da1ae;
+
+```
+font-size: 16px;
+```
+
 }
 
-/* =========================================
+/* =====================================================
 TARJETAS DE REGLAS / INFORMACIÓN
-========================================= */
+===================================================== */
 
 .rules-container {
 width: 100%;
 
 ```
 display: flex;
+
 flex-direction: column;
 
 align-items: center;
+
+justify-content: center;
 
 gap: 14px;
 ```
@@ -320,7 +394,12 @@ border: 1px solid #222631;
 
 border-radius: 13px;
 
-transition: 0.2s ease;
+margin: 0 auto;
+
+transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
 ```
 
 }
@@ -352,6 +431,8 @@ background: #5865f2;
 
 border-radius: 10px;
 
+color: #ffffff;
+
 font-size: 16px;
 font-weight: 800;
 ```
@@ -372,12 +453,17 @@ text-align: left;
 }
 
 .rule strong {
+color: #ffffff;
+
+```
 font-size: 16px;
+```
+
 }
 
-/* =========================================
+/* =====================================================
 AVISOS
-========================================= */
+===================================================== */
 
 .warning {
 width: 100%;
@@ -423,9 +509,9 @@ text-align: left;
 
 }
 
-/* =========================================
+/* =====================================================
 TIENDA
-========================================= */
+===================================================== */
 
 .shop-page {
 width: 100%;
@@ -445,6 +531,8 @@ width: 100%;
 ```
 text-align: center;
 
+color: #ffffff;
+
 font-size: 45px;
 font-weight: 900;
 
@@ -453,9 +541,9 @@ margin-bottom: 30px;
 
 }
 
-/* =========================================
-ESTRUCTURA
-========================================= */
+/* =====================================================
+ESTRUCTURA DE LA TIENDA
+===================================================== */
 
 .shop-layout {
 width: 100%;
@@ -472,9 +560,9 @@ gap: 20px;
 
 }
 
-/* =========================================
-CATEGORÍAS
-========================================= */
+/* =====================================================
+MENÚ DE CATEGORÍAS
+===================================================== */
 
 .shop-menu {
 width: 100%;
@@ -497,6 +585,8 @@ background: #10121a;
 border: 1px solid #292d39;
 
 border-radius: 15px;
+
+margin: 0 auto;
 ```
 
 }
@@ -522,7 +612,10 @@ font-weight: 700;
 
 cursor: pointer;
 
-transition: 0.2s ease;
+transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 ```
 
 }
@@ -551,9 +644,9 @@ color: #ffffff !important;
 
 }
 
-/* =========================================
+/* =====================================================
 CONTENIDO DE TIENDA
-========================================= */
+===================================================== */
 
 .shop-content {
 width: 100%;
@@ -584,6 +677,8 @@ background: #10121a;
 border: 1px solid #292d39;
 
 border-radius: 15px;
+
+margin: 0 auto;
 ```
 
 }
@@ -593,9 +688,11 @@ display: block;
 }
 
 .shop-category h2 {
-text-align: center;
+color: #ffffff;
 
 ```
+text-align: center;
+
 font-size: 28px;
 
 margin-bottom: 28px;
@@ -603,17 +700,15 @@ margin-bottom: 28px;
 
 }
 
-/* =========================================
+/* =====================================================
 PRODUCTOS
-========================================= */
+===================================================== */
 
 .products {
 width: 100%;
 max-width: 950px;
 
 ```
-margin: 0 auto;
-
 display: grid;
 
 grid-template-columns:
@@ -622,12 +717,15 @@ grid-template-columns:
 gap: 18px;
 
 justify-items: center;
+
+margin: 0 auto;
 ```
 
 }
 
 .product-card {
 width: 100%;
+max-width: 300px;
 
 ```
 min-height: 325px;
@@ -648,7 +746,11 @@ border: 1px solid #252936;
 
 border-radius: 14px;
 
-transition: 0.2s ease;
+transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 ```
 
 }
@@ -682,9 +784,11 @@ margin-bottom: 15px;
 }
 
 .product-card h3 {
-font-size: 18px;
+color: #ffffff;
 
 ```
+font-size: 18px;
+
 margin-bottom: 8px;
 ```
 
@@ -709,18 +813,20 @@ margin-bottom: 12px;
 display: block;
 
 ```
+color: #ffffff;
+
+font-size: 22px;
+
 margin-top: auto;
 
 margin-bottom: 15px;
-
-font-size: 22px;
 ```
 
 }
 
-/* =========================================
+/* =====================================================
 BOTÓN COMPRAR
-========================================= */
+===================================================== */
 
 .product-card button {
 width: 100%;
@@ -744,7 +850,9 @@ font-weight: 700;
 
 cursor: pointer;
 
-transition: 0.2s ease;
+transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 ```
 
 }
@@ -760,9 +868,9 @@ transform: translateY(-2px);
 
 }
 
-/* =========================================
+/* =====================================================
 DESCUENTO
-========================================= */
+===================================================== */
 
 .discount {
 position: absolute;
@@ -777,15 +885,17 @@ background: #ed2633;
 
 border-radius: 9px;
 
+color: #ffffff;
+
 font-size: 14px;
 font-weight: 800;
 ```
 
 }
 
-/* =========================================
-EMOJIS
-========================================= */
+/* =====================================================
+EMOJIS / PLACEHOLDERS
+===================================================== */
 
 .product-emoji,
 .item-placeholder {
@@ -805,9 +915,9 @@ margin-bottom: 15px;
 
 }
 
-/* =========================================
+/* =====================================================
 PRÓXIMAMENTE
-========================================= */
+===================================================== */
 
 .coming-soon {
 min-height: 400px;
@@ -839,11 +949,16 @@ margin-bottom: 20px;
 }
 
 .coming-soon h2 {
+color: #ffffff;
+
+```
 margin-bottom: 10px;
+```
+
 }
 
 .coming-soon p {
-color: #aaa;
+color: #aaaaaa;
 
 ```
 font-size: 20px;
@@ -851,15 +966,18 @@ font-size: 20px;
 
 }
 
-/* =========================================
+/* =====================================================
 MODAL DE PAGO
-========================================= */
+===================================================== */
 
 .payment-modal {
 position: fixed;
 
 ```
 inset: 0;
+
+width: 100%;
+height: 100%;
 
 display: none;
 
@@ -871,27 +989,12 @@ padding: 20px;
 background: rgba(0, 0, 0, 0.78);
 
 z-index: 5000;
-
-opacity: 0;
-
-visibility: hidden;
-
-transition:
-    opacity 0.2s ease,
-    visibility 0.2s ease;
 ```
 
 }
 
 .payment-modal.show {
 display: flex;
-
-```
-opacity: 1;
-
-visibility: visible;
-```
-
 }
 
 .payment-box {
@@ -913,6 +1016,8 @@ border-radius: 18px;
 
 box-shadow:
     0 20px 70px rgba(0, 0, 0, 0.6);
+
+margin: 0 auto;
 ```
 
 }
@@ -927,16 +1032,18 @@ margin-bottom: 15px;
 }
 
 .payment-box h2 {
-font-size: 25px;
+color: #ffffff;
 
 ```
+font-size: 25px;
+
 margin-bottom: 12px;
 ```
 
 }
 
 .payment-box p {
-color: #aaa;
+color: #aaaaaa;
 
 ```
 line-height: 1.6;
@@ -946,9 +1053,9 @@ margin-bottom: 25px;
 
 }
 
-/* =========================================
+/* =====================================================
 CERRAR MODAL
-========================================= */
+===================================================== */
 
 .close-payment {
 position: absolute;
@@ -961,7 +1068,7 @@ border: none;
 
 background: transparent;
 
-color: #aaa;
+color: #aaaaaa;
 
 font-size: 30px;
 
@@ -973,6 +1080,8 @@ cursor: pointer;
 .close-payment:hover {
 color: #ffffff;
 }
+
+/* BOTÓN ENTENDIDO */
 
 .close-button {
 padding: 12px 25px;
@@ -986,11 +1095,13 @@ border-radius: 9px;
 
 color: #ffffff !important;
 
+font-family: Arial, Helvetica, sans-serif;
+
 font-weight: 700;
 
 cursor: pointer;
 
-transition: 0.2s ease;
+transition: background 0.2s ease;
 ```
 
 }
@@ -999,9 +1110,9 @@ transition: 0.2s ease;
 background: #4752c4;
 }
 
-/* =========================================
+/* =====================================================
 FOOTER
-========================================= */
+===================================================== */
 
 footer {
 width: 100%;
@@ -1022,9 +1133,9 @@ font-size: 14px;
 
 }
 
-/* =========================================
-SELECCIÓN
-========================================= */
+/* =====================================================
+SELECCIÓN DE TEXTO
+===================================================== */
 
 ::selection {
 background: #5865f2;
@@ -1035,9 +1146,9 @@ color: #ffffff;
 
 }
 
-/* =========================================
+/* =====================================================
 TABLET
-========================================= */
+===================================================== */
 
 @media (max-width: 900px) {
 
@@ -1050,9 +1161,11 @@ header {
     padding: 18px 20px;
 }
 
+
 nav {
     gap: 16px;
 }
+
 
 .products {
     grid-template-columns:
@@ -1062,20 +1175,24 @@ nav {
 
 }
 
-/* =========================================
+/* =====================================================
 MÓVIL
-========================================= */
+===================================================== */
 
 @media (max-width: 600px) {
 
 ```
+/* HEADER */
+
 .logo {
     font-size: 24px;
 }
 
+
 nav {
     gap: 12px;
 }
+
 
 nav a {
     font-size: 13px;
@@ -1088,34 +1205,60 @@ nav a {
     padding: 60px 20px;
 }
 
+
 .hero h1 {
     font-size: 40px;
 }
+
 
 .hero p {
     font-size: 17px;
 }
 
+
 .buttons {
     width: 100%;
+
     max-width: 350px;
 }
 
 
-/* PÁGINAS */
+.main-button {
+    width: 100%;
+}
+
+
+/* REGLAS */
 
 .rules-section {
     padding: 60px 18px;
 }
 
+
 .rules-header h1 {
     font-size: 32px;
 }
 
+
 .rule {
-    max-width: 600px;
+    width: 100%;
 
     padding: 18px;
+
+    gap: 14px;
+}
+
+
+.rule > span {
+    width: 36px;
+    height: 36px;
+
+    font-size: 14px;
+}
+
+
+.rule p {
+    font-size: 14px;
 }
 
 
@@ -1125,33 +1268,49 @@ nav a {
     padding: 40px 15px 60px;
 }
 
+
 .shop-title {
     font-size: 34px;
 }
 
+
 .shop-menu {
     flex-direction: column;
+
+    padding: 15px;
 }
+
 
 .shop-menu button {
     width: 100%;
+
     max-width: 350px;
 }
+
 
 .shop-category {
     padding: 25px 15px;
 }
 
-.products {
-    grid-template-columns: 1fr;
+
+.shop-category h2 {
+    font-size: 25px;
 }
 
+
+.products {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+}
+
+
 .product-card {
+    width: 100%;
+
     max-width: 320px;
 }
 
-
-/* DESCUENTO */
 
 .discount {
     position: static;
@@ -1171,9 +1330,9 @@ nav a {
 
 }
 
-/* =========================================
+/* =====================================================
 MÓVIL PEQUEÑO
-========================================= */
+===================================================== */
 
 @media (max-width: 400px) {
 
@@ -1182,9 +1341,11 @@ nav {
     flex-direction: column;
 }
 
+
 .hero h1 {
     font-size: 34px;
 }
+
 
 .shop-title {
     font-size: 29px;

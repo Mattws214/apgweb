@@ -1,6 +1,6 @@
 /* =========================================
 APGMC WEBSITE
-DISEÑO GLOBAL
+STYLE.CSS PRINCIPAL
 ========================================= */
 
 * {
@@ -36,10 +36,12 @@ justify-content: space-between;
 padding: 15px 6%;
 
 background: #0d0f15;
+
 border-bottom: 1px solid #242733;
 
 position: sticky;
 top: 0;
+
 z-index: 1000;
 ```
 
@@ -48,7 +50,13 @@ z-index: 1000;
 .logo {
 font-size: 28px;
 font-weight: 900;
+
+```
 letter-spacing: 3px;
+
+color: #ffffff;
+```
+
 }
 
 nav {
@@ -58,15 +66,18 @@ justify-content: center;
 
 ```
 gap: 25px;
+
+flex-wrap: wrap;
 ```
 
 }
 
 nav a {
 color: #cfd1da;
-text-decoration: none;
 
 ```
+text-decoration: none;
+
 font-size: 15px;
 font-weight: 600;
 
@@ -80,7 +91,7 @@ color: #ffffff;
 }
 
 /* =========================================
-CONTENIDO
+CONTENIDO GENERAL
 ========================================= */
 
 main {
@@ -88,7 +99,7 @@ min-height: calc(100vh - 150px);
 }
 
 /* =========================================
-INICIO
+HERO / INICIO
 ========================================= */
 
 .hero {
@@ -143,7 +154,7 @@ BOTONES PRINCIPALES
 
 .buttons {
 width: 100%;
-max-width: 600px;
+max-width: 420px;
 
 ```
 display: flex;
@@ -172,6 +183,7 @@ padding: 16px 20px;
 background: #11131b;
 
 border: 1px solid #292d39;
+
 border-radius: 12px;
 
 color: #ffffff;
@@ -201,24 +213,41 @@ box-shadow:
 }
 
 /* =========================================
-TARJETAS DE SERVIDOR
+SERVIDOR
 ========================================= */
 
-.server-option {
-min-height: 125px;
+.server-buttons {
+max-width: 900px;
 
 ```
-text-align: center;
+display: grid;
+
+grid-template-columns: repeat(2, 1fr);
+
+gap: 18px;
+```
+
+}
+
+.server-buttons .server-option {
+width: 100%;
+max-width: 420px;
+
+```
+min-height: 140px;
 ```
 
 }
 
 .server-option > div {
 display: flex;
-flex-direction: column;
 
 ```
+flex-direction: column;
+
 align-items: center;
+
+justify-content: center;
 
 gap: 7px;
 ```
@@ -234,6 +263,8 @@ color: #999daa;
 
 ```
 font-size: 14px;
+
+line-height: 1.4;
 ```
 
 }
@@ -297,6 +328,7 @@ width: 100%;
 
 ```
 display: flex;
+
 flex-direction: column;
 
 align-items: center;
@@ -453,20 +485,20 @@ margin-bottom: 35px;
 }
 
 /* =========================================
-CONTENEDOR PRINCIPAL TIENDA
+CONTENEDOR DE LA TIENDA
 ========================================= */
 
 .shop-wrapper {
 width: 100%;
 
 ```
+padding: 22px;
+
 background: #10121a;
 
 border: 1px solid #292d39;
 
 border-radius: 18px;
-
-padding: 22px;
 ```
 
 }
@@ -481,6 +513,7 @@ width: 100%;
 ```
 display: flex;
 
+align-items: center;
 justify-content: center;
 
 flex-wrap: wrap;
@@ -527,7 +560,7 @@ transform: translateY(-2px);
 }
 
 /* =========================================
-CONTENIDO DE CATEGORÍA
+CONTENIDO
 ========================================= */
 
 .shop-content {
@@ -597,6 +630,7 @@ PRODUCTOS
 
 .products {
 width: 100%;
+max-width: 1050px;
 
 ```
 display: grid;
@@ -606,15 +640,13 @@ grid-template-columns:
 
 gap: 18px;
 
-max-width: 1000px;
-
 margin: 0 auto;
 ```
 
 }
 
 /* =========================================
-TARJETA DE PRODUCTO
+TARJETAS DE PRODUCTO
 ========================================= */
 
 .product-card {
@@ -658,6 +690,10 @@ box-shadow:
 
 }
 
+/* =========================================
+IMÁGENES DE PRODUCTOS
+========================================= */
+
 .product-card img {
 width: 90px;
 height: 90px;
@@ -672,6 +708,10 @@ margin-bottom: 15px;
 
 }
 
+/* =========================================
+NOMBRE
+========================================= */
+
 .product-card h3 {
 font-size: 18px;
 
@@ -680,6 +720,10 @@ margin-bottom: 8px;
 ```
 
 }
+
+/* =========================================
+DESCRIPCIÓN
+========================================= */
 
 .product-card p {
 color: #969aa8;
@@ -696,10 +740,16 @@ max-width: 230px;
 
 }
 
+/* =========================================
+PRECIO
+========================================= */
+
 .product-card strong {
-font-size: 22px;
+display: block;
 
 ```
+font-size: 22px;
+
 margin-top: auto;
 
 margin-bottom: 15px;
@@ -713,10 +763,9 @@ BOTÓN COMPRAR
 
 .product-card button {
 width: 100%;
-
-```
 max-width: 220px;
 
+```
 padding: 12px;
 
 background: #5865f2;
@@ -747,7 +796,7 @@ transform: translateY(-2px);
 }
 
 /* =========================================
-EMOJIS
+EMOJIS / PLACEHOLDERS
 ========================================= */
 
 .product-emoji,
@@ -986,12 +1035,16 @@ font-size: 14px;
 }
 
 /* =========================================
-SELECCIÓN
+SELECCIÓN DE TEXTO
 ========================================= */
 
 ::selection {
 background: #5865f2;
+
+```
 color: #ffffff;
+```
+
 }
 
 /* =========================================
@@ -1011,7 +1064,10 @@ header {
 
 nav {
     gap: 16px;
-    flex-wrap: wrap;
+}
+
+.server-buttons {
+    max-width: 700px;
 }
 
 .products {
@@ -1029,6 +1085,10 @@ MÓVIL
 @media (max-width: 600px) {
 
 ```
+header {
+    padding: 18px 20px;
+}
+
 .logo {
     font-size: 24px;
 }
@@ -1056,12 +1116,31 @@ nav a {
     font-size: 17px;
 }
 
-.main-button {
+.buttons {
     max-width: 350px;
 }
 
 
-/* PÁGINAS */
+/* SERVIDOR */
+
+.server-buttons {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+}
+
+.server-buttons .server-option {
+    max-width: 350px;
+
+    margin: 0 auto;
+}
+
+
+/* REGLAS */
 
 .rules-section {
     padding: 60px 18px;
@@ -1097,6 +1176,8 @@ nav a {
 
 .shop-title {
     font-size: 34px;
+
+    margin-bottom: 30px;
 }
 
 .shop-wrapper {
@@ -1124,6 +1205,8 @@ nav a {
 }
 
 .product-card {
+    width: 100%;
+
     max-width: 320px;
 
     margin: 0 auto;

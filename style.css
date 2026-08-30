@@ -1,6 +1,6 @@
 /* =========================================
 APGMC WEBSITE
-STYLE.CSS PRINCIPAL
+STYLE.CSS
 ========================================= */
 
 * {
@@ -36,54 +36,36 @@ justify-content: space-between;
 padding: 15px 6%;
 
 background: #0d0f15;
-
 border-bottom: 1px solid #242733;
 
 position: sticky;
 top: 0;
-
 z-index: 1000;
 ```
 
 }
 
 .logo {
+color: #ffffff;
 font-size: 28px;
 font-weight: 900;
-
-```
 letter-spacing: 3px;
-
-color: #ffffff;
-```
-
 }
 
 nav {
 display: flex;
 align-items: center;
 justify-content: center;
-
-```
 gap: 25px;
-
 flex-wrap: wrap;
-```
-
 }
 
 nav a {
 color: #cfd1da;
-
-```
 text-decoration: none;
-
 font-size: 15px;
 font-weight: 600;
-
 transition: 0.2s ease;
-```
-
 }
 
 nav a:hover {
@@ -91,24 +73,25 @@ color: #ffffff;
 }
 
 /* =========================================
-CONTENIDO GENERAL
+CONTENIDO
 ========================================= */
 
 main {
+width: 100%;
 min-height: calc(100vh - 150px);
 }
 
 /* =========================================
-HERO / INICIO
+HERO
 ========================================= */
 
 .hero {
+width: 100%;
 min-height: calc(100vh - 150px);
 
 ```
 display: flex;
 flex-direction: column;
-
 align-items: center;
 justify-content: center;
 
@@ -130,26 +113,17 @@ background:
 .hero h1 {
 font-size: 58px;
 font-weight: 900;
-
-```
 margin-bottom: 15px;
-```
-
 }
 
 .hero p {
 color: #aeb1bd;
-
-```
 font-size: 20px;
-
 margin-bottom: 45px;
-```
-
 }
 
 /* =========================================
-BOTONES PRINCIPALES
+BOTONES DEL INICIO
 ========================================= */
 
 .buttons {
@@ -159,7 +133,6 @@ max-width: 420px;
 ```
 display: flex;
 flex-direction: column;
-
 align-items: center;
 
 gap: 16px;
@@ -170,10 +143,9 @@ gap: 16px;
 .main-button {
 width: 100%;
 max-width: 420px;
-
-```
 min-height: 60px;
 
+```
 display: flex;
 align-items: center;
 justify-content: center;
@@ -181,13 +153,10 @@ justify-content: center;
 padding: 16px 20px;
 
 background: #11131b;
-
 border: 1px solid #292d39;
-
 border-radius: 12px;
 
 color: #ffffff;
-
 text-decoration: none;
 
 font-size: 16px;
@@ -203,11 +172,9 @@ transform: translateY(-4px);
 
 ```
 background: #191c27;
-
 border-color: #5865f2;
 
-box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.35);
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 ```
 
 }
@@ -217,39 +184,34 @@ SERVIDOR
 ========================================= */
 
 .server-buttons {
-max-width: 900px;
+width: 100%;
+max-width: 850px;
 
 ```
 display: grid;
-
 grid-template-columns: repeat(2, 1fr);
 
-gap: 18px;
+gap: 20px;
 ```
 
 }
 
 .server-buttons .server-option {
 width: 100%;
-max-width: 420px;
-
-```
-min-height: 140px;
-```
-
+max-width: none;
+min-height: 145px;
 }
 
 .server-option > div {
-display: flex;
+width: 100%;
 
 ```
+display: flex;
 flex-direction: column;
-
 align-items: center;
-
 justify-content: center;
 
-gap: 7px;
+gap: 8px;
 ```
 
 }
@@ -260,13 +222,8 @@ font-size: 18px;
 
 .server-option small {
 color: #999daa;
-
-```
 font-size: 14px;
-
-line-height: 1.4;
-```
-
+line-height: 1.5;
 }
 
 /* =========================================
@@ -275,52 +232,40 @@ PÁGINAS INTERNAS
 
 .rules-section {
 width: 100%;
-max-width: 950px;
+max-width: 1000px;
 
 ```
 margin: 0 auto;
 
-padding: 80px 25px;
+padding: 75px 25px 90px;
 ```
 
 }
 
 .rules-header {
 text-align: center;
-
-```
-margin-bottom: 45px;
-```
-
+margin-bottom: 40px;
 }
 
 .rules-icon {
 display: block;
-
-```
 font-size: 52px;
-
 margin-bottom: 15px;
-```
-
 }
 
 .rules-header h1 {
 font-size: 42px;
 font-weight: 900;
-
-```
 margin-bottom: 10px;
-```
-
 }
 
 .rules-header p {
 color: #9da1ae;
+font-size: 16px;
 }
 
 /* =========================================
-REGLAS
+TARJETAS DE REGLAS / INFORMACIÓN
 ========================================= */
 
 .rules-container {
@@ -328,9 +273,7 @@ width: 100%;
 
 ```
 display: flex;
-
 flex-direction: column;
-
 align-items: center;
 
 gap: 14px;
@@ -340,21 +283,18 @@ gap: 14px;
 
 .rule {
 width: 100%;
-max-width: 900px;
+max-width: 780px;
 
 ```
 display: flex;
-
 align-items: flex-start;
 
-gap: 20px;
+gap: 18px;
 
-padding: 22px 24px;
+padding: 18px 20px;
 
 background: #11131a;
-
 border: 1px solid #222631;
-
 border-radius: 13px;
 
 transition: 0.2s ease;
@@ -363,11 +303,10 @@ transition: 0.2s ease;
 }
 
 .rule:hover {
-transform: translateX(6px);
+transform: translateX(5px);
 
 ```
 background: #161923;
-
 border-color: #5865f2;
 ```
 
@@ -377,19 +316,17 @@ border-color: #5865f2;
 flex-shrink: 0;
 
 ```
-width: 42px;
-height: 42px;
+width: 40px;
+height: 40px;
 
 display: flex;
-
 align-items: center;
 justify-content: center;
 
 background: #5865f2;
-
 border-radius: 10px;
 
-font-size: 17px;
+font-size: 16px;
 font-weight: 800;
 ```
 
@@ -399,15 +336,16 @@ font-weight: 800;
 color: #dedfe5;
 
 ```
-font-size: 16px;
+font-size: 15px;
+line-height: 1.55;
 
-line-height: 1.6;
+text-align: left;
 ```
 
 }
 
 .rule strong {
-font-size: 17px;
+font-size: 16px;
 }
 
 /* =========================================
@@ -416,23 +354,20 @@ AVISO
 
 .warning {
 width: 100%;
-max-width: 900px;
+max-width: 780px;
 
 ```
 display: flex;
-
 align-items: flex-start;
 
-gap: 18px;
+gap: 16px;
 
-margin: 30px auto 0;
+margin: 25px auto 0;
 
-padding: 22px 24px;
+padding: 18px 20px;
 
 background: #19150c;
-
 border: 1px solid #55451b;
-
 border-radius: 13px;
 ```
 
@@ -440,20 +375,13 @@ border-radius: 13px;
 
 .warning span {
 flex-shrink: 0;
-
-```
-font-size: 30px;
-```
-
+font-size: 28px;
 }
 
 .warning p {
 color: #ddd8c7;
-
-```
-line-height: 1.6;
-```
-
+line-height: 1.55;
+text-align: left;
 }
 
 /* =========================================
@@ -462,7 +390,7 @@ TIENDA
 
 .shop-page {
 width: 100%;
-max-width: 1250px;
+max-width: 1180px;
 
 ```
 margin: 0 auto;
@@ -479,13 +407,13 @@ text-align: center;
 font-size: 45px;
 font-weight: 900;
 
-margin-bottom: 35px;
+margin-bottom: 30px;
 ```
 
 }
 
 /* =========================================
-CONTENEDOR DE LA TIENDA
+TARJETA PRINCIPAL DE LA TIENDA
 ========================================= */
 
 .shop-wrapper {
@@ -497,7 +425,6 @@ padding: 22px;
 background: #10121a;
 
 border: 1px solid #292d39;
-
 border-radius: 18px;
 ```
 
@@ -512,7 +439,6 @@ width: 100%;
 
 ```
 display: flex;
-
 align-items: center;
 justify-content: center;
 
@@ -526,17 +452,19 @@ margin-bottom: 22px;
 }
 
 .shop-menu button {
-padding: 13px 20px;
+min-width: 150px;
 
 ```
-background: #08090d;
+padding: 13px 20px;
 
-border: 1px solid #292d39;
+background: #6f7df5;
 
+border: 1px solid #7d89f7;
 border-radius: 10px;
 
 color: #ffffff;
 
+font-family: Arial, Helvetica, sans-serif;
 font-size: 14px;
 font-weight: 700;
 
@@ -547,20 +475,32 @@ transition: 0.2s ease;
 
 }
 
-.shop-menu button:hover,
-.shop-menu button.active {
+.shop-menu button:hover {
 background: #5865f2;
 
 ```
 border-color: #5865f2;
+
+color: #ffffff;
 
 transform: translateY(-2px);
 ```
 
 }
 
+.shop-menu button.active {
+background: #5865f2;
+
+```
+border-color: #5865f2;
+
+color: #ffffff;
+```
+
+}
+
 /* =========================================
-CONTENIDO
+CONTENIDO DE CATEGORÍA
 ========================================= */
 
 .shop-content {
@@ -580,7 +520,6 @@ padding: 30px;
 background: #0b0d13;
 
 border: 1px solid #252936;
-
 border-radius: 15px;
 ```
 
@@ -630,45 +569,41 @@ PRODUCTOS
 
 .products {
 width: 100%;
-max-width: 1050px;
+max-width: 1000px;
 
 ```
+margin: 0 auto;
+
 display: grid;
 
 grid-template-columns:
-    repeat(3, minmax(220px, 1fr));
+    repeat(3, minmax(0, 1fr));
 
 gap: 18px;
-
-margin: 0 auto;
 ```
 
 }
 
 /* =========================================
-TARJETAS DE PRODUCTO
+TARJETA DE PRODUCTO
 ========================================= */
 
 .product-card {
 width: 100%;
+min-height: 325px;
 
 ```
-min-height: 330px;
-
 display: flex;
-
 flex-direction: column;
-
 align-items: center;
 
 text-align: center;
 
-padding: 25px 20px;
+padding: 24px 20px;
 
 background: #08090d;
 
 border: 1px solid #252936;
-
 border-radius: 14px;
 
 transition: 0.2s ease;
@@ -684,19 +619,14 @@ background: #0d0f16;
 
 border-color: #5865f2;
 
-box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.25);
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 ```
 
 }
 
-/* =========================================
-IMÁGENES DE PRODUCTOS
-========================================= */
-
 .product-card img {
-width: 90px;
-height: 90px;
+width: 85px;
+height: 85px;
 
 ```
 object-fit: contain;
@@ -708,51 +638,33 @@ margin-bottom: 15px;
 
 }
 
-/* =========================================
-NOMBRE
-========================================= */
-
 .product-card h3 {
 font-size: 18px;
-
-```
 margin-bottom: 8px;
-```
-
 }
 
-/* =========================================
-DESCRIPCIÓN
-========================================= */
-
 .product-card p {
-color: #969aa8;
+max-width: 220px;
 
 ```
-font-size: 14px;
+color: #969aa8;
 
+font-size: 14px;
 line-height: 1.5;
 
 margin-bottom: 12px;
-
-max-width: 230px;
 ```
 
 }
-
-/* =========================================
-PRECIO
-========================================= */
 
 .product-card strong {
 display: block;
 
 ```
-font-size: 22px;
-
 margin-top: auto;
-
 margin-bottom: 15px;
+
+font-size: 22px;
 ```
 
 }
@@ -771,11 +683,11 @@ padding: 12px;
 background: #5865f2;
 
 border: none;
-
 border-radius: 9px;
 
 color: #ffffff;
 
+font-family: Arial, Helvetica, sans-serif;
 font-size: 15px;
 font-weight: 700;
 
@@ -790,6 +702,8 @@ transition: 0.2s ease;
 background: #4752c4;
 
 ```
+color: #ffffff;
+
 transform: translateY(-2px);
 ```
 
@@ -806,7 +720,6 @@ height: 90px;
 
 ```
 display: flex;
-
 align-items: center;
 justify-content: center;
 
@@ -828,9 +741,7 @@ min-height: 400px;
 display: none;
 
 flex-direction: column;
-
 align-items: center;
-
 justify-content: center;
 
 text-align: center;
@@ -844,11 +755,7 @@ display: flex;
 
 .coming-icon {
 font-size: 80px;
-
-```
 margin-bottom: 20px;
-```
-
 }
 
 .coming-soon h2 {
@@ -857,11 +764,7 @@ margin-bottom: 10px;
 
 .coming-soon p {
 color: #aaa;
-
-```
 font-size: 20px;
-```
-
 }
 
 /* =========================================
@@ -870,10 +773,9 @@ VENTANA DE PAGO
 
 .payment-modal {
 position: fixed;
-
-```
 inset: 0;
 
+```
 display: none;
 
 align-items: center;
@@ -906,11 +808,9 @@ text-align: center;
 background: #11131a;
 
 border: 1px solid #5865f2;
-
 border-radius: 18px;
 
-box-shadow:
-    0 20px 70px rgba(0, 0, 0, 0.6);
+box-shadow: 0 20px 70px rgba(0, 0, 0, 0.6);
 
 animation: paymentAppear 0.2s ease;
 ```
@@ -935,31 +835,18 @@ to {
 
 .payment-icon {
 font-size: 55px;
-
-```
 margin-bottom: 15px;
-```
-
 }
 
 .payment-box h2 {
 font-size: 25px;
-
-```
 margin-bottom: 12px;
-```
-
 }
 
 .payment-box p {
 color: #aaa;
-
-```
 line-height: 1.6;
-
 margin-bottom: 25px;
-```
-
 }
 
 .close-payment {
@@ -970,7 +857,6 @@ top: 10px;
 right: 15px;
 
 border: none;
-
 background: transparent;
 
 color: #aaa;
@@ -993,7 +879,6 @@ padding: 12px 25px;
 background: #5865f2;
 
 border: none;
-
 border-radius: 9px;
 
 color: #ffffff;
@@ -1035,16 +920,12 @@ font-size: 14px;
 }
 
 /* =========================================
-SELECCIÓN DE TEXTO
+SELECCIÓN
 ========================================= */
 
 ::selection {
 background: #5865f2;
-
-```
 color: #ffffff;
-```
-
 }
 
 /* =========================================
@@ -1066,13 +947,9 @@ nav {
     gap: 16px;
 }
 
-.server-buttons {
-    max-width: 700px;
-}
-
 .products {
     grid-template-columns:
-        repeat(2, minmax(220px, 1fr));
+        repeat(2, minmax(0, 1fr));
 }
 ```
 
@@ -1085,10 +962,6 @@ MÓVIL
 @media (max-width: 600px) {
 
 ```
-header {
-    padding: 18px 20px;
-}
-
 .logo {
     font-size: 24px;
 }
@@ -1116,31 +989,20 @@ nav a {
     font-size: 17px;
 }
 
-.buttons {
-    max-width: 350px;
-}
-
 
 /* SERVIDOR */
 
 .server-buttons {
-    width: 100%;
-
-    display: grid;
-
     grid-template-columns: 1fr;
-
-    gap: 16px;
 }
 
 .server-buttons .server-option {
     max-width: 350px;
-
     margin: 0 auto;
 }
 
 
-/* REGLAS */
+/* PÁGINAS */
 
 .rules-section {
     padding: 60px 18px;
@@ -1151,20 +1013,8 @@ nav a {
 }
 
 .rule {
+    max-width: 600px;
     padding: 18px;
-
-    gap: 14px;
-}
-
-.rule > span {
-    width: 36px;
-    height: 36px;
-
-    font-size: 14px;
-}
-
-.rule p {
-    font-size: 14px;
 }
 
 
@@ -1176,8 +1026,6 @@ nav a {
 
 .shop-title {
     font-size: 34px;
-
-    margin-bottom: 30px;
 }
 
 .shop-wrapper {
@@ -1190,14 +1038,11 @@ nav a {
 
 .shop-menu button {
     width: 100%;
+    max-width: 350px;
 }
 
 .shop-category {
     padding: 25px 15px;
-}
-
-.shop-category h2 {
-    font-size: 24px;
 }
 
 .products {
@@ -1205,18 +1050,13 @@ nav a {
 }
 
 .product-card {
-    width: 100%;
-
     max-width: 320px;
-
     margin: 0 auto;
 }
 
 .discount {
     position: static;
-
     display: table;
-
     margin: 0 auto 15px;
 }
 

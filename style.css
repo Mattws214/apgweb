@@ -528,10 +528,11 @@ main {
     background: #10121a;
 
     border: 1px solid #292d39;
-
     border-radius: 15px;
 
     margin: 0 auto;
+
+    overflow: hidden;
 }
 
 .shop-category.active {
@@ -558,27 +559,30 @@ main {
 
 .products {
     width: 100%;
+    max-width: 1000px;
 
     display: grid;
 
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 
-    gap: 18px;
+    gap: 24px;
 
     margin: 0 auto;
+
+    justify-items: stretch;
 }
 
 .product-card {
     width: 100%;
+    min-width: 0;
+    max-width: 100%;
+
     min-height: 325px;
 
     display: flex;
-
     flex-direction: column;
 
     align-items: center;
-
     text-align: center;
 
     padding: 24px 20px;
@@ -586,10 +590,11 @@ main {
     background: #08090d;
 
     border: 1px solid #252936;
-
     border-radius: 14px;
 
     transition: 0.2s ease;
+
+    overflow: hidden;
 }
 
 .product-card:hover {
@@ -901,9 +906,7 @@ footer {
 
     header {
         flex-direction: column;
-
         gap: 15px;
-
         padding: 18px 20px;
     }
 
@@ -912,11 +915,10 @@ footer {
     }
 
     .products {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
     }
 }
-
 /* =====================================================
    MÓVIL
 ===================================================== */
@@ -971,51 +973,52 @@ footer {
         height: 36px;
     }
 
-    /* TIENDA */
+/* TIENDA */
 
-    .shop-page {
-        width: 100%;
+.shop-page {
+    width: 100%;
+    padding: 40px 15px 60px;
+}
 
-        padding: 40px 15px 60px;
-    }
+.shop-title {
+    font-size: 34px;
+}
 
-    .shop-title {
-        font-size: 34px;
-    }
+.shop-menu {
+    flex-direction: column;
+    width: 100%;
+}
 
-    .shop-menu {
-        flex-direction: column;
+.shop-menu button {
+    width: 100%;
+    max-width: 350px;
+}
 
-        width: 100%;
-    }
+.shop-category {
+    width: 100%;
+    max-width: 100%;
+    padding: 25px 15px;
+    overflow: hidden;
+}
 
-    .shop-menu button {
-        width: 100%;
-        max-width: 350px;
-    }
+.products {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 18px;
+}
 
-    .shop-category {
-        padding: 25px 15px;
-    }
+.product-card {
+    width: 100%;
+    max-width: 320px;
+    min-width: 0;
+    margin: 0 auto;
+}
 
-    .products {
-        grid-template-columns: 1fr;
-    }
-
-    .product-card {
-        max-width: 320px;
-
-        margin: 0 auto;
-    }
-
-    .discount {
-        position: static;
-
-        display: table;
-
-        margin: 0 auto 15px;
-    }
-
+.discount {
+    position: static;
+    display: table;
+    margin: 0 auto 15px;
+}
     /* MODAL */
 
     .payment-box {

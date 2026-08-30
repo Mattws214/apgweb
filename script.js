@@ -6,89 +6,98 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     /* =================================================
-       TIENDA - CATEGORÍAS
+       CATEGORÍAS DE LA TIENDA
     ================================================= */
 
-    const categoryButtons =
-        document.querySelectorAll(".shop-menu button");
+    const categoryButtons = document.querySelectorAll(
+        ".shop-menu button"
+    );
 
-    const categories =
-        document.querySelectorAll(".shop-category");
+    const categories = document.querySelectorAll(
+        ".shop-category"
+    );
 
-
-    /* =================================================
-       FUNCIÓN PARA CAMBIAR CATEGORÍA
-    ================================================= */
-
-    function showCategory(categoryId) {
-
-        /* Ocultar todas las categorías */
-
-        categories.forEach(function (category) {
-            category.classList.remove("active");
-        });
-
-
-        /* Quitar activo de todos los botones */
-
-        categoryButtons.forEach(function (button) {
-            button.classList.remove("active");
-        });
-
-
-        /* Buscar la categoría */
-
-        const selectedCategory =
-            document.getElementById(categoryId);
-
-
-        if (!selectedCategory) {
-            return;
-        }
-
-
-        /* Mostrar categoría */
-
-        selectedCategory.classList.add("active");
-
-
-        /* Buscar el botón correspondiente */
-
-        const selectedButton =
-            document.querySelector(
-                '.shop-menu button[data-category="' +
-                categoryId +
-                '"]'
-            );
-
-
-        /* Activarlo */
-
-        if (selectedButton) {
-            selectedButton.classList.add("active");
-        }
-
-    }
-
-
-    /* =================================================
-       BOTONES DE CATEGORÍA
-    ================================================= */
 
     categoryButtons.forEach(function (button) {
 
         button.addEventListener("click", function () {
 
+            /* Obtener la categoría */
+
             const categoryId =
-                button.getAttribute("data-category");
+                this.getAttribute("data-category");
 
 
             if (!categoryId) {
+                console.error(
+                    "El botón no tiene data-category."
+                );
+
                 return;
             }
 
 
-            showCategory(categoryId);
+            /* Ocultar todas las categorías */
+
+            categories.forEach(function (category) {
+
+                category.classList.remove("active");
+
+                category.style.display = "none";
+
+            });
+
+
+            /* Quitar activo de todos los botones */
+
+            categoryButtons.forEach(function (btn) {
+
+                btn.classList.remove("active");
+
+            });
+
+
+            /* Buscar categoría */
+
+            const selected =
+                document.getElementById(categoryId);
+
+
+            if (!selected) {
+
+                console.error(
+                    "No existe la categoría: " +
+                    categoryId
+                );
+
+                return;
+
+            }
+
+
+            /* Mostrar categoría */
+
+            selected.classList.add("active");
+
+
+            if (
+                selected.classList.contains(
+                    "coming-soon"
+                )
+            ) {
+
+                selected.style.display = "flex";
+
+            } else {
+
+                selected.style.display = "block";
+
+            }
+
+
+            /* Activar botón */
+
+            this.classList.add("active");
 
         });
 
@@ -96,15 +105,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =================================================
-       CATEGORÍA INICIAL
+       MOSTRAR SODA AL CARGAR
     ================================================= */
 
     if (categories.length > 0) {
 
+        categories.forEach(function (category) {
+
+            category.classList.remove("active");
+
+            category.style.display = "none";
+
+        });
+
+
         const firstCategory =
             categories[0];
 
-        showCategory(firstCategory.id);
+        firstCategory.classList.add("active");
+
+        firstCategory.style.display = "block";
+
+
+        if (categoryButtons.length > 0) {
+
+            categoryButtons[0].classList.add("active");
+
+        }
 
     }
 
@@ -118,15 +145,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     const buyButtons =
-        document.querySelectorAll(".product-card button");
+        document.querySelectorAll(
+            ".product-card button"
+        );
 
 
     const closePaymentButton =
-        document.querySelector(".close-payment");
+        document.querySelector(
+            ".close-payment"
+        );
 
 
     const closeButton =
-        document.querySelector(".close-button");
+        document.querySelector(
+            ".close-button"
+        );
 
 
     /* =================================================
@@ -169,19 +202,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     buyButtons.forEach(function (button) {
 
-        button.addEventListener("click", function (event) {
+        button.addEventListener(
+            "click",
+            function (event) {
 
-            event.preventDefault();
+                event.preventDefault();
 
-            openPayment();
+                openPayment();
 
-        });
+            }
+        );
 
     });
 
 
     /* =================================================
-       BOTÓN X
+       X
     ================================================= */
 
     if (closePaymentButton) {
@@ -195,7 +231,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =================================================
-       BOTÓN ENTENDIDO
+       ENTENDIDO
     ================================================= */
 
     if (closeButton) {
@@ -209,7 +245,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =================================================
-       CLIC FUERA DEL MODAL
+       CLIC FUERA
     ================================================= */
 
     if (paymentModal) {
@@ -219,7 +255,9 @@ document.addEventListener("DOMContentLoaded", function () {
             function (event) {
 
                 if (event.target === paymentModal) {
+
                     closePayment();
+
                 }
 
             }
@@ -237,7 +275,9 @@ document.addEventListener("DOMContentLoaded", function () {
         function (event) {
 
             if (event.key === "Escape") {
+
                 closePayment();
+
             }
 
         }

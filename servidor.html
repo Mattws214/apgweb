@@ -24,17 +24,12 @@
     </div>
 
     <nav>
-
         <a href="index.html">Inicio</a>
         <a href="reglas.html">Reglas</a>
         <a href="servidor.html">Servidor</a>
         <a href="tienda.html">Tienda</a>
         <a href="informacion.html">Información</a>
-
-        <a href="https://discord.gg/gfNhf58B48" target="_blank">
-            Discord
-        </a>
-
+        <a href="https://discord.gg/gfNhf58B48" target="_blank">Discord</a>
     </nav>
 
 </header>
@@ -42,112 +37,65 @@
 
 <main>
 
-    <section class="rules-section">
+    <section class="hero">
 
-        <div class="rules-header">
+        <h1>
+            Servidor
+        </h1>
 
-            <span class="rules-icon">
-                🌐
-            </span>
-
-            <h1>
-                Servidor
-            </h1>
-
-            <p>
-                Conéctate a APGMC desde tu plataforma favorita.
-            </p>
-
-        </div>
+        <p>
+            Conéctate a APGMC desde Java o Bedrock.
+        </p>
 
 
-        <div class="server-buttons">
+        <div class="buttons">
 
 
             <!-- JAVA -->
 
-            <div class="server-button">
+            <div class="main-button server-option">
 
-                <div class="server-button-icon">
-                    ☕
-                </div>
+                <div>
 
-                <div class="server-button-content">
+                    <strong>
+                        ☕ Minecraft Java
+                    </strong>
 
-                    <h2>
-                        Minecraft Java
-                    </h2>
-
-                    <div class="server-ip">
+                    <small>
                         apgmc.servidor.lol
-                    </div>
+                    </small>
 
-                    <p>
-                        También puedes usar
-                        <strong>51.81.49.65:26495</strong>
-                    </p>
+                    <small>
+                        También puedes usar 51.81.49.65:26495
+                    </small>
 
                 </div>
-
-                <button
-                    onclick="copyText('apgmc.servidor.lol', this)"
-                    title="Copiar IP"
-                >
-                    📋
-                </button>
 
             </div>
 
 
             <!-- BEDROCK -->
 
-            <div class="server-button">
+            <div class="main-button server-option">
 
-                <div class="server-button-icon">
-                    🟩
-                </div>
+                <div>
 
-                <div class="server-button-content">
+                    <strong>
+                        🟩 Minecraft Bedrock
+                    </strong>
 
-                    <h2>
-                        Minecraft Bedrock
-                    </h2>
+                    <small>
+                        IP: 51.81.49.65
+                    </small>
 
-                    <div class="server-ip">
-                        51.81.49.65
-                    </div>
-
-                    <p>
-                        Puerto:
-                        <strong>26495</strong>
-                    </p>
+                    <small>
+                        Puerto: 26495
+                    </small>
 
                 </div>
-
-                <button
-                    onclick="copyText('51.81.49.65:26495', this)"
-                    title="Copiar IP y puerto"
-                >
-                    📋
-                </button>
 
             </div>
 
-
-        </div>
-
-
-        <div class="warning">
-
-            <span>
-                💡
-            </span>
-
-            <p>
-                <strong>¿Juegas desde Bedrock?</strong><br>
-                Introduce <strong>51.81.49.65</strong> como dirección
-                y <strong>26495</strong> como puerto.
-            </p>
 
         </div>
 
@@ -163,27 +111,6 @@
     </p>
 
 </footer>
-
-
-<script>
-
-    function copyText(text, button) {
-
-        navigator.clipboard.writeText(text);
-
-        const original = button.innerHTML;
-
-        button.innerHTML = "✓";
-
-        setTimeout(() => {
-
-            button.innerHTML = original;
-
-        }, 1500);
-
-    }
-
-</script>
 ```
 
 </body>

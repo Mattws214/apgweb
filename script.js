@@ -2,11 +2,11 @@
 APGMC - SCRIPT.JS
 ===================================================== */
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
 ```
 /* =================================================
-   TIENDA - CATEGORÍAS
+   ELEMENTOS DE LA TIENDA
 ================================================= */
 
 const categoryButtons =
@@ -16,117 +16,86 @@ const categories =
     document.querySelectorAll(".shop-category");
 
 
-function showCategory(categoryId) {
+/* =================================================
+   CAMBIAR CATEGORÍA
+================================================= */
 
-    /* Ocultar TODAS las categorías */
+window.showCategory = function (categoryId) {
 
-    categories.forEach(function (category) {
+    /* Ocultar absolutamente todas las categorías */
+
+    categories.forEach(category => {
+
+        category.classList.remove("active");
 
         category.style.display = "none";
-        category.classList.remove("active");
 
     });
 
 
-    /* Quitar estado activo de todos los botones */
+    /* Quitar activo de todos los botones */
 
-    categoryButtons.forEach(function (button) {
+    categoryButtons.forEach(button => {
 
         button.classList.remove("active");
 
     });
 
 
-    /* Mostrar solamente la categoría seleccionada */
+    /* Buscar la categoría seleccionada */
 
     const selected =
         document.getElementById(categoryId);
 
-    if (selected) {
 
-        selected.style.display =
-            selected.classList.contains("coming-soon")
-                ? "flex"
-                : "block";
+    if (!selected) {
+        return;
+    }
 
-        selected.classList.add("active");
+
+    /* Mostrar únicamente la seleccionada */
+
+    selected.classList.add("active");
+
+    if (selected.classList.contains("coming-soon")) {
+
+        selected.style.display = "flex";
+
+    } else {
+
+        selected.style.display = "block";
 
     }
 
-}
 
+    /* Activar el botón correspondiente */
 
-/* Hacer la función accesible desde onclick="" */
-
-window.showCategory = showCategory;
-
-
-/* Eventos de los botones */
-
-categoryButtons.forEach(function (button) {
-
-    button.addEventListener("click", function () {
+    categoryButtons.forEach(button => {
 
         const onclick =
             button.getAttribute("onclick");
 
-        if (!onclick) {
-            return;
+        if (
+            onclick &&
+            onclick.includes("'" + categoryId + "'")
+        ) {
+
+            button.classList.add("active");
+
         }
-
-
-        const match =
-            onclick.match(
-                /showCategory\(['"]([^'"]+)['"]/
-            );
-
-
-        if (!match) {
-            return;
-        }
-
-
-        showCategory(match[1]);
-
-        button.classList.add("active");
 
     });
 
-});
+};
 
 
 /* =================================================
-   MOSTRAR SOLO LA PRIMERA CATEGORÍA AL ENTRAR
+   CATEGORÍA INICIAL
 ================================================= */
 
-if (
-    categories.length > 0 &&
-    categoryButtons.length > 0
-) {
+if (categories.length > 0) {
 
-    const firstCategory =
-        categories[0];
-
-    const firstButton =
-        categoryButtons[0];
-
-
-    categories.forEach(function (category) {
-
-        category.style.display = "none";
-        category.classList.remove("active");
-
-    });
-
-
-    firstCategory.style.display =
-        firstCategory.classList.contains("coming-soon")
-            ? "flex"
-            : "block";
-
-    firstCategory.classList.add("active");
-
-    firstButton.classList.add("active");
+    showCategory(categories[0].id);
 
 }
 
@@ -139,6 +108,8 @@ const paymentModal =
     document.getElementById("payment-modal");
 
 
+/* Abrir ventana */
+
 window.paymentMessage = function () {
 
     if (!paymentModal) {
@@ -147,15 +118,13 @@ window.paymentMessage = function () {
 
     paymentModal.classList.add("show");
 
-    paymentModal.style.display = "flex";
-
     document.body.style.overflow = "hidden";
 
 };
 
 
 /* =================================================
-   CERRAR MODAL
+   CERRAR VENTANA
 ================================================= */
 
 window.closePayment = function () {
@@ -166,24 +135,24 @@ window.closePayment = function () {
 
     paymentModal.classList.remove("show");
 
-    paymentModal.style.display = "none";
-
     document.body.style.overflow = "";
 
 };
 
 
 /* =================================================
-   BOTONES COMPRAR
+   BOTONES DE COMPRAR
 ================================================= */
 
 const buyButtons =
-    document.querySelectorAll(".product-card button");
+    document.querySelectorAll(
+        ".product-card button"
+    );
 
 
-buyButtons.forEach(function (button) {
+buyButtons.forEach(button => {
 
-    button.addEventListener("click", function (event) {
+    button.addEventListener("click", event => {
 
         event.preventDefault();
 
@@ -198,26 +167,23 @@ buyButtons.forEach(function (button) {
    BOTÓN X
 ================================================= */
 
-const closePaymentButton =
+const closePayment =
     document.querySelector(".close-payment");
 
 
-if (closePaymentButton) {
+if (closePayment) {
 
-    closePaymentButton.addEventListener(
-        "click",
-        function () {
+    closePayment.addEventListener("click", () => {
 
-            window.closePayment();
+        window.closePayment();
 
-        }
-    );
+    });
 
 }
 
 
 /* =================================================
-   BOTÓN ENTENDIDO
+   BOTÓN "ENTENDIDO"
 ================================================= */
 
 const closeButton =
@@ -226,56 +192,47 @@ const closeButton =
 
 if (closeButton) {
 
-    closeButton.addEventListener(
-        "click",
-        function () {
+    closeButton.addEventListener("click", () => {
 
-            window.closePayment();
+        window.closePayment();
 
-        }
-    );
+    });
 
 }
 
 
 /* =================================================
-   CLIC FUERA DEL MODAL
+   CERRAR AL HACER CLIC FUERA
 ================================================= */
 
 if (paymentModal) {
 
-    paymentModal.addEventListener(
-        "click",
-        function (event) {
+    paymentModal.addEventListener("click", event => {
 
-            if (event.target === paymentModal) {
-
-                window.closePayment();
-
-            }
-
-        }
-    );
-
-}
-
-
-/* =================================================
-   ESC PARA CERRAR
-================================================= */
-
-document.addEventListener(
-    "keydown",
-    function (event) {
-
-        if (event.key === "Escape") {
+        if (event.target === paymentModal) {
 
             window.closePayment();
 
         }
 
+    });
+
+}
+
+
+/* =================================================
+   CERRAR CON ESC
+================================================= */
+
+document.addEventListener("keydown", event => {
+
+    if (event.key === "Escape") {
+
+        window.closePayment();
+
     }
-);
+
+});
 ```
 
 });

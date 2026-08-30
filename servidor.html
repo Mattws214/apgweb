@@ -1,192 +1,376 @@
 <!DOCTYPE html>
 
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APGMC | Servidor</title>
-    <link rel="stylesheet" href="style.css">
+
+```
+<title>APGMC | Servidor</title>
+
+<link rel="stylesheet" href="style.css">
+```
+
 </head>
 
 <body>
 
 ```
-<header class="navbar">
-    <div class="logo">APGMC</div>
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header>
+
+    <div class="logo">
+        APGMC
+    </div>
 
     <nav>
+
         <a href="index.html">Inicio</a>
+
         <a href="reglas.html">Reglas</a>
-        <a href="servidor.html" class="active">Servidor</a>
+
+        <a href="servidor.html">Servidor</a>
+
         <a href="tienda.html">Tienda</a>
+
         <a href="informacion.html">Información</a>
-        <a href="https://discord.gg/gfNhf58B48" target="_blank">Discord</a>
+
+        <a href="https://discord.gg/gfNhf58B48" target="_blank">
+            Discord
+        </a>
+
     </nav>
+
 </header>
 
-<main class="server-page">
 
-    <section class="server-hero">
-        <span class="server-badge">🟢 SERVIDOR ONLINE</span>
+<!-- =========================================
+     CONTENIDO
+========================================= -->
 
-        <h1>Conéctate a <span>APGMC</span></h1>
+<main>
 
-        <p>
-            Entra al servidor y comienza tu aventura.
-            APGMC es compatible con <strong>Java</strong> y <strong>Bedrock</strong>.
-        </p>
-    </section>
+    <section class="rules-section">
+
+        <!-- TÍTULO -->
+
+        <div class="rules-header">
+
+            <span class="rules-icon">
+                🌐
+            </span>
+
+            <h1>
+                Servidor APGMC
+            </h1>
+
+            <p>
+                Conéctate a nuestra comunidad desde Java o Bedrock.
+            </p>
+
+        </div>
 
 
-    <section class="server-cards">
+        <!-- =====================================
+             SERVIDORES
+        ====================================== -->
 
-        <!-- JAVA -->
-        <div class="server-card">
+        <div class="server-container">
 
-            <div class="server-icon">☕</div>
 
-            <h2>Minecraft Java</h2>
+            <!-- JAVA -->
 
-            <p class="platform">PC • Java Edition</p>
+            <div class="server-card">
 
-            <div class="ip-box">
-                <span id="java-ip">51.81.49.65:26495</span>
-                <button onclick="copyIP('java-ip', this)">
-                    📋 Copiar
+                <div class="server-card-icon">
+                    ☕
+                </div>
+
+                <h2>
+                    Minecraft Java
+                </h2>
+
+                <p class="server-platform">
+                    PC · Java Edition
+                </p>
+
+
+                <div class="server-address">
+
+                    <span>
+                        Dirección del servidor
+                    </span>
+
+                    <strong id="javaAddress">
+                        51.81.49.65:26495
+                    </strong>
+
+                </div>
+
+
+                <button
+                    class="copy-server"
+                    onclick="copyServer('javaAddress', this)"
+                >
+                    📋 Copiar IP
                 </button>
+
             </div>
 
-            <div class="server-info">
-                <div>
-                    <span>IP</span>
-                    <strong>51.81.49.65</strong>
+
+            <!-- BEDROCK -->
+
+            <div class="server-card">
+
+                <div class="server-card-icon">
+                    🟩
                 </div>
 
-                <div>
-                    <span>Puerto</span>
-                    <strong>26495</strong>
+                <h2>
+                    Minecraft Bedrock
+                </h2>
+
+                <p class="server-platform">
+                    Móvil · Windows · Consolas
+                </p>
+
+
+                <div class="server-address">
+
+                    <span>
+                        Dirección del servidor
+                    </span>
+
+                    <strong id="bedrockAddress">
+                        51.81.49.65
+                    </strong>
+
                 </div>
-            </div>
-
-        </div>
 
 
-        <!-- BEDROCK -->
-        <div class="server-card bedrock">
+                <div class="server-port">
 
-            <div class="server-icon">🟩</div>
+                    <span>
+                        Puerto
+                    </span>
 
-            <h2>Minecraft Bedrock</h2>
+                    <strong>
+                        26495
+                    </strong>
 
-            <p class="platform">Móvil • Consolas • Windows</p>
+                </div>
 
-            <div class="ip-box">
-                <span id="bedrock-ip">51.81.49.65</span>
-                <button onclick="copyIP('bedrock-ip', this)">
-                    📋 Copiar
+
+                <button
+                    class="copy-server"
+                    onclick="copyBedrock(this)"
+                >
+                    📋 Copiar IP y puerto
                 </button>
-            </div>
 
-            <div class="server-info">
-                <div>
-                    <span>IP</span>
-                    <strong>51.81.49.65</strong>
-                </div>
-
-                <div>
-                    <span>Puerto</span>
-                    <strong>26495</strong>
-                </div>
-            </div>
-
-            <div class="bedrock-note">
-                💡 En Bedrock debes introducir la IP y el puerto manualmente.
             </div>
 
         </div>
 
-    </section>
+
+        <!-- =====================================
+             INFORMACIÓN
+        ====================================== -->
+
+        <div class="warning">
+
+            <span>
+                💡
+            </span>
+
+            <p>
+
+                <strong>¿Juegas desde Bedrock?</strong><br>
+
+                Al agregar el servidor debes introducir
+                <strong>51.81.49.65</strong> como dirección y
+                <strong>26495</strong> como puerto.
+
+            </p>
+
+        </div>
 
 
-    <section class="how-to">
+        <!-- =====================================
+             CÓMO CONECTARSE
+        ====================================== -->
 
-        <h2>¿Cómo entrar?</h2>
+        <div class="server-howto">
 
-        <div class="steps">
+            <h2>
+                ¿Cómo conectarse?
+            </h2>
 
-            <div class="step">
-                <div class="step-number">1</div>
-                <div>
-                    <h3>Abre Minecraft</h3>
-                    <p>Inicia Minecraft Java o Bedrock.</p>
+
+            <div class="server-steps">
+
+
+                <div class="server-step">
+
+                    <span>
+                        1
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Abre Minecraft
+                        </h3>
+
+                        <p>
+                            Inicia Minecraft Java o Bedrock.
+                        </p>
+
+                    </div>
+
                 </div>
-            </div>
 
-            <div class="step">
-                <div class="step-number">2</div>
-                <div>
-                    <h3>Agrega el servidor</h3>
-                    <p>Busca la opción para añadir un servidor.</p>
-                </div>
-            </div>
 
-            <div class="step">
-                <div class="step-number">3</div>
-                <div>
-                    <h3>Introduce los datos</h3>
-                    <p>Usa la IP y el puerto mostrados arriba.</p>
-                </div>
-            </div>
+                <div class="server-step">
 
-            <div class="step">
-                <div class="step-number">4</div>
-                <div>
-                    <h3>¡A jugar!</h3>
-                    <p>Conéctate y disfruta de APGMC.</p>
+                    <span>
+                        2
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Agrega el servidor
+                        </h3>
+
+                        <p>
+                            Ve a la sección de servidores y selecciona
+                            la opción para agregar uno nuevo.
+                        </p>
+
+                    </div>
+
                 </div>
+
+
+                <div class="server-step">
+
+                    <span>
+                        3
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Introduce los datos
+                        </h3>
+
+                        <p>
+                            Utiliza la IP y el puerto mostrados arriba.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="server-step">
+
+                    <span>
+                        ✓
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            ¡Entra a APGMC!
+                        </h3>
+
+                        <p>
+                            Conéctate y comienza a jugar con nuestra comunidad.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
             </div>
 
         </div>
 
-    </section>
-
-
-    <section class="server-bottom">
-
-        <h2>¿Todavía no estás en nuestra comunidad?</h2>
-
-        <p>Únete a nuestro Discord para conocer las novedades de APGMC.</p>
-
-        <a href="https://discord.gg/gfNhf58B48" target="_blank" class="discord-button">
-            💬 Unirse al Discord
-        </a>
 
     </section>
 
 </main>
 
 
+<!-- =========================================
+     FOOTER
+========================================= -->
+
 <footer>
-    <p>© 2026 APGMC — Todos los derechos reservados.</p>
+
+    <p>
+        © 2026 APGMC — Todos los derechos reservados.
+    </p>
+
 </footer>
 
 
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
 <script>
-    function copyIP(id, button) {
 
-        const text = document.getElementById(id).textContent;
+    function copyServer(id, button) {
 
-        navigator.clipboard.writeText(text);
+        const address =
+            document.getElementById(id).textContent.trim();
 
-        const originalText = button.innerHTML;
+        navigator.clipboard.writeText(address);
+
+        const original = button.innerHTML;
+
+        button.innerHTML = "✓ IP copiada";
+
+        setTimeout(() => {
+
+            button.innerHTML = original;
+
+        }, 1800);
+
+    }
+
+
+    function copyBedrock(button) {
+
+        const address = "51.81.49.65";
+        const port = "26495";
+
+        navigator.clipboard.writeText(
+            address + ":" + port
+        );
+
+        const original = button.innerHTML;
 
         button.innerHTML = "✓ Copiado";
 
         setTimeout(() => {
-            button.innerHTML = originalText;
-        }, 1500);
+
+            button.innerHTML = original;
+
+        }, 1800);
+
     }
+
 </script>
 
 </body>
+
 </html>

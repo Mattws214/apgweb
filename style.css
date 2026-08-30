@@ -246,11 +246,6 @@ font-weight: 900;
 
 .rules-header p {
 color: #9da1ae;
-
-```
-margin-top: 8px;
-```
-
 }
 
 /* =========================================
@@ -386,7 +381,7 @@ TIENDA
 
 .shop-page {
 width: 100%;
-max-width: 1200px;
+max-width: 1400px;
 
 ```
 margin: auto;
@@ -898,200 +893,6 @@ background: #4752c4;
 }
 
 /* =========================================
-SERVIDOR
-========================================= */
-
-.server-buttons {
-display: flex;
-
-```
-flex-direction: column;
-
-gap: 16px;
-
-width: 100%;
-
-max-width: 700px;
-
-margin: 0 auto;
-```
-
-}
-
-/* TARJETA / BOTÓN */
-
-.server-button {
-min-height: 105px;
-
-```
-display: flex;
-
-align-items: center;
-
-gap: 20px;
-
-padding: 18px 22px;
-
-background: #11131b;
-
-border: 1px solid #292d39;
-
-border-radius: 12px;
-
-color: #ffffff;
-
-transition: 0.2s ease;
-```
-
-}
-
-.server-button:hover {
-transform: translateY(-4px);
-
-```
-background: #191c27;
-
-border-color: #5865f2;
-
-box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.35);
-```
-
-}
-
-/* ICONO */
-
-.server-button-icon {
-width: 58px;
-height: 58px;
-
-```
-flex-shrink: 0;
-
-display: flex;
-
-align-items: center;
-justify-content: center;
-
-background: #08090d;
-
-border: 1px solid #292d39;
-
-border-radius: 10px;
-
-font-size: 30px;
-```
-
-}
-
-/* CONTENIDO */
-
-.server-button-content {
-flex: 1;
-
-```
-min-width: 0;
-
-text-align: left;
-```
-
-}
-
-.server-button-content h2 {
-font-size: 19px;
-
-```
-margin-bottom: 9px;
-```
-
-}
-
-/* IP DENTRO DE LA TARJETA */
-
-.server-ip {
-display: inline-block;
-
-```
-padding: 7px 11px;
-
-background: #08090d;
-
-border: 1px solid #292d39;
-
-border-radius: 7px;
-
-color: #ffffff;
-
-font-size: 16px;
-font-weight: 700;
-
-letter-spacing: 0.3px;
-
-margin-bottom: 7px;
-```
-
-}
-
-/* TEXTO SECUNDARIO */
-
-.server-button-content p {
-color: #858997;
-
-```
-font-size: 13px;
-
-line-height: 1.5;
-```
-
-}
-
-.server-button-content p strong {
-color: #cfd1da;
-}
-
-/* BOTÓN COPIAR */
-
-.server-button > button {
-width: 45px;
-height: 45px;
-
-```
-flex-shrink: 0;
-
-display: flex;
-
-align-items: center;
-justify-content: center;
-
-background: #08090d;
-
-border: 1px solid #292d39;
-
-border-radius: 9px;
-
-color: #ffffff;
-
-font-size: 18px;
-
-cursor: pointer;
-
-transition: 0.2s ease;
-```
-
-}
-
-.server-button > button:hover {
-background: #5865f2;
-
-```
-border-color: #5865f2;
-
-transform: translateY(-2px);
-```
-
-}
-
-/* =========================================
 FOOTER
 ========================================= */
 
@@ -1146,9 +947,6 @@ nav {
     gap: 16px;
 }
 
-
-/* TIENDA */
-
 .shop-layout {
     grid-template-columns: 1fr;
 }
@@ -1163,13 +961,6 @@ nav {
 
 .products {
     grid-template-columns: 1fr;
-}
-
-
-/* SERVIDOR */
-
-.server-buttons {
-    max-width: 650px;
 }
 ```
 
@@ -1284,45 +1075,6 @@ nav a {
 .payment-box {
     padding: 35px 22px;
 }
-
-
-/* SERVIDOR */
-
-.server-button {
-    min-height: 90px;
-
-    gap: 12px;
-
-    padding: 14px;
-}
-
-.server-button-icon {
-    width: 45px;
-    height: 45px;
-
-    font-size: 24px;
-}
-
-.server-button-content h2 {
-    font-size: 16px;
-}
-
-.server-ip {
-    font-size: 14px;
-
-    padding: 6px 8px;
-}
-
-.server-button-content p {
-    font-size: 11px;
-}
-
-.server-button > button {
-    width: 40px;
-    height: 40px;
-
-    font-size: 16px;
-}
 ```
 
 }
@@ -1344,31 +1096,6 @@ nav {
 
 .shop-title {
     font-size: 29px;
-}
-
-.server-button {
-    gap: 9px;
-
-    padding: 12px;
-}
-
-.server-button-icon {
-    width: 40px;
-    height: 40px;
-
-    font-size: 21px;
-}
-
-.server-button-content h2 {
-    font-size: 15px;
-}
-
-.server-ip {
-    font-size: 12px;
-}
-
-.server-button-content p {
-    font-size: 10px;
 }
 ```
 

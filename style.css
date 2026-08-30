@@ -1,3 +1,7 @@
+/* ==============================
+   APGMC - ESTILO GENERAL
+============================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -11,194 +15,374 @@ html {
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: #08090d;
-    color: white;
+    color: #ffffff;
     min-height: 100vh;
 }
 
-/* =========================
-   HEADER
-========================= */
+
+/* ==============================
+   MENÚ SUPERIOR
+============================== */
 
 header {
     width: 100%;
-    padding: 20px 7%;
+    height: 75px;
 
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 
-    background: rgba(10, 11, 17, 0.95);
-    border-bottom: 1px solid #20222d;
+    padding: 0 7%;
+
+    background: #0d0f15;
+    border-bottom: 1px solid #20232d;
 
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .logo {
     font-size: 28px;
     font-weight: 900;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
 }
 
 nav {
     display: flex;
+    align-items: center;
     gap: 28px;
 }
 
 nav a {
-    color: #d6d7df;
+    color: #cfd1da;
     text-decoration: none;
+
     font-size: 15px;
-    transition: 0.2s;
+    font-weight: 600;
+
+    transition: 0.2s ease;
 }
 
 nav a:hover {
-    color: white;
+    color: #ffffff;
 }
 
-/* =========================
-   MAIN
-========================= */
+
+/* ==============================
+   PÁGINA DE INICIO
+============================== */
+
+.hero {
+    min-height: calc(100vh - 150px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #181b2d 0%,
+            #0c0e15 45%,
+            #08090d 100%
+        );
+}
+
+.hero h1 {
+    font-size: 58px;
+    font-weight: 900;
+
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: #aeb1bd;
+    font-size: 20px;
+
+    margin-bottom: 45px;
+}
+
+
+/* ==============================
+   BOTONES DEL INICIO
+============================== */
+
+.buttons {
+    display: grid;
+
+    grid-template-columns: repeat(2, 280px);
+
+    gap: 16px;
+}
+
+.main-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 60px;
+
+    padding: 16px 20px;
+
+    background: #11131b;
+    border: 1px solid #292d39;
+
+    border-radius: 12px;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.main-button:hover {
+    transform: translateY(-4px);
+
+    background: #191c27;
+    border-color: #5865f2;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ==============================
+   PÁGINAS INTERNAS
+============================== */
 
 main {
     min-height: calc(100vh - 150px);
 }
 
-/* =========================
-   RULES
-========================= */
-
 .rules-section {
     max-width: 950px;
+
     margin: auto;
+
     padding: 90px 25px;
 }
 
 .rules-header {
     text-align: center;
+
     margin-bottom: 50px;
 }
 
 .rules-icon {
     display: block;
-    font-size: 50px;
+
+    font-size: 52px;
+
     margin-bottom: 15px;
 }
 
 .rules-header h1 {
     font-size: 42px;
-    font-weight: 800;
+    font-weight: 900;
 }
+
+.rules-header p {
+    color: #9da1ae;
+}
+
+
+/* ==============================
+   TARJETAS / REGLAS
+============================== */
 
 .rules-container {
     display: flex;
     flex-direction: column;
+
     gap: 14px;
 }
 
 .rule {
     display: flex;
     align-items: center;
+
     gap: 20px;
 
     padding: 20px 24px;
 
     background: #11131a;
-    border: 1px solid #222530;
+
+    border: 1px solid #222631;
+
     border-radius: 12px;
 
     transition:
         transform 0.2s ease,
-        border-color 0.2s ease,
-        background 0.2s ease;
+        background 0.2s ease,
+        border-color 0.2s ease;
 }
 
 .rule:hover {
     transform: translateX(7px);
-    background: #151821;
+
+    background: #161923;
+
     border-color: #5865f2;
 }
 
-.rule span {
+.rule > span {
     flex-shrink: 0;
 
     width: 40px;
     height: 40px;
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
     background: #5865f2;
+
     border-radius: 10px;
 
-    font-size: 16px;
-    font-weight: bold;
+    font-weight: 800;
 }
 
 .rule p {
-    color: #dfe1e8;
-    line-height: 1.5;
+    color: #dedfe5;
+
     font-size: 16px;
+
+    line-height: 1.5;
 }
 
-/* =========================
-   WARNING
-========================= */
+
+/* ==============================
+   AVISO
+============================== */
 
 .warning {
-    margin-top: 30px;
-
     display: flex;
     align-items: center;
+
     gap: 18px;
+
+    margin-top: 30px;
 
     padding: 22px 24px;
 
     background: #19150c;
+
     border: 1px solid #55451b;
+
     border-radius: 12px;
 }
 
 .warning span {
     font-size: 30px;
+    flex-shrink: 0;
 }
 
 .warning p {
-    color: #ded9c7;
+    color: #ddd8c7;
+
     line-height: 1.5;
 }
 
-/* =========================
+
+/* ==============================
    FOOTER
-========================= */
+============================== */
 
 footer {
-    text-align: center;
+    width: 100%;
+
     padding: 30px 20px;
 
-    border-top: 1px solid #20222d;
+    text-align: center;
 
-    color: #777b88;
+    background: #07080c;
+
+    border-top: 1px solid #20232d;
+
+    color: #777b87;
+
     font-size: 14px;
 }
 
-/* =========================
-   MOBILE
-========================= */
+
+/* ==============================
+   EFECTOS
+============================== */
+
+a {
+    transition: 0.2s ease;
+}
+
+::selection {
+    background: #5865f2;
+    color: white;
+}
+
+
+/* ==============================
+   MÓVILES
+============================== */
 
 @media (max-width: 700px) {
 
     header {
+        height: auto;
+
         padding: 18px 20px;
 
         flex-direction: column;
+
         gap: 15px;
     }
 
     nav {
         gap: 18px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .hero {
+        min-height: calc(100vh - 130px);
+
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .buttons {
+        width: 100%;
+        max-width: 350px;
+
+        grid-template-columns: 1fr;
+    }
+
+    .main-button {
+        width: 100%;
     }
 
     .rules-section {
@@ -206,17 +390,22 @@ footer {
     }
 
     .rules-header h1 {
-        font-size: 30px;
+        font-size: 32px;
     }
 
     .rule {
         padding: 16px;
+
         gap: 14px;
+
+        align-items: flex-start;
     }
 
-    .rule span {
+    .rule > span {
         width: 35px;
         height: 35px;
+
+        font-size: 14px;
     }
 
     .rule p {
@@ -225,5 +414,7 @@ footer {
 
     .warning {
         align-items: flex-start;
+
+        padding: 18px;
     }
 }

@@ -2,218 +2,294 @@
 APGMC - SCRIPT.JS
 ========================================= */
 
-document.addEventListener("DOMContentLoaded", function () {
-
-```
 /* =========================================
-   CATEGORÍAS DE LA TIENDA
+CATEGORÍAS
 ========================================= */
 
-const categoryButtons =
-    document.querySelectorAll(".shop-menu button");
+function showCategory(categoryId, button) {
 
+```
 const categories =
     document.querySelectorAll(".shop-category");
 
-
-categoryButtons.forEach(function (button) {
-
-    button.addEventListener("click", function () {
-
-        /*
-         * Obtener el ID desde el onclick existente.
-         * Ejemplo:
-         * showCategory('survival', this)
-         */
-
-        const onclickCode =
-            button.getAttribute("onclick");
-
-        if (!onclickCode) {
-            return;
-        }
-
-        const match =
-            onclickCode.match(/showCategory\(['"]([^'"]+)['"]/);
-
-        if (!match) {
-            return;
-        }
-
-        const categoryId = match[1];
+const buttons =
+    document.querySelectorAll(".shop-menu button");
 
 
-        /* Ocultar todas */
+categories.forEach(function(category) {
 
-        categories.forEach(function (category) {
-
-            category.classList.remove("active");
-
-        });
-
-
-        /* Mostrar seleccionada */
-
-        const selected =
-            document.getElementById(categoryId);
-
-        if (selected) {
-
-            selected.classList.add("active");
-
-        }
-
-
-        /* Cambiar botón activo */
-
-        categoryButtons.forEach(function (otherButton) {
-
-            otherButton.classList.remove("active");
-
-        });
-
-        button.classList.add("active");
-
-    });
+    category.classList.remove("active");
 
 });
 
 
-/* =========================================
-   CATEGORÍA INICIAL
-========================================= */
+const selectedCategory =
+    document.getElementById(categoryId);
 
-if (
-    categories.length > 0 &&
-    categoryButtons.length > 0
-) {
+if (selectedCategory) {
 
-    categories.forEach(function (category) {
-
-        category.classList.remove("active");
-
-    });
-
-    categoryButtons.forEach(function (button) {
-
-        button.classList.remove("active");
-
-    });
-
-
-    categories[0].classList.add("active");
-    categoryButtons[0].classList.add("active");
+    selectedCategory.classList.add("active");
 
 }
 
 
-/* =========================================
-   BOTONES COMPRAR
-========================================= */
+buttons.forEach(function(categoryButton) {
 
-const buyButtons =
-    document.querySelectorAll(".product-card button");
-
-
-buyButtons.forEach(function (button) {
-
-    button.addEventListener("click", function (event) {
-
-        event.preventDefault();
-        event.stopPropagation();
-
-        openPaymentModal();
-
-    });
+    categoryButton.classList.remove("active");
 
 });
 
 
+if (button) {
+
+    button.classList.add("active");
+
+}
+```
+
+}
+
 /* =========================================
-   MODAL
+ABRIR MODAL DE PAGO
 ========================================= */
 
+function paymentMessage() {
+
+```
 const modal =
     document.getElementById("payment-modal");
 
-const closeButton =
-    document.querySelector(".close-payment");
-
-const understoodButton =
-    document.querySelector(".close-button");
-
-
-function openPaymentModal() {
-
-    if (!modal) {
-        return;
-    }
-
-    modal.classList.add("show");
-
-    document.body.style.overflow = "hidden";
-
+if (!modal) {
+    return;
 }
 
+modal.classList.add("show");
 
-function closePaymentModal() {
-
-    if (!modal) {
-        return;
-    }
-
-    modal.classList.remove("show");
-
-    document.body.style.overflow = "";
+document.body.style.overflow = "hidden";
+```
 
 }
-
-
-/* Botón X */
-
-if (closeButton) {
-
-    closeButton.addEventListener(
-        "click",
-        function () {
-
-            closePaymentModal();
-
-        }
-    );
-
-}
-
-
-/* Botón Entendido */
-
-if (understoodButton) {
-
-    understoodButton.addEventListener(
-        "click",
-        function () {
-
-            closePaymentModal();
-
-        }
-    );
-
-}
-
 
 /* =========================================
-   CLIC FUERA DEL MODAL
+CERRAR MODAL
 ========================================= */
 
-if (modal) {
+function closePayment() {
 
-    modal.addEventListener(
-        "click",
-        function (event) {
+```
+const modal =
+    document.getElementById("payment-modal");
 
-            if (event.target === modal) {
+if (!modal) {
+    return;
+}
 
-                closePaymentModal();
+modal.classList.remove("show");
+
+document.body.style.overflow = "";
+```
+
+}
+
+/* =========================================
+INICIO
+========================================= */
+
+document.addEventListener(
+"DOMContentLoaded",
+function () {
+
+```
+    const categories =
+        document.querySelectorAll(".shop-category");
+
+    const buttons =
+        document.querySelectorAll(".shop-menu button");
+
+
+    /*
+     * Si estamos en la tienda,
+     * mostrar la primera categoría.
+     */
+
+    if (
+        categories.length > 0 &&
+        buttons.length > 0
+    ) {
+
+        let activeCategory =
+            document.querySelector(
+                ".shop-category.active"
+            );
+
+
+        if (!activeCategory) {
+
+            categories[0].classList.add("active");
+
+        }
+
+
+        let activeButton =
+            document.querySelector(
+                ".shop-menu button.active"
+            );
+
+
+        if (!activeButton) {
+
+            buttons[0].classList.add("active");
+
+        }
+
+    }
+
+
+    /* =====================================
+       CLIC EN CATEGORÍAS
+    ===================================== */
+
+    buttons.forEach(function(button) {
+
+        button.addEventListener(
+            "click",
+            function() {
+
+                const code =
+                    button.getAttribute("onclick");
+
+                if (!code) {
+                    return;
+                }
+
+
+                const match =
+                    code.match(
+                        /showCategory\(['"]([^'"]+)['"]/
+                    );
+
+
+                if (!match) {
+                    return;
+                }
+
+
+                showCategory(
+                    match[1],
+                    button
+                );
+
+            }
+        );
+
+    });
+
+
+    /* =====================================
+       CLIC EN COMPRAR
+    ===================================== */
+
+    const buyButtons =
+        document.querySelectorAll(
+            ".product-card button"
+        );
+
+
+    buyButtons.forEach(function(button) {
+
+        button.addEventListener(
+            "click",
+            function(event) {
+
+                event.preventDefault();
+
+                paymentMessage();
+
+            }
+        );
+
+    });
+
+
+    /* =====================================
+       CERRAR CON X
+    ===================================== */
+
+    const closeButton =
+        document.querySelector(
+            ".close-payment"
+        );
+
+
+    if (closeButton) {
+
+        closeButton.addEventListener(
+            "click",
+            closePayment
+        );
+
+    }
+
+
+    /* =====================================
+       BOTÓN ENTENDIDO
+    ===================================== */
+
+    const understoodButton =
+        document.querySelector(
+            ".close-button"
+        );
+
+
+    if (understoodButton) {
+
+        understoodButton.addEventListener(
+            "click",
+            closePayment
+        );
+
+    }
+
+
+    /* =====================================
+       CLIC FUERA DEL MODAL
+    ===================================== */
+
+    const modal =
+        document.getElementById(
+            "payment-modal"
+        );
+
+
+    if (modal) {
+
+        modal.addEventListener(
+            "click",
+            function(event) {
+
+                if (event.target === modal) {
+
+                    closePayment();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =====================================
+       ESC
+    ===================================== */
+
+    document.addEventListener(
+        "keydown",
+        function(event) {
+
+            if (event.key === "Escape") {
+
+                closePayment();
 
             }
 
@@ -221,24 +297,6 @@ if (modal) {
     );
 
 }
-
-
-/* =========================================
-   ESC
-========================================= */
-
-document.addEventListener(
-    "keydown",
-    function (event) {
-
-        if (event.key === "Escape") {
-
-            closePaymentModal();
-
-        }
-
-    }
-);
 ```
 
-});
+);

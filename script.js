@@ -10,7 +10,8 @@ CAMBIAR CATEGORÍA
 function showCategory(categoryId, button) {
 
 ```
-const categories = document.querySelectorAll(".shop-category");
+const categories =
+    document.querySelectorAll(".shop-category");
 
 categories.forEach(function(category) {
 
@@ -51,7 +52,7 @@ if (button) {
 }
 
 /* =========================================
-VENTANA DE PAGO
+ABRIR MÉTODOS DE PAGO
 ========================================= */
 
 function paymentMessage() {
@@ -60,11 +61,11 @@ function paymentMessage() {
 const modal =
     document.getElementById("payment-modal");
 
-
 if (!modal) {
     return;
 }
 
+modal.style.display = "flex";
 
 modal.classList.add("show");
 ```
@@ -72,7 +73,7 @@ modal.classList.add("show");
 }
 
 /* =========================================
-CERRAR PAGO
+CERRAR MÉTODOS DE PAGO
 ========================================= */
 
 function closePayment() {
@@ -81,19 +82,19 @@ function closePayment() {
 const modal =
     document.getElementById("payment-modal");
 
-
 if (!modal) {
     return;
 }
 
-
 modal.classList.remove("show");
+
+modal.style.display = "none";
 ```
 
 }
 
 /* =========================================
-INICIALIZACIÓN
+INICIAR TIENDA
 ========================================= */
 
 document.addEventListener(
@@ -108,54 +109,53 @@ function() {
         document.querySelectorAll(".shop-menu button");
 
 
+    if (
+        categories.length === 0 ||
+        buttons.length === 0
+    ) {
+        return;
+    }
+
+
     /*
-     * Solo ejecutamos esto si estamos
-     * realmente en la página de la tienda.
+     * Buscar categoría activa.
      */
 
-    if (
-        categories.length > 0 &&
-        buttons.length > 0
-    ) {
-
-        let activeCategory =
-            document.querySelector(
-                ".shop-category.active"
-            );
+    let activeCategory =
+        document.querySelector(
+            ".shop-category.active"
+        );
 
 
-        /*
-         * Si no existe una categoría activa,
-         * mostramos la primera.
-         */
+    /*
+     * Si ninguna está activa,
+     * mostramos la primera.
+     */
 
-        if (!activeCategory) {
+    if (!activeCategory) {
 
-            activeCategory =
-                categories[0];
+        activeCategory =
+            categories[0];
 
-            activeCategory.classList.add("active");
+        activeCategory.classList.add("active");
 
-        }
-
-
-        /*
-         * Si ningún botón tiene active,
-         * activamos el botón correspondiente
-         * a la categoría que está visible.
-         */
-
-        let activeButton =
-            document.querySelector(
-                ".shop-menu button.active"
-            );
+    }
 
 
-        if (!activeButton) {
+    /*
+     * Activar el primer botón si
+     * ninguno tiene la clase active.
+     */
 
-            buttons[0].classList.add("active");
+    let activeButton =
+        document.querySelector(
+            ".shop-menu button.active"
+        );
 
-        }
+
+    if (!activeButton) {
+
+        buttons[0].classList.add("active");
 
     }
 
@@ -165,7 +165,7 @@ function() {
 );
 
 /* =========================================
-CERRAR MODAL CON ESCAPE
+ESC PARA CERRAR
 ========================================= */
 
 document.addEventListener(
@@ -185,7 +185,7 @@ function(event) {
 );
 
 /* =========================================
-CERRAR MODAL HACIENDO CLIC AFUERA
+CLIC FUERA DEL MODAL
 ========================================= */
 
 document.addEventListener(
@@ -203,8 +203,8 @@ function(event) {
 
 
     if (
-        modal.classList.contains("show") &&
-        event.target === modal
+        event.target === modal &&
+        modal.classList.contains("show")
     ) {
 
         closePayment();

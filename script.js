@@ -3,10 +3,10 @@
    APGMC - SCRIPT.JS
 ===================================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
     /* =================================================
-       CATEGORÍAS DE LA TIENDA
+       TIENDA - CATEGORÍAS
     ================================================= */
 
     const categoryButtons =
@@ -16,64 +16,79 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll(".shop-category");
 
 
+    /* =================================================
+       FUNCIÓN PARA CAMBIAR CATEGORÍA
+    ================================================= */
+
     function showCategory(categoryId) {
 
-        /* Ocultar todas */
+        /* Ocultar todas las categorías */
 
-        categories.forEach(category => {
+        categories.forEach(function (category) {
             category.classList.remove("active");
         });
 
 
-        /* Desactivar todos los botones */
+        /* Quitar activo de todos los botones */
 
-        categoryButtons.forEach(button => {
+        categoryButtons.forEach(function (button) {
             button.classList.remove("active");
         });
 
 
-        /* Buscar categoría */
+        /* Buscar la categoría */
 
-        const selected =
+        const selectedCategory =
             document.getElementById(categoryId);
 
-        if (!selected) {
+
+        if (!selectedCategory) {
             return;
         }
 
 
         /* Mostrar categoría */
 
-        selected.classList.add("active");
+        selectedCategory.classList.add("active");
 
 
-        /* Activar botón */
+        /* Buscar el botón correspondiente */
 
-        categoryButtons.forEach(button => {
+        const selectedButton =
+            document.querySelector(
+                '.shop-menu button[data-category="' +
+                categoryId +
+                '"]'
+            );
 
-            if (button.dataset.category === categoryId) {
-                button.classList.add("active");
-            }
 
-        });
+        /* Activarlo */
+
+        if (selectedButton) {
+            selectedButton.classList.add("active");
+        }
 
     }
 
 
     /* =================================================
-       CONFIGURAR BOTONES DE CATEGORÍA
+       BOTONES DE CATEGORÍA
     ================================================= */
 
-    categoryButtons.forEach(button => {
+    categoryButtons.forEach(function (button) {
 
-        button.addEventListener("click", () => {
+        button.addEventListener("click", function () {
 
             const categoryId =
-                button.dataset.category;
+                button.getAttribute("data-category");
 
-            if (categoryId) {
-                showCategory(categoryId);
+
+            if (!categoryId) {
+                return;
             }
+
+
+            showCategory(categoryId);
 
         });
 
@@ -86,7 +101,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (categories.length > 0) {
 
-        showCategory(categories[0].id);
+        const firstCategory =
+            categories[0];
+
+        showCategory(firstCategory.id);
 
     }
 
@@ -99,7 +117,23 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("payment-modal");
 
 
-    function paymentMessage() {
+    const buyButtons =
+        document.querySelectorAll(".product-card button");
+
+
+    const closePaymentButton =
+        document.querySelector(".close-payment");
+
+
+    const closeButton =
+        document.querySelector(".close-button");
+
+
+    /* =================================================
+       ABRIR MODAL
+    ================================================= */
+
+    function openPayment() {
 
         if (!paymentModal) {
             return;
@@ -111,6 +145,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+
+    /* =================================================
+       CERRAR MODAL
+    ================================================= */
 
     function closePayment() {
 
@@ -129,17 +167,13 @@ document.addEventListener("DOMContentLoaded", () => {
        BOTONES COMPRAR
     ================================================= */
 
-    const buyButtons =
-        document.querySelectorAll(".product-card button");
+    buyButtons.forEach(function (button) {
 
-
-    buyButtons.forEach(button => {
-
-        button.addEventListener("click", event => {
+        button.addEventListener("click", function (event) {
 
             event.preventDefault();
 
-            paymentMessage();
+            openPayment();
 
         });
 
@@ -150,15 +184,12 @@ document.addEventListener("DOMContentLoaded", () => {
        BOTÓN X
     ================================================= */
 
-    const closeButtonX =
-        document.querySelector(".close-payment");
+    if (closePaymentButton) {
 
-
-    if (closeButtonX) {
-
-        closeButtonX.addEventListener("click", () => {
-            closePayment();
-        });
+        closePaymentButton.addEventListener(
+            "click",
+            closePayment
+        );
 
     }
 
@@ -167,15 +198,12 @@ document.addEventListener("DOMContentLoaded", () => {
        BOTÓN ENTENDIDO
     ================================================= */
 
-    const closeButton =
-        document.querySelector(".close-button");
-
-
     if (closeButton) {
 
-        closeButton.addEventListener("click", () => {
-            closePayment();
-        });
+        closeButton.addEventListener(
+            "click",
+            closePayment
+        );
 
     }
 
@@ -186,28 +214,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (paymentModal) {
 
-        paymentModal.addEventListener("click", event => {
+        paymentModal.addEventListener(
+            "click",
+            function (event) {
 
-            if (event.target === paymentModal) {
-                closePayment();
+                if (event.target === paymentModal) {
+                    closePayment();
+                }
+
             }
-
-        });
+        );
 
     }
 
 
     /* =================================================
-       TECLA ESC
+       ESC
     ================================================= */
 
-    document.addEventListener("keydown", event => {
+    document.addEventListener(
+        "keydown",
+        function (event) {
 
-        if (event.key === "Escape") {
-            closePayment();
+            if (event.key === "Escape") {
+                closePayment();
+            }
+
         }
-
-    });
+    );
 
 });
 ```

@@ -1,695 +1,700 @@
-```html
 <!DOCTYPE html>
+
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>APGMC | Tienda</title>
+```
+<title>APGMC | Tienda</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
+```
+
 </head>
 
 <body>
 
 <header>
 
-    <div class="logo">
-        APGMC
-    </div>
+```
+<div class="logo">
+    APGMC
+</div>
 
-    <nav>
+<nav>
 
-        <a href="index.html">
-            Inicio
-        </a>
+    <a href="index.html">
+        Inicio
+    </a>
 
-        <a href="reglas.html">
-            Reglas
-        </a>
+    <a href="reglas.html">
+        Reglas
+    </a>
 
-        <a href="servidor.html">
-            Dirección IP
-        </a>
+    <a href="servidor.html">
+        Dirección IP
+    </a>
 
-        <a href="tienda.html">
-            Tienda
-        </a>
+    <a href="tienda.html">
+        Tienda
+    </a>
 
-        <a href="informacion.html">
-            Información
-        </a>
+    <a href="informacion.html">
+        Información
+    </a>
 
-        <a
-            href="https://discord.gg/gfNhf58B48"
-            target="_blank">
-            Discord
-        </a>
+    <a
+        href="https://discord.gg/gfNhf58B48"
+        target="_blank">
+        Discord
+    </a>
 
-    </nav>
+</nav>
+```
 
 </header>
 
-
 <main class="shop-page">
 
-    <h1 class="shop-title">
-        Tienda APGMC
-    </h1>
+```
+<h1 class="shop-title">
+    Tienda APGMC
+</h1>
 
 
-    <div class="shop-wrapper">
+<div class="shop-wrapper">
 
 
-        <!-- =====================================
-             CATEGORÍAS
-        ====================================== -->
+    <!-- =====================================
+         CATEGORÍAS
+    ====================================== -->
 
-        <div class="shop-menu">
+    <div class="shop-menu">
 
-            <button
-                class="active"
-                data-category="soda">
+        <button
+            class="active"
+            data-category="soda">
 
+            🥤 Soda
+
+        </button>
+
+
+        <button
+            data-category="survival">
+
+            🌳 Survival clásico
+
+        </button>
+
+
+        <button
+            data-category="anarquico">
+
+            ⚔️ Anárquico
+
+        </button>
+
+
+        <button
+            data-category="rangos">
+
+            🏆 Rangos
+
+        </button>
+
+
+        <button
+            data-category="cosmeticos">
+
+            🎨 Cosméticos
+
+        </button>
+
+    </div>
+
+
+    <!-- =====================================
+         CONTENIDO
+    ====================================== -->
+
+    <section class="shop-content">
+
+
+        <!-- =================================
+             SODA
+        ================================== -->
+
+        <div
+            id="soda"
+            class="shop-category active">
+
+            <div class="discount">
+                -25%
+            </div>
+
+            <h2>
                 🥤 Soda
-
-            </button>
-
-
-            <button
-                data-category="survival">
-
-                🌳 Survival clásico
-
-            </button>
+            </h2>
 
 
-            <button
-                data-category="anarquico">
-
-                ⚔️ Anárquico
-
-            </button>
+            <div class="products">
 
 
-            <button
-                data-category="rangos">
+                <div class="product-card">
 
-                🏆 Rangos
+                    <div class="product-emoji">
+                        🥤
+                    </div>
 
-            </button>
+                    <h3>
+                        Soda — 1 mes
+                    </h3>
+
+                    <p>
+                        Acceso a Soda durante 1 mes.
+                    </p>
+
+                    <strong>
+                        $9
+                    </strong>
+
+                    <button>
+                        Comprar
+                    </button>
+
+                </div>
 
 
-            <button
-                data-category="cosmeticos">
+                <div class="product-card">
 
-                🎨 Cosméticos
+                    <div class="product-emoji">
+                        🥤
+                    </div>
 
-            </button>
+                    <h3>
+                        Soda — 3 meses
+                    </h3>
+
+                    <p>
+                        Acceso a Soda durante 3 meses.
+                    </p>
+
+                    <strong>
+                        $20
+                    </strong>
+
+                    <button>
+                        Comprar
+                    </button>
+
+                </div>
+
+
+                <div class="product-card">
+
+                    <div class="product-emoji">
+                        🥤
+                    </div>
+
+                    <h3>
+                        Soda — 1 año
+                    </h3>
+
+                    <p>
+                        Acceso a Soda durante 1 año.
+                    </p>
+
+                    <strong>
+                        $44
+                    </strong>
+
+                    <button>
+                        Comprar
+                    </button>
+
+                </div>
+
+
+            </div>
 
         </div>
 
 
-        <!-- =====================================
-             CONTENIDO
-        ====================================== -->
+        <!-- =================================
+             SURVIVAL
+        ================================== -->
 
-        <section class="shop-content">
+        <div
+            id="survival"
+            class="shop-category">
 
+            <div class="discount">
+                -25%
+            </div>
 
-            <!-- =================================
-                 SODA
-            ================================== -->
-
-            <div
-                id="soda"
-                class="shop-category active">
-
-                <div class="discount">
-                    -25%
-                </div>
-
-                <h2>
-                    🥤 Soda
-                </h2>
+            <h2>
+                🌳 Survival clásico
+            </h2>
 
 
-                <div class="products">
+            <div class="products">
 
 
-                    <div class="product-card">
+                <!-- BOTAS -->
 
-                        <div class="product-emoji">
-                            🥤
-                        </div>
+                <div class="product-card">
 
-                        <h3>
-                            Soda — 1 mes
-                        </h3>
+                    <img
+                        src="https://mcasset.cloud/1.21.8/assets/minecraft/textures/item/netherite_boots.png"
+                        alt="Botas de netherita">
 
-                        <p>
-                            Acceso a Soda durante 1 mes.
-                        </p>
+                    <h3>
+                        Botas APG
+                    </h3>
 
-                        <strong>
-                            $9
-                        </strong>
+                    <p>
+                        Botas de netherita APG.
+                    </p>
 
-                        <button>
-                            Comprar
-                        </button>
+                    <strong>
+                        $3
+                    </strong>
 
-                    </div>
-
-
-                    <div class="product-card">
-
-                        <div class="product-emoji">
-                            🥤
-                        </div>
-
-                        <h3>
-                            Soda — 3 meses
-                        </h3>
-
-                        <p>
-                            Acceso a Soda durante 3 meses.
-                        </p>
-
-                        <strong>
-                            $20
-                        </strong>
-
-                        <button>
-                            Comprar
-                        </button>
-
-                    </div>
-
-
-                    <div class="product-card">
-
-                        <div class="product-emoji">
-                            🥤
-                        </div>
-
-                        <h3>
-                            Soda — 1 año
-                        </h3>
-
-                        <p>
-                            Acceso a Soda durante 1 año.
-                        </p>
-
-                        <strong>
-                            $44
-                        </strong>
-
-                        <button>
-                            Comprar
-                        </button>
-
-                    </div>
-
+                    <button>
+                        Comprar
+                    </button>
 
                 </div>
+
+
+                <!-- PANTALONES -->
+
+                <div class="product-card">
+
+                    <img
+                        src="https://mcasset.cloud/1.21.8/assets/minecraft/textures/item/netherite_leggings.png"
+                        alt="Pantalones de netherita">
+
+                    <h3>
+                        Pantalones APG
+                    </h3>
+
+                    <p>
+                        Pantalones de netherita APG.
+                    </p>
+
+                    <strong>
+                        $4
+                    </strong>
+
+                    <button>
+                        Comprar
+                    </button>
+
+                </div>
+
+
+                <!-- CASCO -->
+
+                <div class="product-card">
+
+                    <img
+                        src="https://mcasset.cloud/1.21.8/assets/minecraft/textures/item/netherite_helmet.png"
+                        alt="Casco de netherita">
+
+                    <h3>
+                        Casco APG
+                    </h3>
+
+                    <p>
+                        Casco de netherita APG.
+                    </p>
+
+                    <strong>
+                        $3
+                    </strong>
+
+                    <button>
+                        Comprar
+                    </button>
+
+                </div>
+
+
+                <!-- PECHERA -->
+
+                <div class="product-card">
+
+                    <img
+                        src="https://mcasset.cloud/1.21.8/assets/minecraft/textures/item/netherite_chestplate.png"
+                        alt="Pechera de netherita">
+
+                    <h3>
+                        Pechera APG
+                    </h3>
+
+                    <p>
+                        Pechera de netherita APG.
+                    </p>
+
+                    <strong>
+                        $4
+                    </strong>
+
+                    <button>
+                        Comprar
+                    </button>
+
+                </div>
+
+
+                <!-- ESPADA - CUBO DE TIERRA -->
+
+                <div class="product-card">
+
+                    <img
+                        src="https://mcasset.cloud/1.21.8/assets/minecraft/textures/block/grass_block_top.png"
+                        alt="Cubo de tierra con pasto">
+
+                    <h3>
+                        Espada APG
+                    </h3>
+
+                    <p>
+                        Espada de netherita APG.
+                    </p>
+
+                    <strong>
+                        $6
+                    </strong>
+
+                    <button>
+                        Comprar
+                    </button>
+
+                </div>
+
+
+                <!-- PICO -->
+
+                <div class="product-card">
+
+                    <img
+                        src="https://mcasset.cloud/1.21.8/assets/minecraft/textures/item/netherite_pickaxe.png"
+                        alt="Pico de netherita">
+
+                    <h3>
+                        Pico APG
+                    </h3>
+
+                    <p>
+                        Pico de netherita APG.
+                    </p>
+
+                    <strong>
+                        $11
+                    </strong>
+
+                    <button>
+                        Comprar
+                    </button>
+
+                </div>
+
+
+                <!-- HACHA -->
+
+                <div class="product-card">
+
+                    <img
+                        src="https://mcasset.cloud/1.21.8/assets/minecraft/textures/item/netherite_axe.png"
+                        alt="Hacha de netherita">
+
+                    <h3>
+                        Hacha APG
+                    </h3>
+
+                    <p>
+                        Hacha de netherita APG.
+                    </p>
+
+                    <strong>
+                        $7
+                    </strong>
+
+                    <button>
+                        Comprar
+                    </button>
+
+                </div>
+
+
+                <!-- BALLESTA - CUBO DE TIERRA -->
+
+                <div class="product-card">
+
+                    <img
+                        src="https://mcasset.cloud/1.21.8/assets/minecraft/textures/block/grass_block_top.png"
+                        alt="Cubo de tierra con pasto">
+
+                    <h3>
+                        Ballesta APG
+                    </h3>
+
+                    <p>
+                        Ballesta APG.
+                    </p>
+
+                    <strong>
+                        $11
+                    </strong>
+
+                    <button>
+                        Comprar
+                    </button>
+
+                </div>
+
+
+                <!-- ARCO - CUBO DE TIERRA -->
+
+                <div class="product-card">
+
+                    <img
+                        src="https://mcasset.cloud/1.21.8/assets/minecraft/textures/block/grass_block_top.png"
+                        alt="Cubo de tierra con pasto">
+
+                    <h3>
+                        Arco APG
+                    </h3>
+
+                    <p>
+                        Arco APG.
+                    </p>
+
+                    <strong>
+                        $9
+                    </strong>
+
+                    <button>
+                        Comprar
+                    </button>
+
+                </div>
+
+
+                <!-- KIT COMPLETO -->
+
+                <div class="product-card">
+
+                    <div class="item-placeholder">
+                        📦
+                    </div>
+
+                    <h3>
+                        Kit APG completo
+                    </h3>
+
+                    <p>
+                        Set completo de equipamiento APG.
+                    </p>
+
+                    <strong>
+                        $10
+                    </strong>
+
+                    <button>
+                        Comprar
+                    </button>
+
+                </div>
+
 
             </div>
 
+        </div>
 
-            <!-- =================================
-                 SURVIVAL
-            ================================== -->
 
-            <div
-                id="survival"
-                class="shop-category">
+        <!-- =================================
+             RANGOS
+        ================================== -->
 
-                <div class="discount">
-                    -25%
+        <div
+            id="rangos"
+            class="shop-category">
+
+            <div class="discount">
+                -25%
+            </div>
+
+            <h2>
+                🏆 Rangos
+            </h2>
+
+
+            <div class="products">
+
+
+                <div class="product-card">
+
+                    <div class="product-emoji">
+                        🍞
+                    </div>
+
+                    <h3>
+                        Pan
+                    </h3>
+
+                    <p>
+                        Cosmético de pan.
+                    </p>
+
+                    <strong>
+                        $2
+                    </strong>
+
+                    <button>
+                        Comprar
+                    </button>
+
                 </div>
 
-                <h2>
-                    🌳 Survival clásico
-                </h2>
 
+                <div class="product-card">
 
-                <div class="products">
-
-
-                    <!-- BOTAS -->
-
-                    <div class="product-card">
-
-                        <img
-                            src="https://mcitemgallery.com/images/1.21.1/netherite_boots.png"
-                            alt="Botas de netherita">
-
-                        <h3>
-                            Botas APG
-                        </h3>
-
-                        <p>
-                            Botas de netherita APG.
-                        </p>
-
-                        <strong>
-                            $3
-                        </strong>
-
-                        <button>
-                            Comprar
-                        </button>
-
+                    <div class="product-emoji">
+                        🍅
                     </div>
 
-
-                    <!-- PANTALONES -->
-
-                    <div class="product-card">
-
-                        <img
-                            src="https://mcitemgallery.com/images/1.21.1/netherite_leggings.png"
-                            alt="Pantalones de netherita">
-
-                        <h3>
-                            Pantalones APG
-                        </h3>
-
-                        <p>
-                            Pantalones de netherita APG.
-                        </p>
-
-                        <strong>
-                            $4
-                        </strong>
-
-                        <button>
-                            Comprar
-                        </button>
-
-                    </div>
-
-
-                    <!-- CASCO -->
-
-                    <div class="product-card">
-
-                        <img
-                            src="https://mcitemgallery.com/images/1.21.1/netherite_helmet.png"
-                            alt="Casco de netherita">
-
-                        <h3>
-                            Casco APG
-                        </h3>
-
-                        <p>
-                            Casco de netherita APG.
-                        </p>
-
-                        <strong>
-                            $3
-                        </strong>
-
-                        <button>
-                            Comprar
-                        </button>
-
-                    </div>
-
-
-                    <!-- PECHERA -->
-
-                    <div class="product-card">
-
-                        <img
-                            src="https://mcitemgallery.com/images/1.21.1/netherite_chestplate.png"
-                            alt="Pechera de netherita">
-
-                        <h3>
-                            Pechera APG
-                        </h3>
-
-                        <p>
-                            Pechera de netherita APG.
-                        </p>
-
-                        <strong>
-                            $4
-                        </strong>
-
-                        <button>
-                            Comprar
-                        </button>
-
-                    </div>
-
-
-                    <!-- ESPADA -->
-
-                    <div class="product-card">
-
-                        <div class="item-placeholder">
-                            ⚔️
-                        </div>
-
-                        <h3>
-                            Espada APG
-                        </h3>
-
-                        <p>
-                            Espada de netherita APG.
-                        </p>
-
-                        <strong>
-                            $6
-                        </strong>
-
-                        <button>
-                            Comprar
-                        </button>
-
-                    </div>
-
-
-                    <!-- PICO -->
-
-                    <div class="product-card">
-
-                        <div class="item-placeholder">
-                            ⛏️
-                        </div>
-
-                        <h3>
-                            Pico APG
-                        </h3>
-
-                        <p>
-                            Pico de netherita APG.
-                        </p>
-
-                        <strong>
-                            $11
-                        </strong>
-
-                        <button>
-                            Comprar
-                        </button>
-
-                    </div>
-
-
-                    <!-- HACHA -->
-
-                    <div class="product-card">
-
-                        <div class="item-placeholder">
-                            🪓
-                        </div>
-
-                        <h3>
-                            Hacha APG
-                        </h3>
-
-                        <p>
-                            Hacha de netherita APG.
-                        </p>
-
-                        <strong>
-                            $7
-                        </strong>
-
-                        <button>
-                            Comprar
-                        </button>
-
-                    </div>
-
-
-                    <!-- BALLESTA -->
-
-                    <div class="product-card">
-
-                        <div class="item-placeholder">
-                            🏹
-                        </div>
-
-                        <h3>
-                            Ballesta APG
-                        </h3>
-
-                        <p>
-                            Ballesta APG.
-                        </p>
-
-                        <strong>
-                            $11
-                        </strong>
-
-                        <button>
-                            Comprar
-                        </button>
-
-                    </div>
-
-
-                    <!-- ARCO -->
-
-                    <div class="product-card">
-
-                        <div class="item-placeholder">
-                            🏹
-                        </div>
-
-                        <h3>
-                            Arco APG
-                        </h3>
-
-                        <p>
-                            Arco APG.
-                        </p>
-
-                        <strong>
-                            $9
-                        </strong>
-
-                        <button>
-                            Comprar
-                        </button>
-
-                    </div>
-
-
-                    <!-- KIT -->
-
-                    <div class="product-card">
-
-                        <img
-                            src="https://mcitemgallery.com/images/1.21.1/ender_chest.png"
-                            alt="Cofre de Ender">
-
-                        <h3>
-                            Kit APG completo
-                        </h3>
-
-                        <p>
-                            Set completo de equipamiento APG.
-                        </p>
-
-                        <strong>
-                            $10
-                        </strong>
-
-                        <button>
-                            Comprar
-                        </button>
-
-                    </div>
-
+                    <h3>
+                        Tomate
+                    </h3>
+
+                    <p>
+                        Cosmético de tomate.
+                    </p>
+
+                    <strong>
+                        $5
+                    </strong>
+
+                    <button>
+                        Comprar
+                    </button>
 
                 </div>
+
+
+                <div class="product-card">
+
+                    <div class="product-emoji">
+                        🌶️
+                    </div>
+
+                    <h3>
+                        Peperoni
+                    </h3>
+
+                    <p>
+                        Cosmético de peperoni.
+                    </p>
+
+                    <strong>
+                        $10
+                    </strong>
+
+                    <button>
+                        Comprar
+                    </button>
+
+                </div>
+
+
+                <div class="product-card">
+
+                    <div class="product-emoji">
+                        🍕
+                    </div>
+
+                    <h3>
+                        Pizza
+                    </h3>
+
+                    <p>
+                        Cosmético de pizza.
+                    </p>
+
+                    <strong>
+                        $16
+                    </strong>
+
+                    <button>
+                        Comprar
+                    </button>
+
+                </div>
+
 
             </div>
 
-
-            <!-- =================================
-                 RANGOS
-            ================================== -->
-
-            <div
-                id="rangos"
-                class="shop-category">
-
-                <div class="discount">
-                    -25%
-                </div>
-
-                <h2>
-                    🏆 Rangos
-                </h2>
+        </div>
 
 
-                <div class="products">
+        <!-- =================================
+             ANÁRQUICO
+        ================================== -->
 
+        <div
+            id="anarquico"
+            class="shop-category coming-soon">
 
-                    <div class="product-card">
-
-                        <div class="product-emoji">
-                            🍞
-                        </div>
-
-                        <h3>
-                            Pan
-                        </h3>
-
-                        <p>
-                            Cosmético de pan.
-                        </p>
-
-                        <strong>
-                            $2
-                        </strong>
-
-                        <button>
-                            Comprar
-                        </button>
-
-                    </div>
-
-
-                    <div class="product-card">
-
-                        <div class="product-emoji">
-                            🍅
-                        </div>
-
-                        <h3>
-                            Tomate
-                        </h3>
-
-                        <p>
-                            Cosmético de tomate.
-                        </p>
-
-                        <strong>
-                            $5
-                        </strong>
-
-                        <button>
-                            Comprar
-                        </button>
-
-                    </div>
-
-
-                    <div class="product-card">
-
-                        <div class="product-emoji">
-                            🌶️
-                        </div>
-
-                        <h3>
-                            Peperoni
-                        </h3>
-
-                        <p>
-                            Cosmético de peperoni.
-                        </p>
-
-                        <strong>
-                            $10
-                        </strong>
-
-                        <button>
-                            Comprar
-                        </button>
-
-                    </div>
-
-
-                    <div class="product-card">
-
-                        <div class="product-emoji">
-                            🍕
-                        </div>
-
-                        <h3>
-                            Pizza
-                        </h3>
-
-                        <p>
-                            Cosmético de pizza.
-                        </p>
-
-                        <strong>
-                            $16
-                        </strong>
-
-                        <button>
-                            Comprar
-                        </button>
-
-                    </div>
-
-
-                </div>
-
+            <div class="coming-icon">
+                🚧
             </div>
 
+            <h2>
+                Anárquico
+            </h2>
 
-            <!-- =================================
-                 ANÁRQUICO
-            ================================== -->
+            <p>
+                Próximamente 🚧
+            </p>
 
-            <div
-                id="anarquico"
-                class="shop-category coming-soon">
+        </div>
 
-                <div class="coming-icon">
-                    🚧
-                </div>
 
-                <h2>
-                    Anárquico
-                </h2>
+        <!-- =================================
+             COSMÉTICOS
+        ================================== -->
 
-                <p>
-                    Próximamente 🚧
-                </p>
+        <div
+            id="cosmeticos"
+            class="shop-category coming-soon">
 
+            <div class="coming-icon">
+                🚧
             </div>
 
+            <h2>
+                Cosméticos
+            </h2>
 
-            <!-- =================================
-                 COSMÉTICOS
-            ================================== -->
+            <p>
+                Próximamente 🚧
+            </p>
 
-            <div
-                id="cosmeticos"
-                class="shop-category coming-soon">
-
-                <div class="coming-icon">
-                    🚧
-                </div>
-
-                <h2>
-                    Cosméticos
-                </h2>
-
-                <p>
-                    Próximamente 🚧
-                </p>
-
-            </div>
+        </div>
 
 
-        </section>
+    </section>
 
-    </div>
+</div>
+```
 
 </main>
-
 
 <!-- =========================================
      VENTANA DE PAGO
@@ -699,54 +704,55 @@
     id="payment-modal"
     class="payment-modal">
 
-    <div class="payment-box">
+```
+<div class="payment-box">
 
-        <button
-            class="close-payment">
+    <button
+        class="close-payment">
 
-            ×
+        ×
 
-        </button>
-
-
-        <div class="payment-icon">
-            💳
-        </div>
+    </button>
 
 
-        <h2>
-            Métodos de pago
-        </h2>
-
-
-        <p>
-            Aún no están disponibles los métodos de pago.
-        </p>
-
-
-        <button
-            class="close-button">
-
-            Entendido
-
-        </button>
-
+    <div class="payment-icon">
+        💳
     </div>
+
+
+    <h2>
+        Métodos de pago
+    </h2>
+
+
+    <p>
+        Aún no están disponibles los métodos de pago.
+    </p>
+
+
+    <button
+        class="close-button">
+
+        Entendido
+
+    </button>
+
+</div>
+```
 
 </div>
 
-
 <footer>
 
-    <p>
-        © 2026 APGMC. Todos los derechos reservados.
-    </p>
+```
+<p>
+    © 2026 APGMC. Todos los derechos reservados.
+</p>
+```
 
 </footer>
-
 
 <script src="script.js?v=4"></script>
 
 </body>
 </html>
-```

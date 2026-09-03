@@ -85,7 +85,7 @@ main {
 
 
 /* =====================================================
-   HERO
+   HERO / INICIO
 ===================================================== */
 
 .hero {
@@ -127,16 +127,25 @@ main {
 }
 
 
+/* =====================================================
+   BOTONES DEL INICIO
+===================================================== */
+
 .buttons {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+
+    flex-direction: column;
+
+    align-items: center;
+
     gap: 12px;
 }
 
 
 .main-button {
-    display: inline-flex;
+    width: 230px;
+
+    display: flex;
     align-items: center;
     justify-content: center;
 
@@ -169,6 +178,192 @@ main {
 
 .map-button:hover {
     background: #404763;
+}
+
+
+/* =====================================================
+   REGLAS / INFORMACIÓN
+===================================================== */
+
+.rules-section {
+    width: 100%;
+    min-height: calc(100vh - 140px);
+
+    padding: 60px 20px 70px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #30204d 0%,
+            #0d0f17 45%,
+            #08090d 100%
+        );
+}
+
+
+/* =====================================================
+   ENCABEZADO DE REGLAS / INFORMACIÓN
+===================================================== */
+
+.rules-header {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto 30px;
+
+    padding: 35px 30px;
+
+    background: #10121c;
+
+    border: 1px solid #292d42;
+    border-radius: 18px;
+
+    text-align: center;
+}
+
+
+.rules-icon {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size: 48px;
+}
+
+
+.rules-header h1 {
+    margin-bottom: 10px;
+
+    font-size: 42px;
+    font-weight: 900;
+}
+
+
+.rules-header p {
+    color: #aeb0bb;
+
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   CONTENEDOR DE REGLAS / INFORMACIÓN
+===================================================== */
+
+.rules-container {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+/* =====================================================
+   TARJETA INDIVIDUAL
+===================================================== */
+
+.rule {
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 15px;
+
+    padding: 18px 20px;
+
+    background: #10121c;
+
+    border: 1px solid #292d42;
+    border-radius: 14px;
+
+    transition: 0.2s ease;
+}
+
+
+.rule:hover {
+    border-color: #5865f2;
+
+    transform: translateY(-2px);
+}
+
+
+.rule > span {
+    min-width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #5865f2;
+
+    border-radius: 9px;
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 900;
+}
+
+
+.rule p {
+    flex: 1;
+
+    color: #c9cad1;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+.rule strong {
+    color: white;
+}
+
+
+/* =====================================================
+   AVISO
+===================================================== */
+
+.warning {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 25px auto 0;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 12px;
+
+    padding: 18px 20px;
+
+    background: #171a29;
+
+    border: 1px solid #292d42;
+    border-radius: 14px;
+}
+
+
+.warning > span {
+    font-size: 22px;
+}
+
+
+.warning p {
+    flex: 1;
+
+    color: #aeb0bb;
+
+    font-size: 13px;
+    line-height: 1.6;
 }
 
 
@@ -759,7 +954,7 @@ main {
 }
 
 
-.cart-item-name {
+.cart-item-info h3 {
     color: white;
 
     font-size: 15px;
@@ -769,12 +964,23 @@ main {
 }
 
 
-.cart-item-category {
+.cart-item-info p {
     margin-top: 4px;
 
     color: #777b8c;
 
     font-size: 12px;
+}
+
+
+.cart-item-info strong {
+    display: block;
+
+    margin-top: 5px;
+
+    color: white;
+
+    font-size: 14px;
 }
 
 
@@ -832,6 +1038,18 @@ main {
 }
 
 
+.cart-item-controls span {
+    min-width: 25px;
+
+    color: white;
+
+    text-align: center;
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+
 .cart-item-total {
     min-width: 65px;
 
@@ -844,6 +1062,11 @@ main {
 }
 
 
+.cart-item-total strong {
+    display: block;
+}
+
+
 .remove-cart-item {
     width: 30px;
     height: 30px;
@@ -851,6 +1074,9 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    margin-top: 7px;
+    margin-left: auto;
 
     padding: 0;
 
@@ -886,6 +1112,22 @@ main {
     text-align: center;
 
     font-size: 14px;
+}
+
+
+.empty-cart h3 {
+    margin-top: 10px;
+
+    color: white;
+
+    font-size: 18px;
+}
+
+
+.empty-cart p {
+    margin-top: 6px;
+
+    color: #777b8c;
 }
 
 
@@ -1082,6 +1324,36 @@ footer p {
 
     .hero p {
         font-size: 16px;
+    }
+
+
+    .main-button {
+        width: 220px;
+    }
+
+
+    .rules-section {
+        padding: 40px 15px 60px;
+    }
+
+
+    .rules-header {
+        padding: 28px 20px;
+    }
+
+
+    .rules-header h1 {
+        font-size: 34px;
+    }
+
+
+    .rule {
+        padding: 15px;
+    }
+
+
+    .warning {
+        padding: 15px;
     }
 
 

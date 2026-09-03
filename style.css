@@ -60,6 +60,7 @@ nav {
 nav a {
     color: #b8b8c8;
     text-decoration: none;
+
     font-size: 15px;
     font-weight: 600;
 
@@ -104,13 +105,16 @@ main {
 .hero h1 {
     font-size: 64px;
     font-weight: 900;
+
     margin-bottom: 10px;
 }
 
 
 .hero p {
     color: #a8a8b8;
+
     font-size: 19px;
+
     margin-bottom: 35px;
 }
 
@@ -162,6 +166,7 @@ main {
 
 .main-button:hover {
     background: #4752c4;
+
     transform: translateY(-2px);
 }
 
@@ -352,30 +357,20 @@ footer {
 .shop-title {
     text-align: center;
 
+    font-size: 42px;
+    font-weight: 800;
+
     margin-bottom: 35px;
 }
 
 
-.shop-title h1 {
-    font-size: 42px;
-    font-weight: 800;
-
-    margin-bottom: 10px;
-}
-
-
-.shop-title p {
-    color: #9999aa;
-}
-
-
 /* =====================================================
-   TIENDA - DISTRIBUCIÓN
+   SHOP WRAPPER
    CATEGORÍAS IZQUIERDA
    PRODUCTOS DERECHA
 ===================================================== */
 
-.shop-layout {
+.shop-wrapper {
     width: 100%;
 
     display: grid;
@@ -426,7 +421,6 @@ footer {
     text-align: left;
 
     font-size: 14px;
-
     font-weight: 700;
 
     cursor: pointer;
@@ -450,14 +444,19 @@ footer {
 
 
 /* =====================================================
-   CONTENIDO DE LA TIENDA
+   CONTENIDO
 ===================================================== */
 
 .shop-content {
     width: 100%;
+
     min-width: 0;
 }
 
+
+/* =====================================================
+   CATEGORÍA
+===================================================== */
 
 .shop-category {
     display: none;
@@ -490,7 +489,7 @@ footer {
    PRODUCTOS
 ===================================================== */
 
-.products-grid {
+.products {
     width: 100%;
 
     display: grid;
@@ -509,7 +508,7 @@ footer {
 
     border-radius: 12px;
 
-    padding: 18px;
+    padding: 20px;
 
     text-align: center;
 
@@ -532,7 +531,23 @@ footer {
 
     object-fit: contain;
 
-    margin-bottom: 12px;
+    margin: 0 auto 15px;
+}
+
+
+.product-emoji,
+.item-placeholder {
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 15px;
+
+    font-size: 55px;
 }
 
 
@@ -543,14 +558,25 @@ footer {
 }
 
 
+.product-card p {
+    color: #9292a3;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    margin-bottom: 12px;
+}
+
+
 .product-card strong {
     display: block;
 
     color: #ffffff;
 
-    font-size: 17px;
+    font-size: 18px;
 
-    margin-bottom: 14px;
+    margin-bottom: 15px;
 }
 
 
@@ -581,6 +607,29 @@ footer {
 
 
 /* =====================================================
+   DESCUENTO
+===================================================== */
+
+.discount {
+    display: inline-block;
+
+    padding: 5px 9px;
+
+    margin-bottom: 10px;
+
+    border-radius: 6px;
+
+    background: #5865f2;
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+
+/* =====================================================
    PRÓXIMAMENTE
 ===================================================== */
 
@@ -589,10 +638,19 @@ footer {
 
     display: flex;
 
+    flex-direction: column;
+
     align-items: center;
     justify-content: center;
 
     text-align: center;
+}
+
+
+.coming-soon .coming-icon {
+    font-size: 50px;
+
+    margin-bottom: 15px;
 }
 
 
@@ -612,6 +670,7 @@ footer {
 
 .checkout-area {
     display: flex;
+
     justify-content: center;
 
     margin-top: 30px;
@@ -720,7 +779,7 @@ footer {
 
 
 /* =====================================================
-   X DEL MODAL
+   X
 ===================================================== */
 
 .close-cart {
@@ -766,6 +825,7 @@ footer {
 
 .cart-items {
     display: flex;
+
     flex-direction: column;
 
     gap: 12px;
@@ -774,6 +834,7 @@ footer {
 
 .cart-item {
     display: flex;
+
     align-items: center;
 
     justify-content: space-between;
@@ -859,6 +920,7 @@ footer {
 
 .cart-item-total {
     display: flex;
+
     flex-direction: column;
 
     align-items: flex-end;
@@ -914,6 +976,7 @@ footer {
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     margin-top: 25px;
@@ -937,7 +1000,7 @@ footer {
 
 
 /* =====================================================
-   BOTONES DEL CARRITO
+   ACCIONES DEL CARRITO
 ===================================================== */
 
 .cart-actions {
@@ -992,7 +1055,7 @@ footer {
 
 
 /* =====================================================
-   MODAL PRODUCTO AÑADIDO
+   MODAL AÑADIDO
 ===================================================== */
 
 .added-box {
@@ -1062,20 +1125,15 @@ footer {
     }
 
 
-    /*
-       En pantallas pequeñas la tienda sí puede
-       pasar a una columna.
-    */
+    /* En pantallas pequeñas sí se apila */
 
-    .shop-layout {
+    .shop-wrapper {
         grid-template-columns: 1fr;
     }
 
 
     .shop-menu {
         width: 100%;
-
-        display: flex;
 
         flex-direction: row;
 

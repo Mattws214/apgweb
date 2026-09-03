@@ -1,6 +1,5 @@
 /* =====================================================
    APGMC - STYLE.CSS
-   DISEÑO GENERAL
 ===================================================== */
 
 
@@ -122,25 +121,23 @@ main {
 ===================================================== */
 
 .buttons {
-    display: flex;
+    width: 100%;
+    max-width: 500px;
 
+    margin: 0 auto;
+
+    display: flex;
     flex-wrap: wrap;
 
     justify-content: center;
     align-items: center;
 
     gap: 12px;
-
-    width: 100%;
-    max-width: 500px;
-
-    margin: 0 auto;
 }
 
 
 .main-button {
     width: 230px;
-
     min-height: 48px;
 
     display: flex;
@@ -204,6 +201,7 @@ footer {
 
 .rules-header {
     text-align: center;
+
     margin-bottom: 40px;
 }
 
@@ -372,12 +370,19 @@ footer {
 
 
 /* =====================================================
-   TIENDA - CONTENEDOR
+   TIENDA - DISTRIBUCIÓN
+   CATEGORÍAS IZQUIERDA
+   PRODUCTOS DERECHA
 ===================================================== */
 
 .shop-layout {
-    display: flex;
-    align-items: flex-start;
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 220px minmax(0, 1fr);
+
+    align-items: start;
 
     gap: 25px;
 }
@@ -389,8 +394,6 @@ footer {
 
 .shop-menu {
     width: 220px;
-
-    flex-shrink: 0;
 
     background: #14141f;
 
@@ -447,18 +450,19 @@ footer {
 
 
 /* =====================================================
-   CONTENIDO DE CATEGORÍA
+   CONTENIDO DE LA TIENDA
 ===================================================== */
 
 .shop-content {
-    flex: 1;
-
+    width: 100%;
     min-width: 0;
 }
 
 
 .shop-category {
     display: none;
+
+    width: 100%;
 
     background: #14141f;
 
@@ -487,6 +491,8 @@ footer {
 ===================================================== */
 
 .products-grid {
+    width: 100%;
+
     display: grid;
 
     grid-template-columns:
@@ -575,11 +581,13 @@ footer {
 
 
 /* =====================================================
-   CATEGORÍA PRÓXIMAMENTE
+   PRÓXIMAMENTE
 ===================================================== */
 
 .coming-soon {
     min-height: 300px;
+
+    display: flex;
 
     align-items: center;
     justify-content: center;
@@ -710,6 +718,10 @@ footer {
     padding: 30px;
 }
 
+
+/* =====================================================
+   X DEL MODAL
+===================================================== */
 
 .close-cart {
     position: absolute;
@@ -867,6 +879,10 @@ footer {
 }
 
 
+/* =====================================================
+   CARRITO VACÍO
+===================================================== */
+
 .empty-cart {
     text-align: center;
 
@@ -976,7 +992,7 @@ footer {
 
 
 /* =====================================================
-   MODAL "AÑADIDO"
+   MODAL PRODUCTO AÑADIDO
 ===================================================== */
 
 .added-box {
@@ -1046,13 +1062,20 @@ footer {
     }
 
 
+    /*
+       En pantallas pequeñas la tienda sí puede
+       pasar a una columna.
+    */
+
     .shop-layout {
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
 
 
     .shop-menu {
         width: 100%;
+
+        display: flex;
 
         flex-direction: row;
 
@@ -1070,6 +1093,10 @@ footer {
 
 }
 
+
+/* =====================================================
+   MÓVILES
+===================================================== */
 
 @media (max-width: 550px) {
 

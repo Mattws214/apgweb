@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<title>APGMC | Tienda</title>
+    <title>APGMC | Tienda</title>
 
-<link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css">
 
 </head>
 
@@ -18,1813 +21,1212 @@
 <body>
 
 
+<!-- =========================================
+     HEADER
+========================================= -->
+
 <header>
 
-<div class="logo">
-    APGMC
-</div>
+    <div class="logo">
+        APGMC
+    </div>
 
+    <nav>
 
-<nav>
+        <a href="index.html">
+            Inicio
+        </a>
 
-<a href="index.html">
-    Inicio
-</a>
+        <a href="reglas.html">
+            Reglas
+        </a>
 
-<a href="reglas.html">
-    Reglas
-</a>
+        <a href="servidor.html">
+            Dirección IP
+        </a>
 
-<a href="servidor.html">
-    Dirección IP
-</a>
+        <a href="tienda.html">
+            Tienda
+        </a>
 
-<a href="tienda.html">
-    Tienda
-</a>
+        <a href="informacion.html">
+            Información
+        </a>
 
-<a href="informacion.html">
-    Información
-</a>
+        <a
+            href="https://discord.gg/gfNhf58B48"
+            target="_blank">
 
-<a
-    href="https://discord.gg/gfNhf58B48"
-    target="_blank">
-    Discord
-</a>
+            Discord
 
-</nav>
+        </a>
+
+    </nav>
 
 </header>
 
 
+
+<!-- =========================================
+     TIENDA
+========================================= -->
+
 <main class="shop-page">
 
 
-<h1 class="shop-title">
-    Tienda APGMC
-</h1>
+    <h1 class="shop-title">
+        Tienda APGMC
+    </h1>
 
 
-<!-- =====================================
-     BOTÓN CHECKOUT
-====================================== -->
+    <!-- =====================================
+         CHECKOUT
+    ====================================== -->
 
-<div style="
-    width: 100%;
-    max-width: 1200px;
-    margin: -20px auto 25px;
-    display: flex;
-    justify-content: flex-end;
-">
+    <div class="checkout-container">
 
-<a
-    href="#"
-    class="checkout-button"
-    style="
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 12px 20px;
-        background: #5865f2;
-        border: none;
-        border-radius: 10px;
-        color: white;
-        font-family: 'Inter', Arial, sans-serif;
-        font-size: 14px;
-        font-weight: 700;
-        text-decoration: none;
-        cursor: pointer;
-        transition: 0.2s ease;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-    "
-    onmouseover="this.style.background='#4752c4'; this.style.transform='translateY(-2px)'"
-    onmouseout="this.style.background='#5865f2'; this.style.transform='translateY(0)'">
+        <button
+            id="checkout-button"
+            class="checkout-button">
 
-    🛒 Checkout
+            🛒 Checkout
 
-</a>
+            <span
+                id="cart-count"
+                class="cart-count">
 
-</div>
+                0
 
+            </span>
 
-<div class="shop-wrapper">
+        </button>
 
+    </div>
 
-<!-- =====================================
-     CATEGORÍAS
-====================================== -->
 
-<div class="shop-menu">
 
+    <!-- =====================================
+         CONTENEDOR PRINCIPAL
+    ====================================== -->
 
-<button
-    class="active"
-    data-category="soda">
+    <div class="shop-wrapper">
 
-    🥤 Soda
 
-</button>
+        <!-- =================================
+             MENÚ DE CATEGORÍAS
+        ================================== -->
 
+        <aside class="shop-menu">
 
-<button
-    data-category="survival">
 
-    🌳 Survival clásico
+            <button
+                data-category="soda">
 
-</button>
+                🥤 Soda
 
+            </button>
 
-<button
-    data-category="anarquico">
 
-    ⚔️ Anárquico
+            <button
+                data-category="survival">
 
-</button>
+                🌳 Survival clásico
 
+            </button>
 
-<button
-    data-category="earth">
 
-    🌎 Earth
+            <button
+                data-category="anarquico">
 
-</button>
+                ⚔️ Anárquico
 
+            </button>
 
-<button
-    data-category="dinero">
 
-    💵 Dinero
+            <button
+                data-category="earth">
 
-</button>
+                🌎 Earth
 
+            </button>
 
-<button
-    data-category="rangos">
 
-    🏆 Rangos
+            <button
+                data-category="dinero">
 
-</button>
+                💵 Dinero
 
+            </button>
 
-<button
-    data-category="cosmeticos">
 
-    🎨 Cosméticos
+            <button
+                data-category="rangos">
 
-</button>
+                🏆 Rangos
 
+            </button>
 
-</div>
 
+            <button
+                data-category="cosmeticos">
 
-<!-- =====================================
-     CONTENIDO
-====================================== -->
+                🎨 Cosméticos
 
-<section class="shop-content">
+            </button>
 
 
-<!-- =================================
-     SODA
-================================== -->
+        </aside>
 
-<div
-    id="soda"
-    class="shop-category active">
 
 
-<div class="discount">
-    -25%
-</div>
+        <!-- =================================
+             CONTENIDO
+        ================================== -->
 
+        <section class="shop-content">
 
-<h2>
-    🥤 Soda
-</h2>
 
+            <!-- =============================
+                 SODA
+            ============================== -->
 
-<div class="products">
+            <div
+                id="soda"
+                class="shop-category">
 
+                <h2>
+                    🥤 Soda
+                </h2>
 
-<div class="product-card">
+                <p>
+                    Compra Soda para disfrutar de beneficios
+                    especiales dentro de APGMC.
+                </p>
 
-<div class="product-emoji">
-    🥤
-</div>
 
-<h3>
-    Soda — 1 mes
-</h3>
+                <div class="products">
 
-<p>
-    Acceso a Soda durante 1 mes.
-</p>
 
-<strong>
-    $9
-</strong>
+                    <div class="product-card">
 
-<button>
-    Añadir al carrito
-</button>
+                        <div class="product-emoji">
+                            🥤
+                        </div>
 
-</div>
+                        <h3>
+                            Soda — 1 mes
+                        </h3>
 
+                        <p>
+                            Soda durante 1 mes.
+                        </p>
 
-<div class="product-card">
+                        <strong>
+                            $9
+                        </strong>
 
-<div class="product-emoji">
-    🥤
-</div>
+                        <button>
+                            Añadir al carrito
+                        </button>
 
-<h3>
-    Soda — 3 meses
-</h3>
+                    </div>
 
-<p>
-    Acceso a Soda durante 3 meses.
-</p>
 
-<strong>
-    $20
-</strong>
 
-<button>
-    Añadir al carrito
-</button>
+                    <div class="product-card">
 
-</div>
+                        <div class="product-emoji">
+                            🥤
+                        </div>
 
+                        <h3>
+                            Soda — 3 meses
+                        </h3>
 
-<div class="product-card">
+                        <p>
+                            Soda durante 3 meses.
+                        </p>
 
-<div class="product-emoji">
-    🥤
-</div>
+                        <strong>
+                            $20
+                        </strong>
 
-<h3>
-    Soda — 1 año
-</h3>
+                        <button>
+                            Añadir al carrito
+                        </button>
 
-<p>
-    Acceso a Soda durante 1 año.
-</p>
+                    </div>
 
-<strong>
-    $44
-</strong>
 
-<button>
-    Añadir al carrito
-</button>
 
-</div>
+                    <div class="product-card">
 
+                        <div class="product-emoji">
+                            🥤
+                        </div>
 
-</div>
+                        <h3>
+                            Soda — 1 año
+                        </h3>
 
-</div>
+                        <p>
+                            Soda durante 1 año.
+                        </p>
 
+                        <strong>
+                            $44
+                        </strong>
 
-<!-- =================================
-     SURVIVAL CLÁSICO
-================================== -->
+                        <button>
+                            Añadir al carrito
+                        </button>
 
-<div
-    id="survival"
-    class="shop-category">
+                    </div>
 
 
-<div class="discount">
-    -25%
-</div>
+                </div>
 
+            </div>
 
-<h2>
-    🌳 Survival clásico
-</h2>
 
 
-<div class="products">
+            <!-- =============================
+                 SURVIVAL
+            ============================== -->
 
+            <div
+                id="survival"
+                class="shop-category">
 
-<div class="product-card">
+                <h2>
+                    🌳 Survival clásico
+                </h2>
 
-<img
-    src="imagenes/netherite_boots.png"
-    alt="Botas de netherita">
+                <p>
+                    Productos especiales para Survival clásico.
+                </p>
 
-<h3>
-    Botas APG
-</h3>
 
-<p>
-    Botas de netherita APG.
-</p>
+                <div class="products">
 
-<strong>
-    $3
-</strong>
 
-<button>
-    Añadir al carrito
-</button>
+                    <div class="product-card">
 
-</div>
+                        <img
+                            src="imagenes/netherite_boots.png"
+                            alt="Botas APG">
 
+                        <h3>
+                            Botas APG
+                        </h3>
 
-<div class="product-card">
+                        <p>
+                            Botas de netherite para Survival clásico.
+                        </p>
 
-<img
-    src="imagenes/netherite_leggings.png"
-    alt="Pantalones de netherita">
+                        <strong>
+                            $3
+                        </strong>
 
-<h3>
-    Pantalones APG
-</h3>
+                        <button>
+                            Añadir al carrito
+                        </button>
 
-<p>
-    Pantalones de netherita APG.
-</p>
+                    </div>
 
-<strong>
-    $4
-</strong>
 
-<button>
-    Añadir al carrito
-</button>
+                    <div class="product-card">
 
-</div>
+                        <img
+                            src="imagenes/netherite_leggings.png"
+                            alt="Pantalones APG">
 
+                        <h3>
+                            Pantalones APG
+                        </h3>
 
-<div class="product-card">
+                        <p>
+                            Pantalones de netherite para Survival clásico.
+                        </p>
 
-<img
-    src="imagenes/netherite_helmet.png"
-    alt="Casco de netherita">
+                        <strong>
+                            $4
+                        </strong>
 
-<h3>
-    Casco APG
-</h3>
+                        <button>
+                            Añadir al carrito
+                        </button>
 
-<p>
-    Casco de netherita APG.
-</p>
+                    </div>
 
-<strong>
-    $3
-</strong>
 
-<button>
-    Añadir al carrito
-</button>
+                    <div class="product-card">
 
-</div>
+                        <img
+                            src="imagenes/netherite_helmet.png"
+                            alt="Casco APG">
 
+                        <h3>
+                            Casco APG
+                        </h3>
 
-<div class="product-card">
+                        <p>
+                            Casco de netherite para Survival clásico.
+                        </p>
 
-<img
-    src="imagenes/netherite_chestplate.png"
-    alt="Pechera de netherita">
+                        <strong>
+                            $3
+                        </strong>
 
-<h3>
-    Pechera APG
-</h3>
+                        <button>
+                            Añadir al carrito
+                        </button>
 
-<p>
-    Pechera de netherita APG.
-</p>
+                    </div>
 
-<strong>
-    $4
-</strong>
 
-<button>
-    Añadir al carrito
-</button>
+                    <div class="product-card">
 
-</div>
+                        <img
+                            src="imagenes/netherite_chestplate.png"
+                            alt="Pechera APG">
 
+                        <h3>
+                            Pechera APG
+                        </h3>
 
-<div class="product-card">
+                        <p>
+                            Pechera de netherite para Survival clásico.
+                        </p>
 
-<img
-    src="imagenes/netherite_sword.png"
-    alt="Espada de netherita">
+                        <strong>
+                            $4
+                        </strong>
 
-<h3>
-    Espada APG
-</h3>
+                        <button>
+                            Añadir al carrito
+                        </button>
 
-<p>
-    Espada de netherita APG.
-</p>
+                    </div>
 
-<strong>
-    $6
-</strong>
 
-<button>
-    Añadir al carrito
-</button>
+                    <div class="product-card">
 
-</div>
+                        <img
+                            src="imagenes/netherite_sword.png"
+                            alt="Espada APG">
 
+                        <h3>
+                            Espada APG
+                        </h3>
 
-<div class="product-card">
+                        <p>
+                            Espada de netherite para Survival clásico.
+                        </p>
 
-<img
-    src="imagenes/netherite_pickaxe.png"
-    alt="Pico de netherita">
+                        <strong>
+                            $6
+                        </strong>
 
-<h3>
-    Pico APG
-</h3>
+                        <button>
+                            Añadir al carrito
+                        </button>
 
-<p>
-    Pico de netherita APG.
-</p>
+                    </div>
 
-<strong>
-    $11
-</strong>
 
-<button>
-    Añadir al carrito
-</button>
+                    <div class="product-card">
 
-</div>
+                        <img
+                            src="imagenes/netherite_pickaxe.png"
+                            alt="Pico APG">
 
+                        <h3>
+                            Pico APG
+                        </h3>
 
-<div class="product-card">
+                        <p>
+                            Pico de netherite para Survival clásico.
+                        </p>
 
-<img
-    src="imagenes/netherite_axe.png"
-    alt="Hacha de netherita">
+                        <strong>
+                            $11
+                        </strong>
 
-<h3>
-    Hacha APG
-</h3>
+                        <button>
+                            Añadir al carrito
+                        </button>
 
-<p>
-    Hacha de netherita APG.
-</p>
+                    </div>
 
-<strong>
-    $7
-</strong>
 
-<button>
-    Añadir al carrito
-</button>
+                    <div class="product-card">
 
-</div>
+                        <img
+                            src="imagenes/netherite_axe.png"
+                            alt="Hacha APG">
 
+                        <h3>
+                            Hacha APG
+                        </h3>
 
-<div class="product-card">
+                        <p>
+                            Hacha de netherite para Survival clásico.
+                        </p>
 
-<img
-    src="imagenes/crossbow.png"
-    alt="Ballesta">
+                        <strong>
+                            $7
+                        </strong>
 
-<h3>
-    Ballesta APG
-</h3>
+                        <button>
+                            Añadir al carrito
+                        </button>
 
-<p>
-    Ballesta APG.
-</p>
+                    </div>
 
-<strong>
-    $11
-</strong>
 
-<button>
-    Añadir al carrito
-</button>
+                    <div class="product-card">
 
-</div>
+                        <img
+                            src="imagenes/crossbow.png"
+                            alt="Ballesta">
 
+                        <h3>
+                            Ballesta APG
+                        </h3>
 
-<div class="product-card">
+                        <p>
+                            Ballesta para Survival clásico.
+                        </p>
 
-<img
-    src="imagenes/bow.png"
-    alt="Arco">
+                        <strong>
+                            $11
+                        </strong>
 
-<h3>
-    Arco APG
-</h3>
+                        <button>
+                            Añadir al carrito
+                        </button>
 
-<p>
-    Arco APG.
-</p>
+                    </div>
 
-<strong>
-    $9
-</strong>
 
-<button>
-    Añadir al carrito
-</button>
+                    <div class="product-card">
 
-</div>
+                        <img
+                            src="imagenes/bow.png"
+                            alt="Arco">
 
+                        <h3>
+                            Arco APG
+                        </h3>
 
-<div class="product-card">
+                        <p>
+                            Arco para Survival clásico.
+                        </p>
 
-<img
-    src="imagenes/ender_chest.png"
-    alt="Cofre de Ender">
+                        <strong>
+                            $9
+                        </strong>
 
-<h3>
-    Kit APG (completo)
-</h3>
+                        <button>
+                            Añadir al carrito
+                        </button>
 
-<p>
-    Set completo de equipamiento APG.
-</p>
+                    </div>
 
-<strong>
-    $20
-</strong>
 
-<button>
-    Añadir al carrito
-</button>
+                    <div class="product-card">
 
-</div>
+                        <img
+                            src="imagenes/ender_chest.png"
+                            alt="Kit APG">
 
+                        <h3>
+                            Kit APG
+                        </h3>
 
-</div>
+                        <p>
+                            Kit APG completo para Survival clásico.
+                        </p>
 
-</div>
+                        <strong>
+                            $20
+                        </strong>
 
+                        <button>
+                            Añadir al carrito
+                        </button>
 
-<!-- =================================
-     ANÁRQUICO
-================================== -->
+                    </div>
 
-<div
-    id="anarquico"
-    class="shop-category">
 
+                </div>
 
-<div class="discount">
-    -25%
-</div>
+            </div>
 
 
-<h2>
-    ⚔️ Anárquico
-</h2>
 
+            <!-- =============================
+                 ANÁRQUICO
+            ============================== -->
 
-<div class="products">
+            <div
+                id="anarquico"
+                class="shop-category">
 
+                <h2>
+                    ⚔️ Anárquico
+                </h2>
 
-<div class="product-card">
+                <p>
+                    Productos especiales para Anárquico.
+                </p>
 
-<img
-    src="imagenes/netherite_boots.png"
-    alt="Botas de netherita">
 
-<h3>
-    Botas APG
-</h3>
+                <div class="products">
 
-<p>
-    Botas de netherita APG para Anárquico.
-</p>
 
-<strong>
-    $3
-</strong>
+                    <div class="product-card">
+                        <img src="imagenes/netherite_boots.png" alt="Botas APG">
+                        <h3>Botas APG</h3>
+                        <p>Botas de netherite para Anárquico.</p>
+                        <strong>$3</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<button>
-    Añadir al carrito
-</button>
 
-</div>
+                    <div class="product-card">
+                        <img src="imagenes/netherite_leggings.png" alt="Pantalones APG">
+                        <h3>Pantalones APG</h3>
+                        <p>Pantalones de netherite para Anárquico.</p>
+                        <strong>$4</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
 
-<div class="product-card">
+                    <div class="product-card">
+                        <img src="imagenes/netherite_helmet.png" alt="Casco APG">
+                        <h3>Casco APG</h3>
+                        <p>Casco de netherite para Anárquico.</p>
+                        <strong>$3</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<img
-    src="imagenes/netherite_leggings.png"
-    alt="Pantalones de netherita">
 
-<h3>
-    Pantalones APG
-</h3>
+                    <div class="product-card">
+                        <img src="imagenes/netherite_chestplate.png" alt="Pechera APG">
+                        <h3>Pechera APG</h3>
+                        <p>Pechera de netherite para Anárquico.</p>
+                        <strong>$4</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<p>
-    Pantalones de netherita APG para Anárquico.
-</p>
 
-<strong>
-    $4
-</strong>
+                    <div class="product-card">
+                        <img src="imagenes/netherite_sword.png" alt="Espada APG">
+                        <h3>Espada APG</h3>
+                        <p>Espada de netherite para Anárquico.</p>
+                        <strong>$6</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<button>
-    Añadir al carrito
-</button>
 
-</div>
+                    <div class="product-card">
+                        <img src="imagenes/netherite_pickaxe.png" alt="Pico APG">
+                        <h3>Pico APG</h3>
+                        <p>Pico de netherite para Anárquico.</p>
+                        <strong>$11</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
 
-<div class="product-card">
+                    <div class="product-card">
+                        <img src="imagenes/netherite_axe.png" alt="Hacha APG">
+                        <h3>Hacha APG</h3>
+                        <p>Hacha de netherite para Anárquico.</p>
+                        <strong>$7</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<img
-    src="imagenes/netherite_helmet.png"
-    alt="Casco de netherita">
 
-<h3>
-    Casco APG
-</h3>
+                    <div class="product-card">
+                        <img src="imagenes/crossbow.png" alt="Ballesta">
+                        <h3>Ballesta APG</h3>
+                        <p>Ballesta para Anárquico.</p>
+                        <strong>$11</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<p>
-    Casco de netherita APG para Anárquico.
-</p>
 
-<strong>
-    $3
-</strong>
+                    <div class="product-card">
+                        <img src="imagenes/bow.png" alt="Arco">
+                        <h3>Arco APG</h3>
+                        <p>Arco para Anárquico.</p>
+                        <strong>$9</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<button>
-    Añadir al carrito
-</button>
 
-</div>
+                    <div class="product-card">
+                        <img src="imagenes/ender_chest.png" alt="Kit APG">
+                        <h3>Kit APG</h3>
+                        <p>Kit APG completo para Anárquico.</p>
+                        <strong>$20</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
 
-<div class="product-card">
+                </div>
 
-<img
-    src="imagenes/netherite_chestplate.png"
-    alt="Pechera de netherita">
+            </div>
 
-<h3>
-    Pechera APG
-</h3>
 
-<p>
-    Pechera de netherita APG para Anárquico.
-</p>
 
-<strong>
-    $4
-</strong>
+            <!-- =============================
+                 EARTH
+            ============================== -->
 
-<button>
-    Añadir al carrito
-</button>
+            <div
+                id="earth"
+                class="shop-category">
 
-</div>
+                <h2>
+                    🌎 Earth
+                </h2>
 
+                <p>
+                    Productos especiales para Earth.
+                </p>
 
-<div class="product-card">
 
-<img
-    src="imagenes/netherite_sword.png"
-    alt="Espada de netherita">
+                <div class="products">
 
-<h3>
-    Espada APG
-</h3>
 
-<p>
-    Espada de netherita APG para Anárquico.
-</p>
+                    <div class="product-card">
+                        <img src="imagenes/netherite_boots.png" alt="Botas APG">
+                        <h3>Botas APG</h3>
+                        <p>Botas de netherite para Earth.</p>
+                        <strong>$3</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<strong>
-    $6
-</strong>
 
-<button>
-    Añadir al carrito
-</button>
+                    <div class="product-card">
+                        <img src="imagenes/netherite_leggings.png" alt="Pantalones APG">
+                        <h3>Pantalones APG</h3>
+                        <p>Pantalones de netherite para Earth.</p>
+                        <strong>$4</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-</div>
 
+                    <div class="product-card">
+                        <img src="imagenes/netherite_helmet.png" alt="Casco APG">
+                        <h3>Casco APG</h3>
+                        <p>Casco de netherite para Earth.</p>
+                        <strong>$3</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<div class="product-card">
 
-<img
-    src="imagenes/netherite_pickaxe.png"
-    alt="Pico de netherita">
+                    <div class="product-card">
+                        <img src="imagenes/netherite_chestplate.png" alt="Pechera APG">
+                        <h3>Pechera APG</h3>
+                        <p>Pechera de netherite para Earth.</p>
+                        <strong>$4</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<h3>
-    Pico APG
-</h3>
 
-<p>
-    Pico de netherita APG para Anárquico.
-</p>
+                    <div class="product-card">
+                        <img src="imagenes/netherite_sword.png" alt="Espada APG">
+                        <h3>Espada APG</h3>
+                        <p>Espada de netherite para Earth.</p>
+                        <strong>$6</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<strong>
-    $11
-</strong>
 
-<button>
-    Añadir al carrito
-</button>
+                    <div class="product-card">
+                        <img src="imagenes/netherite_pickaxe.png" alt="Pico APG">
+                        <h3>Pico APG</h3>
+                        <p>Pico de netherite para Earth.</p>
+                        <strong>$11</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-</div>
 
+                    <div class="product-card">
+                        <img src="imagenes/netherite_axe.png" alt="Hacha APG">
+                        <h3>Hacha APG</h3>
+                        <p>Hacha de netherite para Earth.</p>
+                        <strong>$7</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<div class="product-card">
 
-<img
-    src="imagenes/netherite_axe.png"
-    alt="Hacha de netherita">
+                    <div class="product-card">
+                        <img src="imagenes/crossbow.png" alt="Ballesta">
+                        <h3>Ballesta APG</h3>
+                        <p>Ballesta para Earth.</p>
+                        <strong>$11</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<h3>
-    Hacha APG
-</h3>
 
-<p>
-    Hacha APG para Anárquico.
-</p>
+                    <div class="product-card">
+                        <img src="imagenes/bow.png" alt="Arco">
+                        <h3>Arco APG</h3>
+                        <p>Arco para Earth.</p>
+                        <strong>$9</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<strong>
-    $7
-</strong>
 
-<button>
-    Añadir al carrito
-</button>
+                    <div class="product-card">
+                        <img src="imagenes/ender_chest.png" alt="Kit APG">
+                        <h3>Kit APG</h3>
+                        <p>Kit APG completo para Earth.</p>
+                        <strong>$20</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-</div>
 
+                </div>
 
-<div class="product-card">
+            </div>
 
-<img
-    src="imagenes/crossbow.png"
-    alt="Ballesta">
 
-<h3>
-    Ballesta APG
-</h3>
 
-<p>
-    Ballesta APG para Anárquico.
-</p>
+            <!-- =============================
+                 DINERO
+            ============================== -->
 
-<strong>
-    $11
-</strong>
+            <div
+                id="dinero"
+                class="shop-category">
 
-<button>
-    Añadir al carrito
-</button>
+                <h2>
+                    💵 Dinero
+                </h2>
 
-</div>
+                <p>
+                    Compra dinero para utilizar dentro del servidor.
+                </p>
 
 
-<div class="product-card">
+                <div class="products">
 
-<img
-    src="imagenes/bow.png"
-    alt="Arco">
 
-<h3>
-    Arco APG
-</h3>
+                    <div class="product-card">
+                        <div class="product-emoji">💵</div>
+                        <h3>$1,000</h3>
+                        <p>Obtén $1,000 dentro del servidor.</p>
+                        <strong>$2</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<p>
-    Arco APG para Anárquico.
-</p>
 
-<strong>
-    $9
-</strong>
+                    <div class="product-card">
+                        <div class="product-emoji">💵</div>
+                        <h3>$10,000</h3>
+                        <p>Obtén $10,000 dentro del servidor.</p>
+                        <strong>$10</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<button>
-    Añadir al carrito
-</button>
 
-</div>
+                    <div class="product-card">
+                        <div class="product-emoji">💵</div>
+                        <h3>$100,000</h3>
+                        <p>Obtén $100,000 dentro del servidor.</p>
+                        <strong>$15</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
 
-<div class="product-card">
+                    <div class="product-card">
+                        <div class="product-emoji">💵</div>
+                        <h3>$500,000</h3>
+                        <p>Obtén $500,000 dentro del servidor.</p>
+                        <strong>$25</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<img
-    src="imagenes/ender_chest.png"
-    alt="Cofre de Ender">
 
-<h3>
-    Kit APG (completo)
-</h3>
+                    <div class="product-card">
+                        <div class="product-emoji">💵</div>
+                        <h3>$1,000,000</h3>
+                        <p>Obtén $1,000,000 dentro del servidor.</p>
+                        <strong>$40</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<p>
-    Set completo de equipamiento APG para Anárquico.
-</p>
 
-<strong>
-    $20
-</strong>
+                </div>
 
-<button>
-    Añadir al carrito
-</button>
+            </div>
 
-</div>
 
 
-</div>
+            <!-- =============================
+                 RANGOS
+            ============================== -->
 
-</div>
+            <div
+                id="rangos"
+                class="shop-category">
 
+                <h2>
+                    🏆 Rangos
+                </h2>
 
-<!-- =================================
-     EARTH
-================================== -->
+                <p>
+                    Rangos disponibles para APGMC.
+                </p>
 
-<div
-    id="earth"
-    class="shop-category">
 
+                <div class="products">
 
-<div class="discount">
-    -25%
-</div>
 
+                    <div class="product-card">
+                        <div class="product-emoji">🍕</div>
+                        <h3>Pan</h3>
+                        <p>Rango Pan.</p>
+                        <strong>$2</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<h2>
-    🌎 Earth
-</h2>
 
+                    <div class="product-card">
+                        <div class="product-emoji">🍅</div>
+                        <h3>Tomate</h3>
+                        <p>Rango Tomate.</p>
+                        <strong>$5</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<div class="products">
 
+                    <div class="product-card">
+                        <div class="product-emoji">🍕</div>
+                        <h3>Peperoni</h3>
+                        <p>Rango Peperoni.</p>
+                        <strong>$10</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<div class="product-card">
 
-<img
-    src="imagenes/netherite_boots.png"
-    alt="Botas de netherita">
+                    <div class="product-card">
+                        <div class="product-emoji">🍕</div>
+                        <h3>Pizza</h3>
+                        <p>Rango Pizza.</p>
+                        <strong>$16</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<h3>
-    Botas APG
-</h3>
 
-<p>
-    Botas de netherita APG para Earth.
-</p>
+                </div>
 
-<strong>
-    $3
-</strong>
+            </div>
 
-<button>
-    Añadir al carrito
-</button>
 
-</div>
 
+            <!-- =============================
+                 COSMÉTICOS
+            ============================== -->
 
-<div class="product-card">
+            <div
+                id="cosmeticos"
+                class="shop-category">
 
-<img
-    src="imagenes/netherite_leggings.png"
-    alt="Pantalones de netherita">
+                <h2>
+                    🎨 Cosméticos
+                </h2>
 
-<h3>
-    Pantalones APG
-</h3>
+                <p>
+                    Personaliza tu experiencia en APGMC.
+                </p>
 
-<p>
-    Pantalones de netherita APG para Earth.
-</p>
 
-<strong>
-    $4
-</strong>
+                <div class="products">
 
-<button>
-    Añadir al carrito
-</button>
 
-</div>
+                    <div class="product-card">
+                        <div class="product-emoji">✨</div>
+                        <h3>[Leyenda]</h3>
+                        <p>Cosmético Leyenda.</p>
+                        <strong>$3</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
 
-<div class="product-card">
+                    <div class="product-card">
+                        <div class="product-emoji">😈</div>
+                        <h3>[Demonio]</h3>
+                        <p>Cosmético Demonio.</p>
+                        <strong>$3</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<img
-    src="imagenes/netherite_helmet.png"
-    alt="Casco de netherita">
 
-<h3>
-    Casco APG
-</h3>
+                    <div class="product-card">
+                        <div class="product-emoji">👑</div>
+                        <h3>[Rey]</h3>
+                        <p>Cosmético Rey.</p>
+                        <strong>$3</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<p>
-    Casco de netherita APG para Earth.
-</p>
 
-<strong>
-    $3
-</strong>
+                    <div class="product-card">
+                        <div class="product-emoji">👑</div>
+                        <h3>[Emperador]</h3>
+                        <p>Cosmético Emperador.</p>
+                        <strong>$3</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<button>
-    Añadir al carrito
-</button>
 
-</div>
+                    <div class="product-card">
+                        <div class="product-emoji">👑</div>
+                        <h3>[Emperatriz]</h3>
+                        <p>Cosmético Emperatriz.</p>
+                        <strong>$3</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
 
-<div class="product-card">
+                    <div class="product-card">
+                        <div class="product-emoji">⚡</div>
+                        <h3>[Caótico]</h3>
+                        <p>Cosmético Caótico.</p>
+                        <strong>$2</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<img
-    src="imagenes/netherite_chestplate.png"
-    alt="Pechera de netherita">
 
-<h3>
-    Pechera APG
-</h3>
+                    <div class="product-card">
+                        <div class="product-emoji">💥</div>
+                        <h3>[Destructor]</h3>
+                        <p>Cosmético Destructor.</p>
+                        <strong>$2</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<p>
-    Pechera de netherita APG para Earth.
-</p>
 
-<strong>
-    $4
-</strong>
+                    <div class="product-card">
+                        <div class="product-emoji">🏗️</div>
+                        <h3>[Constructor]</h3>
+                        <p>Cosmético Constructor.</p>
+                        <strong>$2</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<button>
-    Añadir al carrito
-</button>
 
-</div>
+                    <div class="product-card">
+                        <div class="product-emoji">🔧</div>
+                        <h3>[Técnico]</h3>
+                        <p>Cosmético Técnico.</p>
+                        <strong>$2</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
 
-<div class="product-card">
+                    <div class="product-card">
+                        <div class="product-emoji">♾️</div>
+                        <h3>[Inmortal]</h3>
+                        <p>Cosmético Inmortal.</p>
+                        <strong>$3</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<img
-    src="imagenes/netherite_sword.png"
-    alt="Espada de netherita">
 
-<h3>
-    Espada APG
-</h3>
+                    <div class="product-card">
+                        <div class="product-emoji">💰</div>
+                        <h3>[Magnate]</h3>
+                        <p>Cosmético Magnate.</p>
+                        <strong>$3</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<p>
-    Espada de netherita APG para Earth.
-</p>
 
-<strong>
-    $6
-</strong>
+                    <div class="product-card">
+                        <div class="product-emoji">🌱</div>
+                        <h3>[Novato]</h3>
+                        <p>Cosmético Novato.</p>
+                        <strong>$2</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
-<button>
-    Añadir al carrito
-</button>
 
-</div>
+                    <div class="product-card">
+                        <div class="product-emoji">⭐</div>
+                        <h3>[Pro]</h3>
+                        <p>Cosmético Pro.</p>
+                        <strong>$2</strong>
+                        <button>Añadir al carrito</button>
+                    </div>
 
 
-<div class="product-card">
+                </div>
 
-<img
-    src="imagenes/netherite_pickaxe.png"
-    alt="Pico de netherita">
+            </div>
 
-<h3>
-    Pico APG
-</h3>
 
-<p>
-    Pico de netherita APG para Earth.
-</p>
+        </section>
 
-<strong>
-    $11
-</strong>
-
-<button>
-    Añadir al carrito
-</button>
-
-</div>
-
-
-<div class="product-card">
-
-<img
-    src="imagenes/netherite_axe.png"
-    alt="Hacha de netherita">
-
-<h3>
-    Hacha APG
-</h3>
-
-<p>
-    Hacha APG para Earth.
-</p>
-
-<strong>
-    $7
-</strong>
-
-<button>
-    Añadir al carrito
-</button>
-
-</div>
-
-
-<div class="product-card">
-
-<img
-    src="imagenes/crossbow.png"
-    alt="Ballesta">
-
-<h3>
-    Ballesta APG
-</h3>
-
-<p>
-    Ballesta APG para Earth.
-</p>
-
-<strong>
-    $11
-</strong>
-
-<button>
-    Añadir al carrito
-</button>
-
-</div>
-
-
-<div class="product-card">
-
-<img
-    src="imagenes/bow.png"
-    alt="Arco">
-
-<h3>
-    Arco APG
-</h3>
-
-<p>
-    Arco APG para Earth.
-</p>
-
-<strong>
-    $9
-</strong>
-
-<button>
-    Añadir al carrito
-</button>
-
-</div>
-
-
-<div class="product-card">
-
-<img
-    src="imagenes/ender_chest.png"
-    alt="Cofre de Ender">
-
-<h3>
-    Kit APG (completo)
-</h3>
-
-<p>
-    Set completo de equipamiento APG para Earth.
-</p>
-
-<strong>
-    $20
-</strong>
-
-<button>
-    Añadir al carrito
-</button>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-<!-- =================================
-     DINERO
-================================== -->
-
-<div
-    id="dinero"
-    class="shop-category">
-
-
-<div class="discount">
-    -25%
-</div>
-
-
-<h2>
-    💵 Dinero
-</h2>
-
-
-<p>
-    Dinero para utilizar dentro del servidor.
-</p>
-
-
-<div class="products">
-
-
-<div class="product-card">
-
-<div class="product-emoji">
-    💵
-</div>
-
-<h3>
-    $1,000
-</h3>
-
-<p>
-    Recibe $1,000 de dinero dentro del servidor.
-</p>
-
-<strong>
-    $2
-</strong>
-
-<button>
-    Añadir al carrito
-</button>
-
-</div>
-
-
-<div class="product-card">
-
-<div class="product-emoji">
-    💵
-</div>
-
-<h3>
-    $10,000
-</h3>
-
-<p>
-    Recibe $10,000 de dinero dentro del servidor.
-</p>
-
-<strong>
-    $10
-</strong>
-
-<button>
-    Añadir al carrito
-</button>
-
-</div>
-
-
-<div class="product-card">
-
-<div class="product-emoji">
-    💰
-</div>
-
-<h3>
-    $100,000
-</h3>
-
-<p>
-    Recibe $100,000 de dinero dentro del servidor.
-</p>
-
-<strong>
-    $15
-</strong>
-
-<button>
-    Añadir al carrito
-</button>
-
-</div>
-
-
-<div class="product-card">
-
-<div class="product-emoji">
-    💰
-</div>
-
-<h3>
-    $500,000
-</h3>
-
-<p>
-    Recibe $500,000 de dinero dentro del servidor.
-</p>
-
-<strong>
-    $25
-</strong>
-
-<button>
-    Añadir al carrito
-</button>
-
-</div>
-
-
-<div class="product-card">
-
-<div class="product-emoji">
-    💎
-</div>
-
-<h3>
-    $1,000,000
-</h3>
-
-<p>
-    Recibe $1,000,000 de dinero dentro del servidor.
-</p>
-
-<strong>
-    $40
-</strong>
-
-<button>
-    Añadir al carrito
-</button>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-<!-- =================================
-     RANGOS
-================================== -->
-
-<div
-    id="rangos"
-    class="shop-category">
-
-
-<div class="discount">
-    -25%
-</div>
-
-
-<h2>
-    🏆 Rangos
-</h2>
-
-
-<div class="products">
-
-
-<div class="product-card">
-
-<div class="product-emoji">
-    🍞
-</div>
-
-<h3>
-    Pan
-</h3>
-
-<p>
-    Cosmético de pan.
-</p>
-
-<strong>
-    $2
-</strong>
-
-<button>
-    Añadir al carrito
-</button>
-
-</div>
-
-
-<div class="product-card">
-
-<div class="product-emoji">
-    🍅
-</div>
-
-<h3>
-    Tomate
-</h3>
-
-<p>
-    Cosmético de tomate.
-</p>
-
-<strong>
-    $5
-</strong>
-
-<button>
-    Añadir al carrito
-</button>
-
-</div>
-
-
-<div class="product-card">
-
-<div class="product-emoji">
-    🌶️
-</div>
-
-<h3>
-    Peperoni
-</h3>
-
-<p>
-    Cosmético de peperoni.
-</p>
-
-<strong>
-    $10
-</strong>
-
-<button>
-    Añadir al carrito
-</button>
-
-</div>
-
-
-<div class="product-card">
-
-<div class="product-emoji">
-    🍕
-</div>
-
-<h3>
-    Pizza
-</h3>
-
-<p>
-    Cosmético de pizza.
-</p>
-
-<strong>
-    $16
-</strong>
-
-<button>
-    Añadir al carrito
-</button>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-<!-- =================================
-     COSMÉTICOS
-================================== -->
-
-<div
-    id="cosmeticos"
-    class="shop-category">
-
-
-<div class="discount">
-    -25%
-</div>
-
-
-<h2>
-    🎨 Cosméticos
-</h2>
-
-
-<p>
-    Títulos que aparecerán después de tu nombre.
-</p>
-
-
-<div class="products">
-
-
-<div class="product-card">
-
-<div class="product-emoji">
-    👑
-</div>
-
-<h3>
-    [Leyenda]
-</h3>
-
-<p>
-    Aparecerá después de tu nombre: TuNombre [Leyenda]
-</p>
-
-<strong>
-    $3
-</strong>
-
-<button>
-    Añadir al carrito
-</button>
-
-</div>
-
-
-<div class="product-card">
-
-<div class="product-emoji">
-    😈
-</div>
-
-<h3>
-    [Demonio]
-</h3>
-
-<p>
-    Aparecerá después de tu nombre: TuNombre [Demonio]
-</p>
-
-<strong>
-    $3
-</strong>
-
-<button>
-    Añadir al carrito
-</button>
-
-</div>
-
-
-<div class="product-card">
-
-<div class="product-emoji">
-    👑
-</div>
-
-<h3>
-    [Rey]
-</h3>
-
-<p>
-    Aparecerá después de tu nombre: TuNombre [Rey]
-</p>
-
-<strong>
-    $3
-</strong>
-
-<button>
-    Añadir al carrito
-</button>
-
-</div>
-
-
-<div class="product-card">
-
-<div class="product-emoji">
-    👑
-</div>
-
-<h3>
-    [Emperador]
-</h3>
-
-<p>
-    Aparecerá después de tu nombre: TuNombre [Emperador]
-</p>
-
-<strong>
-    $3
-</strong>
-
-<button>
-    Añadir al carrito
-</button>
-
-</div>
-
-
-<div class="product-card">
-
-<div class="product-emoji">
-    👸
-</div>
-
-<h3>
-    [Emperatriz]
-</h3>
-
-<p>
-    Aparecerá después de tu nombre: TuNombre [Emperatriz]
-</p>
-
-<strong>
-    $3
-</strong>
-
-<button>
-    Añadir al carrito
-</button>
-
-</div>
-
-
-<div class="product-card">
-
-<div class="product-emoji">
-    ☠️
-</div>
-
-<h3>
-    [Caótico]
-</h3>
-
-<p>
-    Aparecerá después de tu nombre: TuNombre [Caótico]
-</p>
-
-<strong>
-    $2
-</strong>
-
-<button>
-    Añadir al carrito
-</button>
-
-</div>
-
-
-<div class="product-card">
-
-<div class="product-emoji">
-    💥
-</div>
-
-<h3>
-    [Destructor]
-</h3>
-
-<p>
-    Aparecerá después de tu nombre: TuNombre [Destructor]
-</p>
-
-<strong>
-    $2
-</strong>
-
-<button>
-    Añadir al carrito
-</button>
-
-</div>
-
-
-<div class="product-card">
-
-<div class="product-emoji">
-    🏗️
-</div>
-
-<h3>
-    [Constructor]
-</h3>
-
-<p>
-    Aparecerá después de tu nombre: TuNombre [Constructor]
-</p>
-
-<strong>
-    $2
-</strong>
-
-<button>
-    Añadir al carrito
-</button>
-
-</div>
-
-
-<div class="product-card">
-
-<div class="product-emoji">
-    ⚙️
-</div>
-
-<h3>
-    [Técnico]
-</h3>
-
-<p>
-    Aparecerá después de tu nombre: TuNombre [Técnico]
-</p>
-
-<strong>
-    $2
-</strong>
-
-<button>
-    Añadir al carrito
-</button>
-
-</div>
-
-
-<div class="product-card">
-
-<div class="product-emoji">
-    ♾️
-</div>
-
-<h3>
-    [Inmortal]
-</h3>
-
-<p>
-    Aparecerá después de tu nombre: TuNombre [Inmortal]
-</p>
-
-<strong>
-    $3
-</strong>
-
-<button>
-    Añadir al carrito
-</button>
-
-</div>
-
-
-<div class="product-card">
-
-<div class="product-emoji">
-    💰
-</div>
-
-<h3>
-    [Magnate]
-</h3>
-
-<p>
-    Aparecerá después de tu nombre: TuNombre [Magnate]
-</p>
-
-<strong>
-    $3
-</strong>
-
-<button>
-    Añadir al carrito
-</button>
-
-</div>
-
-
-<div class="product-card">
-
-<div class="product-emoji">
-    🌱
-</div>
-
-<h3>
-    [Novato]
-</h3>
-
-<p>
-    Aparecerá después de tu nombre: TuNombre [Novato]
-</p>
-
-<strong>
-    $2
-</strong>
-
-<button>
-    Añadir al carrito
-</button>
-
-</div>
-
-
-<div class="product-card">
-
-<div class="product-emoji">
-    ⭐
-</div>
-
-<h3>
-    [Pro]
-</h3>
-
-<p>
-    Aparecerá después de tu nombre: TuNombre [Pro]
-</p>
-
-<strong>
-    $2
-</strong>
-
-<button>
-    Añadir al carrito
-</button>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-</section>
-
-</div>
+    </div>
 
 </main>
 
 
+
 <!-- =========================================
-     VENTANA DE PAGO
+     MODAL: PRODUCTO AÑADIDO
 ========================================= -->
 
 <div
-    id="payment-modal"
-    class="payment-modal">
+    id="added-modal"
+    class="cart-modal">
+
+    <div class="cart-box added-box">
+
+        <button
+            class="close-cart added-x">
+
+            ×
+
+        </button>
 
 
-<div class="payment-box">
+        <div class="cart-big-icon">
+            🛒
+        </div>
 
 
-<button
-    class="close-payment">
-
-    ×
-
-</button>
+        <h2>
+            ¡Añadido al carrito!
+        </h2>
 
 
-<div class="payment-icon">
-    💳
+        <p>
+
+            <strong id="added-product">
+                Producto
+            </strong>
+
+            fue añadido correctamente.
+
+        </p>
+
+
+        <p class="cart-small-text">
+
+            Puedes seguir comprando.
+            Tu carrito conservará todos
+            los productos.
+
+        </p>
+
+
+        <button
+            class="added-close">
+
+            Entendido
+
+        </button>
+
+    </div>
+
 </div>
 
 
-<h2>
-    Métodos de pago
-</h2>
+
+<!-- =========================================
+     MODAL: CARRITO
+========================================= -->
+
+<div
+    id="cart-modal"
+    class="cart-modal">
+
+    <div class="cart-box">
+
+        <button
+            class="close-cart">
+
+            ×
+
+        </button>
 
 
-<p>
-    Aún no están disponibles los métodos de pago.
-</p>
+        <div class="cart-big-icon">
+            🛒
+        </div>
 
 
-<button
-    class="close-button">
+        <h2>
+            Tu carrito
+        </h2>
 
-    Entendido
 
-</button>
+        <div
+            id="cart-items"
+            class="cart-items">
+        </div>
 
+
+        <div class="cart-summary">
+
+            <span>
+                Total
+            </span>
+
+            <strong id="cart-total">
+                $0.00
+            </strong>
+
+        </div>
+
+
+        <button
+            id="clear-cart"
+            class="clear-cart-button">
+
+            🗑️ Vaciar carrito
+
+        </button>
+
+
+        <button
+            id="continue-tebex"
+            class="tebex-button">
+
+            💳 Continuar con Tebex
+
+        </button>
+
+    </div>
 
 </div>
 
-</div>
 
+
+<!-- =========================================
+     FOOTER
+========================================= -->
 
 <footer>
 
-<p>
-    © 2026 APGMC. Todos los derechos reservados.
-</p>
+    <p>
+        © 2026 APGMC. Todos los derechos reservados.
+    </p>
 
 </footer>
 
 
-<script src="script.js?v=4"></script>
 
+<script src="script.js?v=5"></script>
 
 </body>
 

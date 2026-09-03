@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =================================================
-       ELEMENTOS DEL CARRITO
+       ELEMENTOS
     ================================================= */
 
     const cartModal =
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("cart-count");
 
     const checkoutButton =
-        document.querySelector(".checkout-button");
+        document.getElementById("checkout-button");
 
 
     /* =================================================
@@ -418,25 +418,38 @@ document.addEventListener("DOMContentLoaded", function () {
     const addedClose =
         document.querySelector(".added-close");
 
+    const addedX =
+        document.querySelector("#added-modal .added-x");
+
+
+    function closeAddedModal() {
+
+        if (!addedModal) {
+            return;
+        }
+
+        addedModal.classList.remove("show");
+
+        document.body.style.overflow = "";
+
+    }
+
 
     if (addedClose) {
 
         addedClose.addEventListener(
             "click",
-            function () {
+            closeAddedModal
+        );
 
-                if (addedModal) {
+    }
 
-                    addedModal.classList.remove(
-                        "show"
-                    );
 
-                    document.body.style.overflow =
-                        "";
+    if (addedX) {
 
-                }
-
-            }
+        addedX.addEventListener(
+            "click",
+            closeAddedModal
         );
 
     }
@@ -588,19 +601,18 @@ document.addEventListener("DOMContentLoaded", function () {
     ================================================= */
 
     const closeCartButton =
-        document.querySelector(".close-cart");
+        document.querySelector("#cart-modal .close-cart");
 
 
     function closeCart() {
 
-        if (cartModal) {
-
-            cartModal.classList.remove("show");
-
-            document.body.style.overflow =
-                "";
-
+        if (!cartModal) {
+            return;
         }
+
+        cartModal.classList.remove("show");
+
+        document.body.style.overflow = "";
 
     }
 
@@ -616,7 +628,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =================================================
-       CERRAR AL HACER CLIC FUERA
+       CERRAR CLIC FUERA
     ================================================= */
 
     if (cartModal) {
@@ -649,12 +661,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     event.target === addedModal
                 ) {
 
-                    addedModal.classList.remove(
-                        "show"
-                    );
-
-                    document.body.style.overflow =
-                        "";
+                    closeAddedModal();
 
                 }
 
@@ -676,16 +683,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 closeCart();
 
-                if (addedModal) {
-
-                    addedModal.classList.remove(
-                        "show"
-                    );
-
-                }
-
-                document.body.style.overflow =
-                    "";
+                closeAddedModal();
 
             }
 

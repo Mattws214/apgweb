@@ -11,68 +11,45 @@ document.addEventListener("DOMContentLoaded", function () {
        CATEGORÍAS
     ================================================= */
 
-    const buttons =
-        document.querySelectorAll(".shop-menu button");
-
-    const categories =
-        document.querySelectorAll(".shop-category");
+    const buttons = document.querySelectorAll(".shop-menu button");
+    const categories = document.querySelectorAll(".shop-category");
 
 
     buttons.forEach(function (button) {
 
         button.addEventListener("click", function () {
 
-            const categoryId =
-                this.dataset.category;
-
+            const categoryId = this.dataset.category;
 
             categories.forEach(function (category) {
 
                 category.classList.remove("active");
-
                 category.style.display = "none";
 
             });
 
 
             buttons.forEach(function (btn) {
-
                 btn.classList.remove("active");
-
             });
 
 
-            const category =
-                document.getElementById(categoryId);
+            const category = document.getElementById(categoryId);
 
 
             if (!category) {
-
-                console.error(
-                    "No se encontró la categoría:",
-                    categoryId
-                );
-
+                console.error("No se encontró la categoría:", categoryId);
                 return;
-
             }
 
 
             category.classList.add("active");
 
 
-            if (
-                category.classList.contains(
-                    "coming-soon"
-                )
-            ) {
-
+            if (category.classList.contains("coming-soon")) {
                 category.style.display = "flex";
-
             } else {
-
                 category.style.display = "block";
-
             }
 
 
@@ -83,36 +60,29 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-
     /* =================================================
        CATEGORÍA INICIAL
     ================================================= */
 
     if (categories.length > 0) {
 
-
         categories.forEach(function (category) {
 
             category.classList.remove("active");
-
             category.style.display = "none";
 
         });
 
 
         categories[0].classList.add("active");
-
         categories[0].style.display = "block";
 
 
         if (buttons.length > 0) {
-
             buttons[0].classList.add("active");
-
         }
 
     }
-
 
 
     /* =================================================
@@ -120,39 +90,30 @@ document.addEventListener("DOMContentLoaded", function () {
     ================================================= */
 
     let cart =
-        JSON.parse(
-            localStorage.getItem("apgmc_cart")
-        ) || [];
-
+        JSON.parse(localStorage.getItem("apgmc_cart")) || [];
 
 
     /* =================================================
-       ELEMENTOS DEL CARRITO
+       ELEMENTOS
     ================================================= */
 
     const cartModal =
         document.getElementById("cart-modal");
 
-
     const addedModal =
         document.getElementById("added-modal");
-
 
     const cartItems =
         document.getElementById("cart-items");
 
-
     const cartTotal =
         document.getElementById("cart-total");
-
 
     const cartCount =
         document.getElementById("cart-count");
 
-
     const checkoutButton =
         document.getElementById("checkout-button");
-
 
 
     /* =================================================
@@ -167,7 +128,6 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
     }
-
 
 
     /* =================================================
@@ -186,7 +146,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
     /* =================================================
        CANTIDAD
     ================================================= */
@@ -202,55 +161,41 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
     /* =================================================
-       ACTUALIZAR CONTADOR
+       CONTADOR
     ================================================= */
 
     function updateCartCount() {
 
-        if (!cartCount) {
-
-            return;
-
-        }
+        if (!cartCount) return;
 
 
-        const count =
-            getCartCount();
+        const count = getCartCount();
 
 
-        cartCount.textContent =
-            count;
+        cartCount.textContent = count;
 
 
         if (count > 0) {
 
-            cartCount.style.display =
-                "inline-flex";
+            cartCount.style.display = "inline-flex";
 
         } else {
 
-            cartCount.style.display =
-                "none";
+            cartCount.style.display = "none";
 
         }
 
     }
 
 
-
     /* =================================================
-       RENDERIZAR CARRITO
+       RENDER CARRITO
     ================================================= */
 
     function renderCart() {
 
-        if (!cartItems || !cartTotal) {
-
-            return;
-
-        }
+        if (!cartItems || !cartTotal) return;
 
 
         cartItems.innerHTML = "";
@@ -258,9 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (cart.length === 0) {
 
-
             cartItems.innerHTML = `
-
                 <div class="empty-cart">
 
                     🛒
@@ -274,20 +217,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     </p>
 
                 </div>
-
             `;
 
 
-            cartTotal.textContent =
-                "$0.00";
-
+            cartTotal.textContent = "$0.00";
 
             updateCartCount();
 
             return;
 
         }
-
 
 
         cart.forEach(function (item, index) {
@@ -377,10 +316,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
 
-
         cartTotal.textContent =
-            "$" +
-            getCartTotal().toFixed(2);
+            "$" + getCartTotal().toFixed(2);
 
 
         updateCartCount();
@@ -388,11 +325,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
     /* =================================================
        AÑADIR PRODUCTO
-       IMPORTANTE:
-       SOLO .buy-button
     ================================================= */
 
     const buyButtons =
@@ -413,32 +347,22 @@ document.addEventListener("DOMContentLoaded", function () {
                     this.closest(".product-card");
 
 
-                if (!card) {
-
-                    return;
-
-                }
+                if (!card) return;
 
 
                 const name =
-                    card
-                        .querySelector("h3")
-                        ?.textContent
-                        .trim();
+                    card.querySelector("h3")
+                    ?.textContent
+                    .trim();
 
 
                 const priceText =
-                    card
-                        .querySelector("strong")
-                        ?.textContent
-                        .trim();
+                    card.querySelector("strong")
+                    ?.textContent
+                    .trim();
 
 
-                if (!name || !priceText) {
-
-                    return;
-
-                }
+                if (!name || !priceText) return;
 
 
                 const price =
@@ -449,30 +373,26 @@ document.addEventListener("DOMContentLoaded", function () {
                     );
 
 
+                if (isNaN(price)) return;
+
+
                 const categoryElement =
-                    card.closest(
-                        ".shop-category"
-                    );
+                    card.closest(".shop-category");
 
 
-                let category =
-                    "Tienda";
+                let category = "Tienda";
 
 
                 if (categoryElement) {
 
-
                     const title =
-                        categoryElement
-                            .querySelector("h2");
+                        categoryElement.querySelector("h2");
 
 
                     if (title) {
 
                         category =
-                            title
-                                .textContent
-                                .trim();
+                            title.textContent.trim();
 
                     }
 
@@ -480,9 +400,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                 const productId =
-                    category +
-                    "-" +
-                    name;
+                    category + "-" + name;
 
 
                 const existingProduct =
@@ -493,35 +411,27 @@ document.addEventListener("DOMContentLoaded", function () {
                     });
 
 
-
                 if (existingProduct) {
 
                     existingProduct.quantity++;
 
                 } else {
 
-
                     cart.push({
 
-                        id:
-                            productId,
+                        id: productId,
 
-                        name:
-                            name,
+                        name: name,
 
-                        price:
-                            price,
+                        price: price,
 
-                        category:
-                            category,
+                        category: category,
 
-                        quantity:
-                            1
+                        quantity: 1
 
                     });
 
                 }
-
 
 
                 saveCart();
@@ -529,11 +439,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 renderCart();
 
 
-
-                /* =====================================
-                   MOSTRAR "AÑADIDO"
-                ===================================== */
-
+                /* MOSTRAR AÑADIDO */
 
                 if (addedModal) {
 
@@ -552,10 +458,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
 
 
-                    addedModal.classList.add(
-                        "show"
-                    );
-
+                    addedModal.classList.add("show");
 
                     document.body.style.overflow =
                         "hidden";
@@ -566,7 +469,6 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
     });
-
 
 
     /* =================================================
@@ -603,114 +505,93 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-
     /* =================================================
        DATOS DE INFORMACIÓN
     ================================================= */
 
     const productInfo = {
 
-
         boots: {
 
-            title:
-                "Botas APG",
+            title: "Botas APG",
 
-            image:
-                "imagenes/SetAPG.png"
+            image: "imagenes/SetAPG.png"
 
         },
 
 
         leggings: {
 
-            title:
-                "Pantalones APG",
+            title: "Pantalones APG",
 
-            image:
-                "imagenes/SetAPG.png"
+            image: "imagenes/SetAPG.png"
 
         },
 
 
         helmet: {
 
-            title:
-                "Casco APG",
+            title: "Casco APG",
 
-            image:
-                "imagenes/SetAPG.png"
+            image: "imagenes/SetAPG.png"
 
         },
 
 
         chestplate: {
 
-            title:
-                "Pechera APG",
+            title: "Pechera APG",
 
-            image:
-                "imagenes/SetAPG.png"
+            image: "imagenes/SetAPG.png"
 
         },
 
 
         sword: {
 
-            title:
-                "Espada APG",
+            title: "Espada APG",
 
-            image:
-                "imagenes/espadaAPG.png"
+            image: "imagenes/espadaAPG.png"
 
         },
 
 
         pickaxe: {
 
-            title:
-                "Pico APG",
+            title: "Pico APG",
 
-            image:
-                "imagenes/picoAPG.png"
+            image: "imagenes/picoAPG.png"
 
         },
 
 
         axe: {
 
-            title:
-                "Hacha APG",
+            title: "Hacha APG",
 
-            image:
-                "imagenes/hachaAPG.png"
+            image: "imagenes/hachaAPG.png"
 
         },
 
 
         crossbow: {
 
-            title:
-                "Ballesta APG",
+            title: "Ballesta APG",
 
-            image:
-                "imagenes/BallestaAPG.png"
+            image: "imagenes/BallestaAPG.png"
 
         },
 
 
         bow: {
 
-            title:
-                "Arco APG",
+            title: "Arco APG",
 
-            image:
-                "imagenes/arcoAPG.png"
+            image: "imagenes/arcoAPG.png"
 
         }
 
     };
-
 
 
     /* =================================================
@@ -726,28 +607,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                 event.preventDefault();
-
                 event.stopPropagation();
 
 
                 if (
                     !productInfoModal ||
                     !productInfoContent
-                ) {
-
-                    return;
-
-                }
+                ) return;
 
 
                 const infoType =
                     this.dataset.info;
 
 
-                /* =================================
-                   SIN INFORMACIÓN
-                ================================= */
-
+                /* SIN INFORMACIÓN */
 
                 if (
                     !infoType ||
@@ -771,15 +644,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     `;
 
-                }
 
-
-                /* =================================
-                   PRODUCTO APG
-                ================================= */
-
-
-                else {
+                } else {
 
 
                     const info =
@@ -787,6 +653,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                     if (!info) {
+
 
                         productInfoTitle.textContent =
                             "Información del producto";
@@ -804,6 +671,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         `;
 
+
                     } else {
 
 
@@ -816,9 +684,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             <div class="product-info-inner">
 
                                 <p class="product-info-intro">
-
                                     Al adquirir este paquete recibirás:
-
                                 </p>
 
 
@@ -828,9 +694,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                                 <p class="product-info-label">
-
                                     IMAGEN DEL OBJETO DENTRO DEL JUEGO:
-
                                 </p>
 
 
@@ -838,7 +702,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                                     <img
                                         src="${info.image}"
-                                        alt="${info.title}">
+                                        alt="${info.title}"
+                                    >
 
                                 </div>
 
@@ -849,14 +714,11 @@ document.addEventListener("DOMContentLoaded", function () {
                                         ¡Nota antes de comprar!
                                     </h3>
 
-
                                     <p>
-
                                         Recuerda cuidar el objeto,
                                         ya que si lo pierdes deberás
                                         volver a comprarlo en el caso
                                         que lo quieras de nuevo.
-
                                     </p>
 
                                 </div>
@@ -879,11 +741,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
 
-
-                productInfoModal.classList.add(
-                    "show"
-                );
-
+                productInfoModal.classList.add("show");
 
                 document.body.style.overflow =
                     "hidden";
@@ -894,31 +752,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-
     /* =================================================
        CERRAR INFORMACIÓN
     ================================================= */
 
     function closeProductInfoModal() {
 
-
-        if (!productInfoModal) {
-
-            return;
-
-        }
+        if (!productInfoModal) return;
 
 
-        productInfoModal.classList.remove(
-            "show"
-        );
+        productInfoModal.classList.remove("show");
 
-
-        document.body.style.overflow =
-            "";
+        document.body.style.overflow = "";
 
     }
-
 
 
     if (closeProductInfo) {
@@ -931,13 +778,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
     if (productInfoModal) {
 
         productInfoModal.addEventListener(
             "click",
             function (event) {
-
 
                 if (
                     event.target ===
@@ -954,15 +799,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
     /* =================================================
-       CERRAR VENTANA "AÑADIDO"
+       CERRAR AÑADIDO
     ================================================= */
 
     const addedClose =
-        document.querySelector(
-            ".added-close"
-        );
+        document.querySelector(".added-close");
 
 
     const addedX =
@@ -973,22 +815,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function closeAddedModal() {
 
-
         if (addedModal) {
 
+            addedModal.classList.remove("show");
 
-            addedModal.classList.remove(
-                "show"
-            );
-
-
-            document.body.style.overflow =
-                "";
+            document.body.style.overflow = "";
 
         }
 
     }
-
 
 
     if (addedClose) {
@@ -1001,7 +836,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
     if (addedX) {
 
         addedX.addEventListener(
@@ -1012,18 +846,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
     /* =================================================
        ABRIR CARRITO
     ================================================= */
 
     if (checkoutButton) {
 
-
         checkoutButton.addEventListener(
             "click",
             function (event) {
-
 
                 event.preventDefault();
 
@@ -1033,11 +864,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (cartModal) {
 
-
-                    cartModal.classList.add(
-                        "show"
-                    );
-
+                    cartModal.classList.add("show");
 
                     document.body.style.overflow =
                         "hidden";
@@ -1050,13 +877,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
     /* =================================================
        CONTROLES DEL CARRITO
     ================================================= */
 
     if (cartItems) {
-
 
         cartItems.addEventListener(
             "click",
@@ -1064,16 +889,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                 const button =
-                    event.target.closest(
-                        "button"
-                    );
+                    event.target.closest("button");
 
 
-                if (!button) {
-
-                    return;
-
-                }
+                if (!button) return;
 
 
                 const index =
@@ -1082,32 +901,21 @@ document.addEventListener("DOMContentLoaded", function () {
                     );
 
 
-                if (isNaN(index)) {
-
-                    return;
-
-                }
+                if (isNaN(index)) return;
 
 
                 const action =
                     button.dataset.action;
 
 
-
-                if (
-                    action === "increase"
-                ) {
+                if (action === "increase") {
 
                     cart[index].quantity++;
 
                 }
 
 
-
-                if (
-                    action === "decrease"
-                ) {
-
+                if (action === "decrease") {
 
                     cart[index].quantity--;
 
@@ -1116,15 +924,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         cart[index].quantity <= 0
                     ) {
 
-                        cart.splice(
-                            index,
-                            1
-                        );
+                        cart.splice(index, 1);
 
                     }
 
                 }
-
 
 
                 if (
@@ -1133,13 +937,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     )
                 ) {
 
-                    cart.splice(
-                        index,
-                        1
-                    );
+                    cart.splice(index, 1);
 
                 }
-
 
 
                 saveCart();
@@ -1150,7 +950,6 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
     }
-
 
 
     /* =================================================
@@ -1165,17 +964,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (clearCartButton) {
 
-
         clearCartButton.addEventListener(
             "click",
             function () {
 
-
                 cart = [];
 
-
                 saveCart();
-
 
                 renderCart();
 
@@ -1183,7 +978,6 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
     }
-
 
 
     /* =================================================
@@ -1198,22 +992,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function closeCart() {
 
-
         if (cartModal) {
 
+            cartModal.classList.remove("show");
 
-            cartModal.classList.remove(
-                "show"
-            );
-
-
-            document.body.style.overflow =
-                "";
+            document.body.style.overflow = "";
 
         }
 
     }
-
 
 
     if (closeCartButton) {
@@ -1226,22 +1013,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
     /* =================================================
-       CERRAR CLIC FUERA
+       CERRAR AL HACER CLIC FUERA
     ================================================= */
 
     if (cartModal) {
-
 
         cartModal.addEventListener(
             "click",
             function (event) {
 
-
                 if (
-                    event.target ===
-                    cartModal
+                    event.target === cartModal
                 ) {
 
                     closeCart();
@@ -1254,18 +1037,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
     if (addedModal) {
-
 
         addedModal.addEventListener(
             "click",
             function (event) {
 
-
                 if (
-                    event.target ===
-                    addedModal
+                    event.target === addedModal
                 ) {
 
                     closeAddedModal();
@@ -1278,7 +1057,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
     /* =================================================
        ESC
     ================================================= */
@@ -1287,11 +1065,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "keydown",
         function (event) {
 
-
-            if (
-                event.key === "Escape"
-            ) {
-
+            if (event.key === "Escape") {
 
                 closeCart();
 
@@ -1305,9 +1079,8 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
-
     /* =================================================
-       CONTINUAR CON TEBEX
+       TEBEX
     ================================================= */
 
     const tebexButton =
@@ -1318,32 +1091,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (tebexButton) {
 
-
         tebexButton.addEventListener(
             "click",
             function () {
 
 
-                /*
-                 * ======================================
-                 * AQUÍ PONDREMOS LA URL REAL DE TEBEX
-                 * ======================================
-                 */
+                const tebexUrl = "#";
 
 
-                const tebexUrl =
-                    "#";
-
-
-                if (
-                    tebexUrl === "#"
-                ) {
-
+                if (tebexUrl === "#") {
 
                     alert(
                         "El checkout de Tebex todavía no está configurado."
                     );
-
 
                     return;
 
@@ -1359,7 +1119,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
     /* =================================================
        INICIO
     ================================================= */
@@ -1367,7 +1126,6 @@ document.addEventListener("DOMContentLoaded", function () {
     renderCart();
 
     updateCartCount();
-
 
 });
 ```

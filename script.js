@@ -1,4 +1,3 @@
-```javascript
 /* =====================================================
    APGMC - SCRIPT.JS
    CATEGORÍAS + CARRITO + INFORMACIÓN DE PRODUCTOS

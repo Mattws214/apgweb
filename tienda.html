@@ -1,1743 +1,1815 @@
+```html
 <!DOCTYPE html>
-
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<title>APGMC | Tienda</title>
+    <title>APGMC | Tienda</title>
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
-<!-- ESTILOS EXCLUSIVOS DE LA TIENDA -->
-<style>
-    .product-actions {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        width: 100%;
-    }
+    <!-- ESTILOS EXCLUSIVOS DE LA TIENDA -->
+    <style>
 
-    .product-actions .buy-button {
-        flex: 1;
-        width: auto;
-    }
+        /* =================================================
+           ACCIONES DE PRODUCTO
+        ================================================= */
 
-    .product-actions .info-button {
-        width: 38px;
-        min-width: 38px;
-        height: 38px;
-        padding: 0;
-        flex-shrink: 0;
+        .product-actions {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            width: 100%;
+        }
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+        .product-actions .buy-button {
+            flex: 1;
+            width: auto;
+        }
 
-    /* INFORMACIÓN DEL PRODUCTO */
+        .product-actions .info-button {
+            width: 38px;
+            min-width: 38px;
+            height: 38px;
+            padding: 0;
+            flex-shrink: 0;
 
-    .product-info-inner {
-        text-align: center;
-    }
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .product-info-intro {
-        color: #aaaabb;
-        margin-bottom: 15px;
-    }
 
-    .product-info-inner h3 {
-        margin-bottom: 15px;
-    }
+        /* =================================================
+           CATEGORÍAS
+           SOLO UNA CATEGORÍA VISIBLE
+        ================================================= */
 
-    .product-info-label {
-        color: #9292a3;
-        font-size: 12px;
-        font-weight: 700;
-        margin-bottom: 10px;
-    }
+        .shop-category {
+            display: none !important;
+        }
 
-    .product-info-image {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 15px 0 25px;
-    }
+        .shop-category.active {
+            display: block !important;
+        }
 
-    .product-info-image img {
-        width: 180px;
-        height: 180px;
-        object-fit: contain;
-    }
 
-    .product-info-note {
-        padding: 18px;
-        background: #101019;
-        border: 1px solid #25253a;
-        border-radius: 10px;
-        margin-top: 20px;
-    }
+        /* =================================================
+           INFORMACIÓN DEL PRODUCTO
+        ================================================= */
 
-    .product-info-note h3 {
-        margin-bottom: 8px;
-    }
+        .product-info-inner {
+            text-align: center;
+        }
 
-    .product-info-note p {
-        color: #aaaabb;
-        line-height: 1.5;
-        font-size: 14px;
-    }
+        .product-info-intro {
+            color: #aaaabb;
+            margin-bottom: 15px;
+        }
 
-    .minecraft-disclaimer {
-        margin-top: 20px;
-        color: #77778a;
-        font-size: 11px;
-        line-height: 1.5;
-        text-align: center;
-    }
+        .product-info-inner h3 {
+            margin-bottom: 15px;
+        }
 
-    .empty-product-info {
-        text-align: center;
-        padding: 30px 10px;
-        color: #aaaabb;
-    }
-</style>
-```
+        .product-info-label {
+            color: #9292a3;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .product-info-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 15px 0 25px;
+        }
+
+        .product-info-image img {
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+        }
+
+        .product-info-note {
+            padding: 18px;
+            background: #101019;
+            border: 1px solid #25253a;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .product-info-note h3 {
+            margin-bottom: 8px;
+        }
+
+        .product-info-note p {
+            color: #aaaabb;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        .minecraft-disclaimer {
+            margin-top: 20px;
+            color: #77778a;
+            font-size: 11px;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .empty-product-info {
+            text-align: center;
+            padding: 30px 10px;
+            color: #aaaabb;
+        }
+
+    </style>
 
 </head>
 
+
 <body>
+
 
 <header>
 
-```
-<div class="logo">
-    APGMC
-</div>
+    <div class="logo">
+        APGMC
+    </div>
 
-<nav>
-    <a href="index.html">Inicio</a>
-    <a href="reglas.html">Reglas</a>
-    <a href="servidor.html">Dirección IP</a>
-    <a href="tienda.html">Tienda</a>
-    <a href="informacion.html">Información</a>
-    <a href="https://discord.gg/gfNhf58B48" target="_blank">Discord</a>
-</nav>
-```
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="reglas.html">Reglas</a>
+        <a href="servidor.html">Dirección IP</a>
+        <a href="tienda.html">Tienda</a>
+        <a href="informacion.html">Información</a>
+        <a href="https://discord.gg/gfNhf58B48" target="_blank">Discord</a>
+    </nav>
 
 </header>
 
+
 <main class="shop-page">
 
-```
-<h1 class="shop-title">
-    Tienda APGMC
-</h1>
+
+    <h1 class="shop-title">
+        Tienda APGMC
+    </h1>
 
 
-<!-- CARRITO -->
+    <!-- =================================================
+         CARRITO
+    ================================================= -->
 
-<div class="checkout-area">
+    <div class="checkout-area">
 
-    <button id="checkout-button" class="checkout-button">
+        <button id="checkout-button" class="checkout-button">
 
-        🛒 Ver carrito
+            🛒 Ver carrito
 
-        <span id="cart-count" class="cart-count">
-            0
-        </span>
+            <span id="cart-count" class="cart-count">
+                0
+            </span>
 
-    </button>
-
-</div>
-
-
-<div class="shop-wrapper">
-
-
-    <!-- =========================================
-         CATEGORÍAS
-    ========================================== -->
-
-    <div class="shop-menu">
-
-        <button class="active" data-category="soda">
-            🥤 Soda
-        </button>
-
-        <button data-category="survival">
-            🌳 Survival clásico
-        </button>
-
-        <button data-category="anarquico">
-            ⚔️ Anárquico
-        </button>
-
-        <button data-category="earth">
-            🌎 Earth
-        </button>
-
-        <button data-category="dinero">
-            💰 Dinero
-        </button>
-
-        <button data-category="rangos">
-            🏆 Rangos
-        </button>
-
-        <button data-category="cosmeticos">
-            🎨 Cosméticos
         </button>
 
     </div>
 
 
-    <section class="shop-content">
+    <div class="shop-wrapper">
 
 
-        <!-- =====================================
-             SODA
-        ====================================== -->
+        <!-- =================================================
+             CATEGORÍAS
+        ================================================= -->
 
-        <div id="soda" class="shop-category active">
+        <div class="shop-menu">
 
-            <div class="discount">
-                -25%
-            </div>
-
-            <h2>
+            <button class="active" data-category="soda">
                 🥤 Soda
-            </h2>
+            </button>
 
-
-            <div class="products">
-
-
-                <div class="product-card">
-
-                    <div class="product-emoji">
-                        🥤
-                    </div>
-
-                    <h3>
-                        Soda — 1 mes
-                    </h3>
-
-                    <p>
-                        Acceso a Soda durante 1 mes.
-                    </p>
-
-                    <strong>
-                        $9
-                    </strong>
-
-                    <div class="product-actions">
-
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button
-                            class="info-button"
-                            data-info="empty">
-                            ❗
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <div class="product-card">
-
-                    <div class="product-emoji">
-                        🥤
-                    </div>
-
-                    <h3>
-                        Soda — 3 meses
-                    </h3>
-
-                    <p>
-                        Acceso a Soda durante 3 meses.
-                    </p>
-
-                    <strong>
-                        $20
-                    </strong>
-
-                    <div class="product-actions">
-
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button
-                            class="info-button"
-                            data-info="empty">
-                            ❗
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <div class="product-card">
-
-                    <div class="product-emoji">
-                        🥤
-                    </div>
-
-                    <h3>
-                        Soda — 1 año
-                    </h3>
-
-                    <p>
-                        Acceso a Soda durante 1 año.
-                    </p>
-
-                    <strong>
-                        $44
-                    </strong>
-
-                    <div class="product-actions">
-
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button
-                            class="info-button"
-                            data-info="empty">
-                            ❗
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-
-        <!-- =====================================
-             SURVIVAL CLÁSICO
-        ====================================== -->
-
-        <div id="survival" class="shop-category">
-
-            <div class="discount">
-                -25%
-            </div>
-
-            <h2>
+            <button data-category="survival">
                 🌳 Survival clásico
-            </h2>
+            </button>
 
-
-            <div class="products">
-
-
-                <!-- BOTAS -->
-
-                <div class="product-card">
-
-                    <img
-                        src="imagenes/netherite_boots.png"
-                        alt="Botas de netherita">
-
-                    <h3>
-                        Botas APG
-                    </h3>
-
-                    <p>
-                        Botas de netherita APG.
-                    </p>
-
-                    <strong>
-                        $3
-                    </strong>
-
-                    <div class="product-actions">
-
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button
-                            class="info-button"
-                            data-info="boots">
-                            ❗
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- PANTALONES -->
-
-                <div class="product-card">
-
-                    <img
-                        src="imagenes/netherite_leggings.png"
-                        alt="Pantalones de netherita">
-
-                    <h3>
-                        Pantalones APG
-                    </h3>
-
-                    <p>
-                        Pantalones de netherita APG.
-                    </p>
-
-                    <strong>
-                        $4
-                    </strong>
-
-                    <div class="product-actions">
-
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button
-                            class="info-button"
-                            data-info="leggings">
-                            ❗
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- CASCO -->
-
-                <div class="product-card">
-
-                    <img
-                        src="imagenes/netherite_helmet.png"
-                        alt="Casco de netherita">
-
-                    <h3>
-                        Casco APG
-                    </h3>
-
-                    <p>
-                        Casco de netherita APG.
-                    </p>
-
-                    <strong>
-                        $3
-                    </strong>
-
-                    <div class="product-actions">
-
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button
-                            class="info-button"
-                            data-info="helmet">
-                            ❗
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- PECHERA -->
-
-                <div class="product-card">
-
-                    <img
-                        src="imagenes/netherite_chestplate.png"
-                        alt="Pechera de netherita">
-
-                    <h3>
-                        Pechera APG
-                    </h3>
-
-                    <p>
-                        Pechera de netherita APG.
-                    </p>
-
-                    <strong>
-                        $4
-                    </strong>
-
-                    <div class="product-actions">
-
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button
-                            class="info-button"
-                            data-info="chestplate">
-                            ❗
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- ESPADA -->
-
-                <div class="product-card">
-
-                    <img
-                        src="imagenes/netherite_sword.png"
-                        alt="Espada de netherita">
-
-                    <h3>
-                        Espada APG
-                    </h3>
-
-                    <p>
-                        Espada de netherita APG.
-                    </p>
-
-                    <strong>
-                        $6
-                    </strong>
-
-                    <div class="product-actions">
-
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button
-                            class="info-button"
-                            data-info="sword">
-                            ❗
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- PICO -->
-
-                <div class="product-card">
-
-                    <img
-                        src="imagenes/netherite_pickaxe.png"
-                        alt="Pico de netherita">
-
-                    <h3>
-                        Pico APG
-                    </h3>
-
-                    <p>
-                        Pico de netherita APG.
-                    </p>
-
-                    <strong>
-                        $11
-                    </strong>
-
-                    <div class="product-actions">
-
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button
-                            class="info-button"
-                            data-info="pickaxe">
-                            ❗
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- HACHA -->
-
-                <div class="product-card">
-
-                    <img
-                        src="imagenes/netherite_axe.png"
-                        alt="Hacha de netherita">
-
-                    <h3>
-                        Hacha APG
-                    </h3>
-
-                    <p>
-                        Hacha de netherita APG.
-                    </p>
-
-                    <strong>
-                        $7
-                    </strong>
-
-                    <div class="product-actions">
-
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button
-                            class="info-button"
-                            data-info="axe">
-                            ❗
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- BALLESTA -->
-
-                <div class="product-card">
-
-                    <img
-                        src="imagenes/crossbow.png"
-                        alt="Ballesta">
-
-                    <h3>
-                        Ballesta APG
-                    </h3>
-
-                    <p>
-                        Ballesta APG.
-                    </p>
-
-                    <strong>
-                        $11
-                    </strong>
-
-                    <div class="product-actions">
-
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button
-                            class="info-button"
-                            data-info="crossbow">
-                            ❗
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- ARCO -->
-
-                <div class="product-card">
-
-                    <img
-                        src="imagenes/bow.png"
-                        alt="Arco">
-
-                    <h3>
-                        Arco APG
-                    </h3>
-
-                    <p>
-                        Arco APG.
-                    </p>
-
-                    <strong>
-                        $9
-                    </strong>
-
-                    <div class="product-actions">
-
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button
-                            class="info-button"
-                            data-info="bow">
-                            ❗
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- KIT APG -->
-
-                <div class="product-card">
-
-                    <img
-                        src="imagenes/ender_chest.png"
-                        alt="Cofre de Ender">
-
-                    <h3>
-                        Kit APG completo
-                    </h3>
-
-                    <p>
-                        Set completo de equipamiento APG.
-                    </p>
-
-                    <strong>
-                        $20
-                    </strong>
-
-                    <div class="product-actions">
-
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button
-                            class="info-button"
-                            data-info="empty">
-                            ❗
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-
-        <!-- =====================================
-             ANÁRQUICO
-        ====================================== -->
-
-        <div id="anarquico" class="shop-category">
-
-            <div class="discount">
-                -25%
-            </div>
-
-            <h2>
+            <button data-category="anarquico">
                 ⚔️ Anárquico
-            </h2>
+            </button>
 
-
-            <div class="products">
-
-
-                <div class="product-card">
-
-                    <img src="imagenes/netherite_boots.png"
-                         alt="Botas de netherita">
-
-                    <h3>Botas APG</h3>
-
-                    <p>Botas de netherita APG.</p>
-
-                    <strong>$3</strong>
-
-                    <div class="product-actions">
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button class="info-button"
-                                data-info="boots">
-                            ❗
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-card">
-
-                    <img src="imagenes/netherite_leggings.png"
-                         alt="Pantalones de netherita">
-
-                    <h3>Pantalones APG</h3>
-
-                    <p>Pantalones de netherita APG.</p>
-
-                    <strong>$4</strong>
-
-                    <div class="product-actions">
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button class="info-button"
-                                data-info="leggings">
-                            ❗
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-card">
-
-                    <img src="imagenes/netherite_helmet.png"
-                         alt="Casco de netherita">
-
-                    <h3>Casco APG</h3>
-
-                    <p>Casco de netherita APG.</p>
-
-                    <strong>$3</strong>
-
-                    <div class="product-actions">
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button class="info-button"
-                                data-info="helmet">
-                            ❗
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-card">
-
-                    <img src="imagenes/netherite_chestplate.png"
-                         alt="Pechera de netherita">
-
-                    <h3>Pechera APG</h3>
-
-                    <p>Pechera de netherita APG.</p>
-
-                    <strong>$4</strong>
-
-                    <div class="product-actions">
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button class="info-button"
-                                data-info="chestplate">
-                            ❗
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-card">
-
-                    <img src="imagenes/netherite_sword.png"
-                         alt="Espada de netherita">
-
-                    <h3>Espada APG</h3>
-
-                    <p>Espada de netherita APG.</p>
-
-                    <strong>$6</strong>
-
-                    <div class="product-actions">
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button class="info-button"
-                                data-info="sword">
-                            ❗
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-card">
-
-                    <img src="imagenes/netherite_pickaxe.png"
-                         alt="Pico de netherita">
-
-                    <h3>Pico APG</h3>
-
-                    <p>Pico de netherita APG.</p>
-
-                    <strong>$11</strong>
-
-                    <div class="product-actions">
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button class="info-button"
-                                data-info="pickaxe">
-                            ❗
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-card">
-
-                    <img src="imagenes/netherite_axe.png"
-                         alt="Hacha de netherita">
-
-                    <h3>Hacha APG</h3>
-
-                    <p>Hacha de netherita APG.</p>
-
-                    <strong>$7</strong>
-
-                    <div class="product-actions">
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button class="info-button"
-                                data-info="axe">
-                            ❗
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-card">
-
-                    <img src="imagenes/crossbow.png"
-                         alt="Ballesta">
-
-                    <h3>Ballesta APG</h3>
-
-                    <p>Ballesta APG.</p>
-
-                    <strong>$11</strong>
-
-                    <div class="product-actions">
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button class="info-button"
-                                data-info="crossbow">
-                            ❗
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-card">
-
-                    <img src="imagenes/bow.png"
-                         alt="Arco">
-
-                    <h3>Arco APG</h3>
-
-                    <p>Arco APG.</p>
-
-                    <strong>$9</strong>
-
-                    <div class="product-actions">
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button class="info-button"
-                                data-info="bow">
-                            ❗
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-card">
-
-                    <img src="imagenes/ender_chest.png"
-                         alt="Cofre de Ender">
-
-                    <h3>Kit APG completo</h3>
-
-                    <p>Set completo de equipamiento APG.</p>
-
-                    <strong>$20</strong>
-
-                    <div class="product-actions">
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button class="info-button"
-                                data-info="empty">
-                            ❗
-                        </button>
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-
-        <!-- =====================================
-             EARTH
-        ====================================== -->
-
-        <div id="earth" class="shop-category">
-
-            <div class="discount">
-                -25%
-            </div>
-
-            <h2>
+            <button data-category="earth">
                 🌎 Earth
-            </h2>
+            </button>
 
-
-            <div class="products">
-
-
-                <div class="product-card">
-
-                    <img src="imagenes/netherite_boots.png"
-                         alt="Botas de netherita">
-
-                    <h3>Botas APG</h3>
-
-                    <p>Botas de netherita APG.</p>
-
-                    <strong>$3</strong>
-
-                    <div class="product-actions">
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button class="info-button"
-                                data-info="boots">
-                            ❗
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-card">
-
-                    <img src="imagenes/netherite_leggings.png"
-                         alt="Pantalones de netherita">
-
-                    <h3>Pantalones APG</h3>
-
-                    <p>Pantalones de netherita APG.</p>
-
-                    <strong>$4</strong>
-
-                    <div class="product-actions">
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button class="info-button"
-                                data-info="leggings">
-                            ❗
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-card">
-
-                    <img src="imagenes/netherite_helmet.png"
-                         alt="Casco de netherita">
-
-                    <h3>Casco APG</h3>
-
-                    <p>Casco de netherita APG.</p>
-
-                    <strong>$3</strong>
-
-                    <div class="product-actions">
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button class="info-button"
-                                data-info="helmet">
-                            ❗
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-card">
-
-                    <img src="imagenes/netherite_chestplate.png"
-                         alt="Pechera de netherita">
-
-                    <h3>Pechera APG</h3>
-
-                    <p>Pechera de netherita APG.</p>
-
-                    <strong>$4</strong>
-
-                    <div class="product-actions">
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button class="info-button"
-                                data-info="chestplate">
-                            ❗
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-card">
-
-                    <img src="imagenes/netherite_sword.png"
-                         alt="Espada de netherita">
-
-                    <h3>Espada APG</h3>
-
-                    <p>Espada de netherita APG.</p>
-
-                    <strong>$6</strong>
-
-                    <div class="product-actions">
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button class="info-button"
-                                data-info="sword">
-                            ❗
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-card">
-
-                    <img src="imagenes/netherite_pickaxe.png"
-                         alt="Pico de netherita">
-
-                    <h3>Pico APG</h3>
-
-                    <p>Pico de netherita APG.</p>
-
-                    <strong>$11</strong>
-
-                    <div class="product-actions">
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button class="info-button"
-                                data-info="pickaxe">
-                            ❗
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-card">
-
-                    <img src="imagenes/netherite_axe.png"
-                         alt="Hacha de netherita">
-
-                    <h3>Hacha APG</h3>
-
-                    <p>Hacha de netherita APG.</p>
-
-                    <strong>$7</strong>
-
-                    <div class="product-actions">
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button class="info-button"
-                                data-info="axe">
-                            ❗
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-card">
-
-                    <img src="imagenes/crossbow.png"
-                         alt="Ballesta">
-
-                    <h3>Ballesta APG</h3>
-
-                    <p>Ballesta APG.</p>
-
-                    <strong>$11</strong>
-
-                    <div class="product-actions">
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button class="info-button"
-                                data-info="crossbow">
-                            ❗
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-card">
-
-                    <img src="imagenes/bow.png"
-                         alt="Arco">
-
-                    <h3>Arco APG</h3>
-
-                    <p>Arco APG.</p>
-
-                    <strong>$9</strong>
-
-                    <div class="product-actions">
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button class="info-button"
-                                data-info="bow">
-                            ❗
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-card">
-
-                    <img src="imagenes/ender_chest.png"
-                         alt="Cofre de Ender">
-
-                    <h3>Kit APG completo</h3>
-
-                    <p>Set completo de equipamiento APG.</p>
-
-                    <strong>$20</strong>
-
-                    <div class="product-actions">
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button class="info-button"
-                                data-info="empty">
-                            ❗
-                        </button>
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-
-        <!-- =====================================
-             DINERO
-        ====================================== -->
-
-        <div id="dinero" class="shop-category">
-
-            <div class="discount">
-                -25%
-            </div>
-
-            <h2>
+            <button data-category="dinero">
                 💰 Dinero
-            </h2>
+            </button>
 
-
-            <div class="products">
-
-
-                <div class="product-card">
-
-                    <div class="product-emoji">
-                        💵
-                    </div>
-
-                    <h3>$1,000</h3>
-
-                    <p>
-                        Dinero para tu cuenta.
-                    </p>
-
-                    <strong>$2</strong>
-
-                    <div class="product-actions">
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button class="info-button"
-                                data-info="empty">
-                            ❗
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-card">
-
-                    <div class="product-emoji">
-                        💵
-                    </div>
-
-                    <h3>$10,000</h3>
-
-                    <p>
-                        Dinero para tu cuenta.
-                    </p>
-
-                    <strong>$10</strong>
-
-                    <div class="product-actions">
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button class="info-button"
-                                data-info="empty">
-                            ❗
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-card">
-
-                    <div class="product-emoji">
-                        💵
-                    </div>
-
-                    <h3>$100,000</h3>
-
-                    <p>
-                        Dinero para tu cuenta.
-                    </p>
-
-                    <strong>$15</strong>
-
-                    <div class="product-actions">
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button class="info-button"
-                                data-info="empty">
-                            ❗
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-card">
-
-                    <div class="product-emoji">
-                        💵
-                    </div>
-
-                    <h3>$500,000</h3>
-
-                    <p>
-                        Dinero para tu cuenta.
-                    </p>
-
-                    <strong>$25</strong>
-
-                    <div class="product-actions">
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button class="info-button"
-                                data-info="empty">
-                            ❗
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-card">
-
-                    <div class="product-emoji">
-                        💵
-                    </div>
-
-                    <h3>$1,000,000</h3>
-
-                    <p>
-                        Dinero para tu cuenta.
-                    </p>
-
-                    <strong>$40</strong>
-
-                    <div class="product-actions">
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button class="info-button"
-                                data-info="empty">
-                            ❗
-                        </button>
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-
-        <!-- =====================================
-             RANGOS
-        ====================================== -->
-
-        <div id="rangos" class="shop-category">
-
-            <div class="discount">
-                -25%
-            </div>
-
-            <h2>
+            <button data-category="rangos">
                 🏆 Rangos
-            </h2>
+            </button>
 
-
-            <div class="products">
-
-
-                <div class="product-card">
-
-                    <div class="product-emoji">
-                        🍞
-                    </div>
-
-                    <h3>
-                        Pan
-                    </h3>
-
-                    <p>
-                        Rango Pan.
-                    </p>
-
-                    <strong>
-                        $2
-                    </strong>
-
-                    <div class="product-actions">
-
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button class="info-button"
-                                data-info="empty">
-                            ❗
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <div class="product-card">
-
-                    <div class="product-emoji">
-                        🍅
-                    </div>
-
-                    <h3>
-                        Tomate
-                    </h3>
-
-                    <p>
-                        Rango Tomate.
-                    </p>
-
-                    <strong>
-                        $5
-                    </strong>
-
-                    <div class="product-actions">
-
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button class="info-button"
-                                data-info="empty">
-                            ❗
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <div class="product-card">
-
-                    <div class="product-emoji">
-                        🌶️
-                    </div>
-
-                    <h3>
-                        Peperoni
-                    </h3>
-
-                    <p>
-                        Rango Peperoni.
-                    </p>
-
-                    <strong>
-                        $10
-                    </strong>
-
-                    <div class="product-actions">
-
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button class="info-button"
-                                data-info="empty">
-                            ❗
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <div class="product-card">
-
-                    <div class="product-emoji">
-                        🍕
-                    </div>
-
-                    <h3>
-                        Pizza
-                    </h3>
-
-                    <p>
-                        Rango Pizza.
-                    </p>
-
-                    <strong>
-                        $16
-                    </strong>
-
-                    <div class="product-actions">
-
-                        <button class="buy-button">
-                            Añadir al carrito
-                        </button>
-
-                        <button class="info-button"
-                                data-info="empty">
-                            ❗
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-
-        <!-- =====================================
-             COSMÉTICOS
-        ====================================== -->
-
-        <div id="cosmeticos"
-             class="shop-category coming-soon">
-
-            <div class="coming-icon">
-                🎨
-            </div>
-
-            <h2>
+            <button data-category="cosmeticos">
                 🎨 Cosméticos
-            </h2>
-
-            <p>
-                Próximamente 🚧
-            </p>
+            </button>
 
         </div>
 
 
-    </section>
+        <section class="shop-content">
 
-</div>
-```
+
+            <!-- =================================================
+                 SODA
+            ================================================= -->
+
+            <div id="soda" class="shop-category active">
+
+                <div class="discount">
+                    -25%
+                </div>
+
+                <h2>
+                    🥤 Soda
+                </h2>
+
+                <div class="products">
+
+
+                    <div class="product-card">
+
+                        <div class="product-emoji">
+                            🥤
+                        </div>
+
+                        <h3>
+                            Soda — 1 mes
+                        </h3>
+
+                        <p>
+                            Acceso a Soda durante 1 mes.
+                        </p>
+
+                        <strong>
+                            $9
+                        </strong>
+
+                        <div class="product-actions">
+
+                            <button class="buy-button">
+                                Añadir al carrito
+                            </button>
+
+                            <button class="info-button"
+                                    data-info="empty">
+                                ❗
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="product-card">
+
+                        <div class="product-emoji">
+                            🥤
+                        </div>
+
+                        <h3>
+                            Soda — 3 meses
+                        </h3>
+
+                        <p>
+                            Acceso a Soda durante 3 meses.
+                        </p>
+
+                        <strong>
+                            $20
+                        </strong>
+
+                        <div class="product-actions">
+
+                            <button class="buy-button">
+                                Añadir al carrito
+                            </button>
+
+                            <button class="info-button"
+                                    data-info="empty">
+                                ❗
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="product-card">
+
+                        <div class="product-emoji">
+                            🥤
+                        </div>
+
+                        <h3>
+                            Soda — 1 año
+                        </h3>
+
+                        <p>
+                            Acceso a Soda durante 1 año.
+                        </p>
+
+                        <strong>
+                            $44
+                        </strong>
+
+                        <div class="product-actions">
+
+                            <button class="buy-button">
+                                Añadir al carrito
+                            </button>
+
+                            <button class="info-button"
+                                    data-info="empty">
+                                ❗
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 SURVIVAL CLÁSICO
+            ================================================= -->
+
+            <div id="survival" class="shop-category">
+
+                <div class="discount">
+                    -25%
+                </div>
+
+                <h2>
+                    🌳 Survival clásico
+                </h2>
+
+                <div class="products">
+
+
+                    <!-- BOTAS -->
+
+                    <div class="product-card">
+
+                        <img src="imagenes/netherite_boots.png"
+                             alt="Botas de netherita">
+
+                        <h3>
+                            Botas APG
+                        </h3>
+
+                        <p>
+                            Botas de netherita APG.
+                        </p>
+
+                        <strong>
+                            $3
+                        </strong>
+
+                        <div class="product-actions">
+
+                            <button class="buy-button">
+                                Añadir al carrito
+                            </button>
+
+                            <button class="info-button"
+                                    data-info="boots">
+                                ❗
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PANTALONES -->
+
+                    <div class="product-card">
+
+                        <img src="imagenes/netherite_leggings.png"
+                             alt="Pantalones de netherita">
+
+                        <h3>
+                            Pantalones APG
+                        </h3>
+
+                        <p>
+                            Pantalones de netherita APG.
+                        </p>
+
+                        <strong>
+                            $4
+                        </strong>
+
+                        <div class="product-actions">
+
+                            <button class="buy-button">
+                                Añadir al carrito
+                            </button>
+
+                            <button class="info-button"
+                                    data-info="leggings">
+                                ❗
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CASCO -->
+
+                    <div class="product-card">
+
+                        <img src="imagenes/netherite_helmet.png"
+                             alt="Casco de netherita">
+
+                        <h3>
+                            Casco APG
+                        </h3>
+
+                        <p>
+                            Casco de netherita APG.
+                        </p>
+
+                        <strong>
+                            $3
+                        </strong>
+
+                        <div class="product-actions">
+
+                            <button class="buy-button">
+                                Añadir al carrito
+                            </button>
+
+                            <button class="info-button"
+                                    data-info="helmet">
+                                ❗
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PECHERA -->
+
+                    <div class="product-card">
+
+                        <img src="imagenes/netherite_chestplate.png"
+                             alt="Pechera de netherita">
+
+                        <h3>
+                            Pechera APG
+                        </h3>
+
+                        <p>
+                            Pechera de netherita APG.
+                        </p>
+
+                        <strong>
+                            $4
+                        </strong>
+
+                        <div class="product-actions">
+
+                            <button class="buy-button">
+                                Añadir al carrito
+                            </button>
+
+                            <button class="info-button"
+                                    data-info="chestplate">
+                                ❗
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ESPADA -->
+
+                    <div class="product-card">
+
+                        <img src="imagenes/netherite_sword.png"
+                             alt="Espada de netherita">
+
+                        <h3>
+                            Espada APG
+                        </h3>
+
+                        <p>
+                            Espada de netherita APG.
+                        </p>
+
+                        <strong>
+                            $6
+                        </strong>
+
+                        <div class="product-actions">
+
+                            <button class="buy-button">
+                                Añadir al carrito
+                            </button>
+
+                            <button class="info-button"
+                                    data-info="sword">
+                                ❗
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PICO -->
+
+                    <div class="product-card">
+
+                        <img src="imagenes/netherite_pickaxe.png"
+                             alt="Pico de netherita">
+
+                        <h3>
+                            Pico APG
+                        </h3>
+
+                        <p>
+                            Pico de netherita APG.
+                        </p>
+
+                        <strong>
+                            $11
+                        </strong>
+
+                        <div class="product-actions">
+
+                            <button class="buy-button">
+                                Añadir al carrito
+                            </button>
+
+                            <button class="info-button"
+                                    data-info="pickaxe">
+                                ❗
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- HACHA -->
+
+                    <div class="product-card">
+
+                        <img src="imagenes/netherite_axe.png"
+                             alt="Hacha de netherita">
+
+                        <h3>
+                            Hacha APG
+                        </h3>
+
+                        <p>
+                            Hacha de netherita APG.
+                        </p>
+
+                        <strong>
+                            $7
+                        </strong>
+
+                        <div class="product-actions">
+
+                            <button class="buy-button">
+                                Añadir al carrito
+                            </button>
+
+                            <button class="info-button"
+                                    data-info="axe">
+                                ❗
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- BALLESTA -->
+
+                    <div class="product-card">
+
+                        <img src="imagenes/crossbow.png"
+                             alt="Ballesta">
+
+                        <h3>
+                            Ballesta APG
+                        </h3>
+
+                        <p>
+                            Ballesta APG.
+                        </p>
+
+                        <strong>
+                            $11
+                        </strong>
+
+                        <div class="product-actions">
+
+                            <button class="buy-button">
+                                Añadir al carrito
+                            </button>
+
+                            <button class="info-button"
+                                    data-info="crossbow">
+                                ❗
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ARCO -->
+
+                    <div class="product-card">
+
+                        <img src="imagenes/bow.png"
+                             alt="Arco">
+
+                        <h3>
+                            Arco APG
+                        </h3>
+
+                        <p>
+                            Arco APG.
+                        </p>
+
+                        <strong>
+                            $9
+                        </strong>
+
+                        <div class="product-actions">
+
+                            <button class="buy-button">
+                                Añadir al carrito
+                            </button>
+
+                            <button class="info-button"
+                                    data-info="bow">
+                                ❗
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- KIT APG -->
+
+                    <div class="product-card">
+
+                        <img src="imagenes/ender_chest.png"
+                             alt="Cofre de Ender">
+
+                        <h3>
+                            Kit APG completo
+                        </h3>
+
+                        <p>
+                            Set completo de equipamiento APG.
+                        </p>
+
+                        <strong>
+                            $20
+                        </strong>
+
+                        <div class="product-actions">
+
+                            <button class="buy-button">
+                                Añadir al carrito
+                            </button>
+
+                            <button class="info-button"
+                                    data-info="empty">
+                                ❗
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 ANÁRQUICO
+            ================================================= -->
+
+            <div id="anarquico" class="shop-category">
+
+                <div class="discount">
+                    -25%
+                </div>
+
+                <h2>
+                    ⚔️ Anárquico
+                </h2>
+
+                <div class="products">
+
+                    <div class="product-card">
+                        <img src="imagenes/netherite_boots.png"
+                             alt="Botas de netherita">
+                        <h3>Botas APG</h3>
+                        <p>Botas de netherita APG.</p>
+                        <strong>$3</strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="boots">❗</button>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card">
+                        <img src="imagenes/netherite_leggings.png"
+                             alt="Pantalones de netherita">
+                        <h3>Pantalones APG</h3>
+                        <p>Pantalones de netherita APG.</p>
+                        <strong>$4</strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="leggings">❗</button>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card">
+                        <img src="imagenes/netherite_helmet.png"
+                             alt="Casco de netherita">
+                        <h3>Casco APG</h3>
+                        <p>Casco de netherita APG.</p>
+                        <strong>$3</strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="helmet">❗</button>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card">
+                        <img src="imagenes/netherite_chestplate.png"
+                             alt="Pechera de netherita">
+                        <h3>Pechera APG</h3>
+                        <p>Pechera de netherita APG.</p>
+                        <strong>$4</strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="chestplate">❗</button>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card">
+                        <img src="imagenes/netherite_sword.png"
+                             alt="Espada de netherita">
+                        <h3>Espada APG</h3>
+                        <p>Espada de netherita APG.</p>
+                        <strong>$6</strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="sword">❗</button>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card">
+                        <img src="imagenes/netherite_pickaxe.png"
+                             alt="Pico de netherita">
+                        <h3>Pico APG</h3>
+                        <p>Pico de netherita APG.</p>
+                        <strong>$11</strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="pickaxe">❗</button>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card">
+                        <img src="imagenes/netherite_axe.png"
+                             alt="Hacha de netherita">
+                        <h3>Hacha APG</h3>
+                        <p>Hacha de netherita APG.</p>
+                        <strong>$7</strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="axe">❗</button>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card">
+                        <img src="imagenes/crossbow.png"
+                             alt="Ballesta">
+                        <h3>Ballesta APG</h3>
+                        <p>Ballesta APG.</p>
+                        <strong>$11</strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="crossbow">❗</button>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card">
+                        <img src="imagenes/bow.png"
+                             alt="Arco">
+                        <h3>Arco APG</h3>
+                        <p>Arco APG.</p>
+                        <strong>$9</strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="bow">❗</button>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card">
+                        <img src="imagenes/ender_chest.png"
+                             alt="Cofre de Ender">
+                        <h3>Kit APG completo</h3>
+                        <p>Set completo de equipamiento APG.</p>
+                        <strong>$20</strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="empty">❗</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 EARTH
+            ================================================= -->
+
+            <div id="earth" class="shop-category">
+
+                <div class="discount">
+                    -25%
+                </div>
+
+                <h2>
+                    🌎 Earth
+                </h2>
+
+                <div class="products">
+
+                    <div class="product-card">
+                        <img src="imagenes/netherite_boots.png" alt="Botas de netherita">
+                        <h3>Botas APG</h3>
+                        <p>Botas de netherita APG.</p>
+                        <strong>$3</strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="boots">❗</button>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card">
+                        <img src="imagenes/netherite_leggings.png" alt="Pantalones de netherita">
+                        <h3>Pantalones APG</h3>
+                        <p>Pantalones de netherita APG.</p>
+                        <strong>$4</strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="leggings">❗</button>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card">
+                        <img src="imagenes/netherite_helmet.png" alt="Casco de netherita">
+                        <h3>Casco APG</h3>
+                        <p>Casco de netherita APG.</p>
+                        <strong>$3</strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="helmet">❗</button>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card">
+                        <img src="imagenes/netherite_chestplate.png" alt="Pechera de netherita">
+                        <h3>Pechera APG</h3>
+                        <p>Pechera de netherita APG.</p>
+                        <strong>$4</strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="chestplate">❗</button>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card">
+                        <img src="imagenes/netherite_sword.png" alt="Espada de netherita">
+                        <h3>Espada APG</h3>
+                        <p>Espada de netherita APG.</p>
+                        <strong>$6</strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="sword">❗</button>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card">
+                        <img src="imagenes/netherite_pickaxe.png" alt="Pico de netherita">
+                        <h3>Pico APG</h3>
+                        <p>Pico de netherita APG.</p>
+                        <strong>$11</strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="pickaxe">❗</button>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card">
+                        <img src="imagenes/netherite_axe.png" alt="Hacha de netherita">
+                        <h3>Hacha APG</h3>
+                        <p>Hacha de netherita APG.</p>
+                        <strong>$7</strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="axe">❗</button>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card">
+                        <img src="imagenes/crossbow.png" alt="Ballesta">
+                        <h3>Ballesta APG</h3>
+                        <p>Ballesta APG.</p>
+                        <strong>$11</strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="crossbow">❗</button>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card">
+                        <img src="imagenes/bow.png" alt="Arco">
+                        <h3>Arco APG</h3>
+                        <p>Arco APG.</p>
+                        <strong>$9</strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="bow">❗</button>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card">
+                        <img src="imagenes/ender_chest.png" alt="Cofre de Ender">
+                        <h3>Kit APG completo</h3>
+                        <p>Set completo de equipamiento APG.</p>
+                        <strong>$20</strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="empty">❗</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 DINERO
+            ================================================= -->
+
+            <div id="dinero" class="shop-category">
+
+                <div class="discount">
+                    -25%
+                </div>
+
+                <h2>
+                    💰 Dinero
+                </h2>
+
+                <div class="products">
+
+
+                    <div class="product-card">
+
+                        <div class="product-emoji">
+                            💵
+                        </div>
+
+                        <h3>$1,000</h3>
+
+                        <p>
+                            Dinero para tu cuenta.
+                        </p>
+
+                        <strong>
+                            $2
+                        </strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="empty">❗</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="product-card">
+
+                        <div class="product-emoji">
+                            💵
+                        </div>
+
+                        <h3>$10,000</h3>
+
+                        <p>
+                            Dinero para tu cuenta.
+                        </p>
+
+                        <strong>
+                            $10
+                        </strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="empty">❗</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="product-card">
+
+                        <div class="product-emoji">
+                            💵
+                        </div>
+
+                        <h3>$100,000</h3>
+
+                        <p>
+                            Dinero para tu cuenta.
+                        </p>
+
+                        <strong>
+                            $15
+                        </strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="empty">❗</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="product-card">
+
+                        <div class="product-emoji">
+                            💵
+                        </div>
+
+                        <h3>$500,000</h3>
+
+                        <p>
+                            Dinero para tu cuenta.
+                        </p>
+
+                        <strong>
+                            $25
+                        </strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="empty">❗</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="product-card">
+
+                        <div class="product-emoji">
+                            💵
+                        </div>
+
+                        <h3>$1,000,000</h3>
+
+                        <p>
+                            Dinero para tu cuenta.
+                        </p>
+
+                        <strong>
+                            $40
+                        </strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="empty">❗</button>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 RANGOS
+            ================================================= -->
+
+            <div id="rangos" class="shop-category">
+
+                <div class="discount">
+                    -25%
+                </div>
+
+                <h2>
+                    🏆 Rangos
+                </h2>
+
+                <div class="products">
+
+
+                    <div class="product-card">
+
+                        <div class="product-emoji">
+                            🍞
+                        </div>
+
+                        <h3>
+                            Pan
+                        </h3>
+
+                        <p>
+                            Rango Pan.
+                        </p>
+
+                        <strong>
+                            $2
+                        </strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="empty">❗</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="product-card">
+
+                        <div class="product-emoji">
+                            🍅
+                        </div>
+
+                        <h3>
+                            Tomate
+                        </h3>
+
+                        <p>
+                            Rango Tomate.
+                        </p>
+
+                        <strong>
+                            $5
+                        </strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="empty">❗</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="product-card">
+
+                        <div class="product-emoji">
+                            🌶️
+                        </div>
+
+                        <h3>
+                            Peperoni
+                        </h3>
+
+                        <p>
+                            Rango Peperoni.
+                        </p>
+
+                        <strong>
+                            $10
+                        </strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="empty">❗</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="product-card">
+
+                        <div class="product-emoji">
+                            🍕
+                        </div>
+
+                        <h3>
+                            Pizza
+                        </h3>
+
+                        <p>
+                            Rango Pizza.
+                        </p>
+
+                        <strong>
+                            $16
+                        </strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="empty">❗</button>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 COSMÉTICOS
+            ================================================= -->
+
+            <div id="cosmeticos" class="shop-category">
+
+                <div class="discount">
+                    -25%
+                </div>
+
+                <h2>
+                    🎨 Cosméticos
+                </h2>
+
+                <div class="products">
+
+
+                    <!-- LEYENDA -->
+
+                    <div class="product-card">
+
+                        <div class="product-emoji">
+                            👑
+                        </div>
+
+                        <h3>
+                            AceiguateIsHere [Leyenda]
+                        </h3>
+
+                        <p>
+                            Cosmético Leyenda.
+                        </p>
+
+                        <strong>
+                            $3
+                        </strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="empty">❗</button>
+                        </div>
+
+                    </div>
+
+
+                    <!-- DEMONIO -->
+
+                    <div class="product-card">
+
+                        <div class="product-emoji">
+                            😈
+                        </div>
+
+                        <h3>
+                            AceiguateIsHere [Demonio]
+                        </h3>
+
+                        <p>
+                            Cosmético Demonio.
+                        </p>
+
+                        <strong>
+                            $3
+                        </strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="empty">❗</button>
+                        </div>
+
+                    </div>
+
+
+                    <!-- REY -->
+
+                    <div class="product-card">
+
+                        <div class="product-emoji">
+                            👑
+                        </div>
+
+                        <h3>
+                            AceiguateIsHere [Rey]
+                        </h3>
+
+                        <p>
+                            Cosmético Rey.
+                        </p>
+
+                        <strong>
+                            $3
+                        </strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="empty">❗</button>
+                        </div>
+
+                    </div>
+
+
+                    <!-- EMPERADOR -->
+
+                    <div class="product-card">
+
+                        <div class="product-emoji">
+                            👑
+                        </div>
+
+                        <h3>
+                            AceiguateIsHere [Emperador]
+                        </h3>
+
+                        <p>
+                            Cosmético Emperador.
+                        </p>
+
+                        <strong>
+                            $3
+                        </strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="empty">❗</button>
+                        </div>
+
+                    </div>
+
+
+                    <!-- EMPERATRIZ -->
+
+                    <div class="product-card">
+
+                        <div class="product-emoji">
+                            👑
+                        </div>
+
+                        <h3>
+                            AceiguateIsHere [Emperatriz]
+                        </h3>
+
+                        <p>
+                            Cosmético Emperatriz.
+                        </p>
+
+                        <strong>
+                            $3
+                        </strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="empty">❗</button>
+                        </div>
+
+                    </div>
+
+
+                    <!-- CAÓTICO -->
+
+                    <div class="product-card">
+
+                        <div class="product-emoji">
+                            ☠️
+                        </div>
+
+                        <h3>
+                            AceiguateIsHere [Caotico]
+                        </h3>
+
+                        <p>
+                            Cosmético Caótico.
+                        </p>
+
+                        <strong>
+                            $2
+                        </strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="empty">❗</button>
+                        </div>
+
+                    </div>
+
+
+                    <!-- DESTRUCTOR -->
+
+                    <div class="product-card">
+
+                        <div class="product-emoji">
+                            💀
+                        </div>
+
+                        <h3>
+                            AceiguateIsHere [Destructor]
+                        </h3>
+
+                        <p>
+                            Cosmético Destructor.
+                        </p>
+
+                        <strong>
+                            $2
+                        </strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="empty">❗</button>
+                        </div>
+
+                    </div>
+
+
+                    <!-- CONSTRUCTOR -->
+
+                    <div class="product-card">
+
+                        <div class="product-emoji">
+                            🧱
+                        </div>
+
+                        <h3>
+                            AceiguateIsHere [Constructor]
+                        </h3>
+
+                        <p>
+                            Cosmético Constructor.
+                        </p>
+
+                        <strong>
+                            $2
+                        </strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="empty">❗</button>
+                        </div>
+
+                    </div>
+
+
+                    <!-- TÉCNICO -->
+
+                    <div class="product-card">
+
+                        <div class="product-emoji">
+                            🔧
+                        </div>
+
+                        <h3>
+                            AceiguateIsHere [Tecnico]
+                        </h3>
+
+                        <p>
+                            Cosmético Técnico.
+                        </p>
+
+                        <strong>
+                            $2
+                        </strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="empty">❗</button>
+                        </div>
+
+                    </div>
+
+
+                    <!-- INMORTAL -->
+
+                    <div class="product-card">
+
+                        <div class="product-emoji">
+                            ♾️
+                        </div>
+
+                        <h3>
+                            AceiguateIsHere [Inmortal]
+                        </h3>
+
+                        <p>
+                            Cosmético Inmortal.
+                        </p>
+
+                        <strong>
+                            $3
+                        </strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="empty">❗</button>
+                        </div>
+
+                    </div>
+
+
+                    <!-- MAGNATE -->
+
+                    <div class="product-card">
+
+                        <div class="product-emoji">
+                            💰
+                        </div>
+
+                        <h3>
+                            AceiguateIsHere [Magnate]
+                        </h3>
+
+                        <p>
+                            Cosmético Magnate.
+                        </p>
+
+                        <strong>
+                            $3
+                        </strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="empty">❗</button>
+                        </div>
+
+                    </div>
+
+
+                    <!-- NOVATO -->
+
+                    <div class="product-card">
+
+                        <div class="product-emoji">
+                            🌱
+                        </div>
+
+                        <h3>
+                            AceiguateIsHere [Novato]
+                        </h3>
+
+                        <p>
+                            Cosmético Novato.
+                        </p>
+
+                        <strong>
+                            $2
+                        </strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="empty">❗</button>
+                        </div>
+
+                    </div>
+
+
+                    <!-- PRO -->
+
+                    <div class="product-card">
+
+                        <div class="product-emoji">
+                            ⭐
+                        </div>
+
+                        <h3>
+                            AceiguateIsHere [Pro]
+                        </h3>
+
+                        <p>
+                            Cosmético Pro.
+                        </p>
+
+                        <strong>
+                            $2
+                        </strong>
+
+                        <div class="product-actions">
+                            <button class="buy-button">Añadir al carrito</button>
+                            <button class="info-button" data-info="empty">❗</button>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </div>
 
 </main>
 
-<!-- =========================================
+
+<!-- =================================================
      MODAL INFORMACIÓN
-========================================= -->
+================================================= -->
 
 <div id="product-info-modal"
      class="cart-modal">
 
-```
-<div class="cart-box product-info-box">
+    <div class="cart-box product-info-box">
 
-    <button
-        id="close-product-info"
-        class="close-cart">
-        ×
-    </button>
+        <button
+            id="close-product-info"
+            class="close-cart">
+            ×
+        </button>
 
-    <h2 id="product-info-title">
-        Información del producto
-    </h2>
+        <h2 id="product-info-title">
+            Información del producto
+        </h2>
 
-    <div id="product-info-content"></div>
+        <div id="product-info-content"></div>
 
-</div>
-```
+    </div>
 
 </div>
 
-<!-- =========================================
+
+<!-- =================================================
      MODAL PRODUCTO AÑADIDO
-========================================= -->
+================================================= -->
 
 <div id="added-modal"
      class="cart-modal">
 
-```
-<div class="cart-box added-box">
+    <div class="cart-box added-box">
 
-    <button
-        class="added-x close-cart">
-        ×
-    </button>
+        <button
+            class="added-x close-cart">
+            ×
+        </button>
 
-    <h2>
-        ¡Producto añadido!
-    </h2>
+        <h2>
+            ¡Producto añadido!
+        </h2>
 
-    <p>
-        <span id="added-product"></span>
-        fue añadido al carrito.
-    </p>
+        <p>
+            <span id="added-product"></span>
+            fue añadido al carrito.
+        </p>
 
-    <button class="added-close">
-        Entendido
-    </button>
+        <button class="added-close">
+            Entendido
+        </button>
 
-</div>
-```
+    </div>
 
 </div>
 
-<!-- =========================================
+
+<!-- =================================================
      MODAL CARRITO
-========================================= -->
+================================================= -->
 
 <div id="cart-modal"
      class="cart-modal">
 
-```
-<div class="cart-box">
+    <div class="cart-box">
 
-    <button class="close-cart">
-        ×
-    </button>
+        <button class="close-cart">
+            ×
+        </button>
 
-    <h2>
-        🛒 Tu carrito
-    </h2>
+        <h2>
+            🛒 Tu carrito
+        </h2>
 
-    <div id="cart-items"></div>
+        <div id="cart-items"></div>
 
-    <div class="cart-total-area">
+        <div class="cart-total-area">
 
-        <span>
-            Total:
-        </span>
+            <span>
+                Total:
+            </span>
 
-        <strong id="cart-total">
-            $0.00
-        </strong>
+            <strong id="cart-total">
+                $0.00
+            </strong>
 
-    </div>
+        </div>
 
-    <div class="cart-actions">
+        <div class="cart-actions">
 
-        <button id="clear-cart"
+            <button
+                id="clear-cart"
                 class="clear-cart-button">
-            Vaciar carrito
-        </button>
+                Vaciar carrito
+            </button>
 
-        <button id="continue-tebex"
+            <button
+                id="continue-tebex"
                 class="tebex-button">
-            Continuar con Tebex
-        </button>
+                Continuar con Tebex
+            </button>
+
+        </div>
 
     </div>
 
 </div>
-```
 
-</div>
 
 <footer>
 
-```
-<p>
-    © 2026 APGMC. Todos los derechos reservados.
-</p>
-```
+    <p>
+        © 2026 APGMC. Todos los derechos reservados.
+    </p>
 
 </footer>
 
-<script src="script.js?v=10"></script>
+
+<script src="script.js?v=11"></script>
 
 </body>
 
 </html>
+```
